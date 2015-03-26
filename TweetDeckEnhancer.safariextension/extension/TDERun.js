@@ -17,6 +17,6 @@ var observer = new MutationObserver(function(mutations) {
   });    
 });
 
-observer.observe(document.querySelector("link[title='dark']"), {attributes:true,childList:true,characterData:true});
+observer.observe(document.querySelector("link[title='dark']"), {attributes:true});
 
 ReloadTheme();
