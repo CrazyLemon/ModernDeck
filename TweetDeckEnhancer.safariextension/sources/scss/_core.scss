@@ -1,3 +1,6 @@
-body {
-	display:block; /* TODO: DO ACTUAL STUFF */
+@import "animation";
+
+[class=''] body {
+	-webkit-animation: columnFlyin 0.35s;
+	animation: columnFlyin 0.35s;
 }
