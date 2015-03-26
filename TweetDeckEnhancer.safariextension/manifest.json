@@ -16,15 +16,10 @@
   "content_scripts": [
     {
       "matches": ["https://tweetdeck.twitter.com/"],
-      "js": ["extension/TDELoad.js"],
+      "js": ["extension/TDERun.js"],
       "run_at": "document_end"
     }
   ],
-
-  "background": {
-    "scripts": ["extension/TDEBackground.js"],
-    "persistent": true
-  },
 
   "icons": {
       "16": "AppIcon16.png",
@@ -41,7 +36,7 @@
   ],
 
   "browser_action": {
-    "default_icon": "sources/oneclick/InstaTweetDeck.png",
+    "default_icon": "sources/imgs/InstaTweetDeck.png",
     "default_popup": "extension/ITD.html",
     "default_title": "__MSG_ButtonHoverTitle__"
   },
