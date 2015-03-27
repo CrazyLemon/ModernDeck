@@ -83,6 +83,10 @@ body[class=''] .application {
   display: none;
   /* not sure why this happens */ }
 
+html .stream-item {
+  border-bottom: none;
+  background: #fefefe; }
+
 html .btn {
   color: #00BCD4;
   background: transparent;
@@ -107,20 +111,26 @@ html .btn:active, html .avatar:active {
 html .tde-dark .btn:active, html .tde-dark .avatar:active {
   color: rgba(38, 50, 56, 0.9); }
 html .btn:focus:not(:active) {
-  background: transparent; }
+  background: transparent;
+  color: rgba(0, 188, 212, 0.9); }
+html .tde-dark .btn:focus:not(:active) {
+  background: transparent;
+  color: rgba(38, 50, 56, 0.9); }
 
 html {
   /* For overriding */ }
   html a {
-    color: #00BCD4; }
+    color: #00BCD4;
+    text-decoration: none; }
   html a:hover {
-    color: rgba(0, 188, 212, 0.9); }
+    color: rgba(0, 188, 212, 0.9);
+    text-decoration: none; }
   html .tde-dark a {
     color: #00838F; }
   html .tde-dark a:hover {
     color: rgba(38, 50, 56, 0.9); }
   html a:focus {
-    border: none !important; }
+    outline: none; }
 
 html .btn {
   color: #00BCD4;
@@ -146,14 +156,21 @@ html .btn:active, html .avatar:active {
 html .tde-dark .btn:active, html .tde-dark .avatar:active {
   color: rgba(38, 50, 56, 0.9); }
 html .btn:focus:not(:active) {
-  background: transparent; }
+  background: transparent;
+  color: rgba(0, 188, 212, 0.9); }
+html .tde-dark .btn:focus:not(:active) {
+  background: transparent;
+  color: rgba(38, 50, 56, 0.9); }
 
 html .avatar, html .prf-img, html html.tweet-avatar {
   border-radius: 100px; }
 html .avatar:active {
   background: transparent; }
 
-/* tweets and stuff */
+html .stream-item {
+  border-bottom: none;
+  background: #fefefe; }
+
 html {
   /* for overriding some things. ugh */ }
   html .compose-account {

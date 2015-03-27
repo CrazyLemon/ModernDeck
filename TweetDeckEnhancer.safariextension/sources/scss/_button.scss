@@ -41,6 +41,12 @@ html {
 
 	.btn:focus:not(:active) {
 		background:transparent;
+		color:$secondary_colour_light_hover;
+	}
+
+	.tde-dark .btn:focus:not(:active) {
+		background:transparent;
+		color:$secondary_colour_dark_hover;
 	}
 
 }

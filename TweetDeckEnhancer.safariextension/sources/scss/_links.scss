@@ -4,10 +4,12 @@ html { /* For overriding */
 
 	a {
 	  color:$secondary_colour_light;
+	  text-decoration:none;
 	}
 
 	a:hover {
 	  color:$secondary_colour_light_hover;
+	  text-decoration:none;
 	}
 
 	.tde-dark a {
@@ -19,7 +21,7 @@ html { /* For overriding */
 	}
 
 	a:focus {
-	  border:none!important;
+	  outline:none;
 	}
 
 }
