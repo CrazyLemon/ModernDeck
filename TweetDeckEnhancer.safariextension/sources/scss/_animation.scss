@@ -19,3 +19,27 @@
 	    animation-timing-function: cubic-bezier(.55,0,.1,1);
     }
 }
+
+@-webkit-keyframes modalPopover {
+    0% {
+        opacity: 0.5;
+        -webkit-transform: scale(1.125,1.125)
+        -webkit-animation-timing-function: cubic-bezier(.55,0,.1,1);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1,1);
+        -webkit-animation-timing-function: cubic-bezier(.55,0,.1,1);
+    }
+}
+
+@keyframes modalPopover {
+    0% {
+        opacity: 0.5;
+        transform: scale(1.125,1.125)
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1,1);
+    }
+}
