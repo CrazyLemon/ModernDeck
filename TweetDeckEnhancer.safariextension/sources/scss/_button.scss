@@ -39,4 +39,8 @@ html {
 		color:$secondary_colour_dark_hover;
 	}
 
+	.btn:focus:not(:active) {
+		background:transparent;
+	}
+
 }

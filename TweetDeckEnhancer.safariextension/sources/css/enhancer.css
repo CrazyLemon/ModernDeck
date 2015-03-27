@@ -83,29 +83,31 @@ body[class=''] .application {
   display: none;
   /* not sure why this happens */ }
 
-button .btn {
+html .btn {
   color: #00BCD4;
   background: transparent;
   text-transform: uppercase;
   transition: 180ms all;
   transform: scale(1, 1);
   border: none; }
-button .tde-dark .btn {
+html .tde-dark .btn {
   color: #00838F; }
-button .btn:hover, button html .avatar:hover, html button .avatar:hover {
+html .btn:hover, html .avatar:hover {
   transform: scale(1.025, 1.025);
   color: rgba(0, 188, 212, 0.9);
   background: transparent; }
-button .tde-dark .btn:hover, button .tde-dark html .avatar:hover, html button .tde-dark .avatar:hover {
+html .tde-dark .btn:hover, html .tde-dark .avatar:hover {
   color: rgba(38, 50, 56, 0.9); }
-button .btn:focus {
+html .btn:focus {
   box-shadow: none; }
-button .btn:active, button html .avatar:active, html button .avatar:active {
+html .btn:active, html .avatar:active {
   transform: scale(0.95, 0.95);
   color: #999;
   background: rgba(100, 100, 100, 0.2); }
-button .tde-dark .btn:active, button .tde-dark html .avatar:active, html button .tde-dark .avatar:active {
+html .tde-dark .btn:active, html .tde-dark .avatar:active {
   color: rgba(38, 50, 56, 0.9); }
+html .btn:focus:not(:active) {
+  background: transparent; }
 
 html {
   /* For overriding */ }
@@ -120,29 +122,31 @@ html {
   html a:focus {
     border: none !important; }
 
-button .btn {
+html .btn {
   color: #00BCD4;
   background: transparent;
   text-transform: uppercase;
   transition: 180ms all;
   transform: scale(1, 1);
   border: none; }
-button .tde-dark .btn {
+html .tde-dark .btn {
   color: #00838F; }
-button .btn:hover, button html .avatar:hover, html button .avatar:hover {
+html .btn:hover, html .avatar:hover {
   transform: scale(1.025, 1.025);
   color: rgba(0, 188, 212, 0.9);
   background: transparent; }
-button .tde-dark .btn:hover, button .tde-dark html .avatar:hover, html button .tde-dark .avatar:hover {
+html .tde-dark .btn:hover, html .tde-dark .avatar:hover {
   color: rgba(38, 50, 56, 0.9); }
-button .btn:focus {
+html .btn:focus {
   box-shadow: none; }
-button .btn:active, button html .avatar:active, html button .avatar:active {
+html .btn:active, html .avatar:active {
   transform: scale(0.95, 0.95);
   color: #999;
   background: rgba(100, 100, 100, 0.2); }
-button .tde-dark .btn:active, button .tde-dark html .avatar:active, html button .tde-dark .avatar:active {
+html .tde-dark .btn:active, html .tde-dark .avatar:active {
   color: rgba(38, 50, 56, 0.9); }
+html .btn:focus:not(:active) {
+  background: transparent; }
 
 html .avatar, html .prf-img, html html.tweet-avatar {
   border-radius: 100px; }
