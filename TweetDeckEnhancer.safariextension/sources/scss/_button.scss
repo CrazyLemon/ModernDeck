@@ -1,14 +1,35 @@
 @import "colour";
 
-.btn {
+button.btn {
 	color:$secondary_colour_light;
-	background-color:transparent;
+	background:transparent;
 	text-transform:uppercase;
 	transition:180ms all;
 	transform:scale(1,1);
 }
 
-.btn:hover {
-	opacity:1;
-	transform:scale(1.07,1.07);
+.tde-dark button.btn {
+	color:$secondary_colour_dark;
+}
+
+button.btn:hover {
+	transform:scale(1.025,1.025);
+	color:$secondary_colour_light_hover;
+}
+
+.tde-dark button.btn:hover {
+	color:$secondary_colour_dark_hover;
+}
+
+button.btn:focus {
+	box-shadow:none;
+}
+
+button.btn:active {
+	transform:scale(0.95,0.95);
+	color:#ccc;
+}
+
+.tde-dark button.btn:active {
+	color:$secondary_colour_dark_hover;
 }

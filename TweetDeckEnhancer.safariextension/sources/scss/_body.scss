@@ -1,8 +1,8 @@
 @import "animation";
 @import "colour";
 
-body {
-	background: $primary_colour_light;
+html body {
+	background: $primary_colour_light!important;
 }
 
 body[class=''] .application {
