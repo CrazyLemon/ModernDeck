@@ -112,7 +112,8 @@ html .btn {
   text-transform: uppercase;
   transition: 180ms all;
   transform: scale(1, 1);
-  border: none; }
+  border: none;
+  font-size: 14px; }
 html .tde-dark .btn {
   color: #00838F; }
 html .btn:hover, html .avatar:hover:not(:active) {
@@ -135,6 +136,61 @@ html .btn:focus:not(:active) {
 html .tde-dark .btn:focus:not(:active) {
   background: transparent;
   color: rgba(38, 50, 56, 0.9); }
+
+@-webkit-keyframes applicationFlyIn {
+  0% {
+    margin-top: 100%; }
+  100% {
+    margin-top: 0%; } }
+@keyframes applicationFlyIn {
+  0% {
+    margin-top: 100%; }
+  100% {
+    margin-top: 0%; } }
+@-webkit-keyframes modalPopover {
+  0% {
+    opacity: 0.5;
+    -webkit-transform: scale(1.125, 1.125); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes modalPopover {
+  0% {
+    opacity: 0.5;
+    transform: scale(1.125, 1.125); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+#transition, html .dropdown-menu, html .stream-item {
+  transition: 180ms all;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+
+html .dropdown-menu {
+  position: absolute;
+  z-index: 1;
+  padding: 10px 0;
+  font-weight: 400;
+  font-size: 14.5px;
+  line-height: 18px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(117, 117, 117, 0.8);
+  margin-bottom: -15px;
+  margin-right: inherit !important;
+  border-radius: 2px; }
+html .dropdown-menu ul {
+  position: relative;
+  z-index: 1;
+  transition: 200ms all; }
+html .dropdown-menu li {
+  position: relative;
+  display: block;
+  float: none;
+  transition: 200ms all !important;
+  height: 32px; }
+html .dropdown-menu li.is-selectable:hover {
+  background-color: rgba(16, 16, 16, 0.05) !important; }
+html .ovl, html .overlay {
+  background: rgba(100, 100, 100, 0.4); }
 
 html {
   /* For overriding */ }
@@ -161,7 +217,8 @@ html .btn {
   text-transform: uppercase;
   transition: 180ms all;
   transform: scale(1, 1);
-  border: none; }
+  border: none;
+  font-size: 14px; }
 html .tde-dark .btn {
   color: #00838F; }
 html .btn:hover, html .avatar:hover:not(:active) {
@@ -219,7 +276,7 @@ html .avatar:active {
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
-#transition, html .stream-item {
+#transition, html .dropdown-menu, html .stream-item {
   transition: 180ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
@@ -241,7 +298,8 @@ html .btn {
   text-transform: uppercase;
   transition: 180ms all;
   transform: scale(1, 1);
-  border: none; }
+  border: none;
+  font-size: 14px; }
 html .tde-dark .btn {
   color: #00838F; }
 html .btn:hover, html .avatar:hover:not(:active) {
@@ -265,13 +323,12 @@ html .tde-dark .btn:focus:not(:active) {
   background: transparent;
   color: rgba(38, 50, 56, 0.9); }
 
-.btn-positive, .btn-positive-alt, .btn-fav.s-favorited, .s-following .follow-btn {
-  color: #03A9F4; }
-
-.tde-dark .btn-positive, .tde-dark .btn-positive-alt, .tde-dark .btn-fav.s-favorited, .tde-dark .s-following .follow-btn {
-  color: #263238; }
-
-html .s-following .follow-btn:hover {
+html .btn-positive, html .btn-positive-alt, html .btn-fav.s-favorited, html .s-following .follow-btn {
+  color: #00BCD4;
+  box-shadow: none; }
+html .tde-dark .btn-positive, html .tde-dark .btn-positive-alt, html .tde-dark .btn-fav.s-favorited, html .tde-dark .s-following .follow-btn {
+  color: #00838F; }
+html html .s-following .follow-btn:hover {
   background: #a00; }
 
 @-webkit-keyframes applicationFlyIn {

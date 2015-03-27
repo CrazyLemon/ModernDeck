@@ -1,16 +1,21 @@
 @import "button";
 @import "colour";
 
-.btn-positive, .btn-positive-alt, .btn-fav.s-favorited, .s-following .follow-btn {
-	color:$primary_colour_light;
-}
+html {
 
-.tde-dark {
 	.btn-positive, .btn-positive-alt, .btn-fav.s-favorited, .s-following .follow-btn {
-		color:$primary_colour_dark;
+		color:$secondary_colour_light;
+		box-shadow:none;
 	}
-}
 
-html .s-following .follow-btn:hover {
-	background:#a00;
+	.tde-dark {
+		.btn-positive, .btn-positive-alt, .btn-fav.s-favorited, .s-following .follow-btn {
+			color:$secondary_colour_dark;
+		}
+	}
+
+	html .s-following .follow-btn:hover {
+		background:#a00;
+	}
+
 }

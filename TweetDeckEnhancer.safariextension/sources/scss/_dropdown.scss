@@ -1,0 +1,42 @@
+@import "transition";
+
+html {
+
+	.dropdown-menu {
+		position: absolute;
+		z-index: 1;
+		padding: 10px 0;
+		font-weight: 400;
+		font-size: 14.5px;
+		line-height: 18px;
+		background: #fff;
+		box-shadow: 0 2px 5px rgba(117,117,117,0.8);
+		@extend #transition;
+		margin-bottom: -15px;
+		margin-right: inherit!important;
+		border-radius: 2px;
+	}
+
+	.dropdown-menu ul {
+		position: relative;
+		z-index: 1;
+		transition: 200ms all;
+	}
+
+	.dropdown-menu li {
+		position: relative;
+		display: block;
+		float: none;
+		transition: 200ms all!important;
+		height: 32px;
+	}
+
+	.dropdown-menu li.is-selectable:hover {
+		background-color: rgba(16,16,16,0.05)!important;
+	}
+
+	.ovl, .overlay {
+		background:rgba(100, 100, 100, 0.4);
+	}
+
+}
