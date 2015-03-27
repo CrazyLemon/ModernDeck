@@ -5,6 +5,8 @@ html { /* For overriding */
 	a {
 	  color:$secondary_colour_light;
 	  text-decoration:none;
+	  transition:180ms all;
+	  transition-timing-function:cubic-bezier(.55,0,.1,1);
 	}
 
 	a:hover {

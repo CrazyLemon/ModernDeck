@@ -1,0 +1,16 @@
+@import "button";
+@import "colour";
+
+.btn-positive, .btn-positive-alt, .btn-fav.s-favorited, .s-following .follow-btn {
+	color:$primary_colour_light;
+}
+
+.tde-dark {
+	.btn-positive, .btn-positive-alt, .btn-fav.s-favorited, .s-following .follow-btn {
+		color:$primary_colour_dark;
+	}
+}
+
+html .s-following .follow-btn:hover {
+	background:#a00;
+}

@@ -38,7 +38,7 @@
 
   "browser_action": {
     "default_icon": "sources/imgs/launcher.png",
-    "default_popup": "resources/launcher/launcher.html",
+    "default_popup": "sources/launcher/launcher.html",
     "default_title": "__MSG_ButtonHoverTitle__"
   },
 
