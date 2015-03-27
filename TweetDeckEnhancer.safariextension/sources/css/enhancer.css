@@ -168,5 +168,7 @@ html {
   html .compose-content > .scroll-v {
     padding-left: 20px !important;
     padding-right: 20px !important; }
+  html .compose-accounts {
+    margin-left: 5px; }
 
 /*# sourceMappingURL=enhancer.css.map */
