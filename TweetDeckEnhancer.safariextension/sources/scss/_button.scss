@@ -1,36 +1,42 @@
 @import "colour";
 
-button.btn {
-	color:$secondary_colour_light;
-	background:transparent;
-	text-transform:uppercase;
-	transition:180ms all;
-	transform:scale(1,1);
-}
+button { 
 
-.tde-dark button.btn {
-	color:$secondary_colour_dark;
-}
+	.btn {
+		color:$secondary_colour_light;
+		background:transparent;
+		text-transform:uppercase;
+		transition:180ms all;
+		transform:scale(1,1);
+		border:none;
+	}
 
-button.btn:hover {
-	transform:scale(1.025,1.025);
-	color:$secondary_colour_light_hover;
-}
+	.tde-dark .btn {
+		color:$secondary_colour_dark;
+	}
 
-.tde-dark button.btn:hover {
-	color:$secondary_colour_dark_hover;
-}
+	.btn:hover {
+		transform:scale(1.025,1.025);
+		color:$secondary_colour_light_hover;
+		background:transparent;
+	}
 
-button.btn:focus {
-	box-shadow:none;
-}
+	.tde-dark .btn:hover {
+		color:$secondary_colour_dark_hover;
+	}
 
-button.btn:active {
-	transform:scale(0.95,0.95);
-	color:#999;
-	background:rgba(100,100,100,0.2)
-}
+	.btn:focus {
+		box-shadow:none;
+	}
 
-.tde-dark button.btn:active {
-	color:$secondary_colour_dark_hover;
+	.btn:active {
+		transform:scale(0.95,0.95);
+		color:#999;
+		background:rgba(100,100,100,0.2)
+	}
+
+	.tde-dark .btn:active {
+		color:$secondary_colour_dark_hover;
+	}
+
 }

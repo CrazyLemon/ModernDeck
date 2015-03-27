@@ -15,3 +15,7 @@ a:hover {
 .tde-dark a:hover {
   color:$secondary_colour_dark_hover;
 }
+
+a:focus {
+  border:none;
+}
