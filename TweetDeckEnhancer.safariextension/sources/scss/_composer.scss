@@ -1,3 +1,31 @@
-a.compose-account {
-	background:transparent;
+html { /* for overriding some things. ugh */
+
+	.compose-account {
+		background:transparent;
+		margin-right:10px;
+		margin-bottom:10px;
+	}
+
+	.compose-title-text {
+		display:none!important;
+	}
+
+	.js-drawer-close {
+		display:none;
+	}
+
+	.compose-header {
+		height:0px;
+		border-bottom:none;
+	}
+
+	.compose-text-title {
+		display:none;
+	}
+
+	.compose-content>.scroll-v {
+		padding-left:20px!important;
+		padding-right:20px!important;
+	}
+
 }

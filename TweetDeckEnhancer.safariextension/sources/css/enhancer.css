@@ -150,7 +150,23 @@ html .avatar:active {
   background: transparent; }
 
 /* tweets and stuff */
-a.compose-account {
-  background: transparent; }
+html {
+  /* for overriding some things. ugh */ }
+  html .compose-account {
+    background: transparent;
+    margin-right: 10px;
+    margin-bottom: 10px; }
+  html .compose-title-text {
+    display: none !important; }
+  html .js-drawer-close {
+    display: none; }
+  html .compose-header {
+    height: 0px;
+    border-bottom: none; }
+  html .compose-text-title {
+    display: none; }
+  html .compose-content > .scroll-v {
+    padding-left: 20px !important;
+    padding-right: 20px !important; }
 
 /*# sourceMappingURL=enhancer.css.map */
