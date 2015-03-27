@@ -6,4 +6,7 @@ html {
 		background:#fefefe;
 	}
 
+	.stream-item:not(.conversation-event) {
+		border-bottom:none;
+	}
 }

@@ -191,5 +191,7 @@ html {
     padding-right: 20px !important; }
   html .compose-accounts {
     margin-left: 5px; }
+  html .attach-compose-buttons .tweet-button {
+    background: none; }
 
 /*# sourceMappingURL=enhancer.css.map */
