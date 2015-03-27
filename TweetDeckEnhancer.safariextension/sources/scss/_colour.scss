@@ -1,9 +1,4 @@
-.tde-light {
-	$primary_colour = #03A9F4;
-	$secondary_colour = #00BCD4;
-}
-
-.tde-dark {
-	$primary_colour = rgba(38, 50, 56, 1);
-	$secondary_colour = #00838F;
-}
+$primary_colour_light: #03A9F4;
+$secondary_colour_light: #00BCD4;
+$primary_colour_dark: rgba(38, 50, 56, 1);
+$secondary_colour_dark: #00838F;

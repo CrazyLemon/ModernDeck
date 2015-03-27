@@ -1,6 +1,15 @@
 @import "animation";
+@import "colour";
 
-[class=''] body {
-	-webkit-animation: columnFlyin 0.35s;
-	animation: columnFlyin 0.35s;
+body {
+	background: $primary_colour_light;
+}
+
+body[class=''] .application {
+	-webkit-animation: applicationFlyIn 0.35s;
+	animation: applicationFlyIn 0.35s;
+}
+
+.application[style="top: 46px;"] {
+	top:0px!important;
 }
