@@ -4,4 +4,11 @@
 	color:$secondary_colour_light;
 	background-color:transparent;
 	text-transform:uppercase;
+	transition:180ms all;
+	transform:scale(1,1);
+}
+
+.btn:hover {
+	opacity:1;
+	transform:scale(1.07,1.07);
 }
