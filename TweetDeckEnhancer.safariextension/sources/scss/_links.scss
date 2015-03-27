@@ -1,21 +1,25 @@
 @import "colours";
 
-a {
-  color:$secondary_colour_light;
-}
+html { /* For overriding */
 
-a:hover {
-  color:$secondary_colour_light_hover;
-}
+	a {
+	  color:$secondary_colour_light;
+	}
 
-.tde-dark a {
-  color:$secondary_colour_dark;
-}
+	a:hover {
+	  color:$secondary_colour_light_hover;
+	}
 
-.tde-dark a:hover {
-  color:$secondary_colour_dark_hover;
-}
+	.tde-dark a {
+	  color:$secondary_colour_dark;
+	}
 
-a:focus {
-  border:none;
+	.tde-dark a:hover {
+	  color:$secondary_colour_dark_hover;
+	}
+
+	a:focus {
+	  border:none!important;
+	}
+
 }

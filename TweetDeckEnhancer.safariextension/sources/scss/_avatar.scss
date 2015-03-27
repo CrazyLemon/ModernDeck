@@ -1,12 +1,18 @@
-html .avatar,html .prf-img,html .tweet-avatar {
-	border-radius:100px;
-}
+@import "button";
 
-html .avatar:hover {
-	@extend .btn:hover;
-}
+html {
 
-html .avatar:active {
-	@extend .btn:active;
-	background:transparent;
+	.avatar,.prf-img,html.tweet-avatar {
+		border-radius:100px;
+	}
+
+	.avatar:hover {
+		@extend .btn:hover;
+	}
+
+	.avatar:active {
+		@extend .btn:active;
+		background:transparent;
+	}
+
 }

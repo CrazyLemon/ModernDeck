@@ -107,17 +107,18 @@ button .btn:active, button html .avatar:active, html button .avatar:active {
 button .tde-dark .btn:active, button .tde-dark html .avatar:active, html button .tde-dark .avatar:active {
   color: rgba(38, 50, 56, 0.9); }
 
-a {
-  color: #00BCD4; }
-
-a:hover {
-  color: rgba(0, 188, 212, 0.9); }
-
-.tde-dark a {
-  color: #00838F; }
-
-.tde-dark a:hover {
-  color: rgba(38, 50, 56, 0.9); }
+html {
+  /* For overriding */ }
+  html a {
+    color: #00BCD4; }
+  html a:hover {
+    color: rgba(0, 188, 212, 0.9); }
+  html .tde-dark a {
+    color: #00838F; }
+  html .tde-dark a:hover {
+    color: rgba(38, 50, 56, 0.9); }
+  html a:focus {
+    border: none; }
 
 html .avatar, html .prf-img, html .tweet-avatar {
   border-radius: 100px; }
