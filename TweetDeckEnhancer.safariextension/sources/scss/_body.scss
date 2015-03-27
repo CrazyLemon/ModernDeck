@@ -5,7 +5,7 @@ html body {
 	background: $primary_colour_light!important;
 }
 
-body[class=''] .application {
+body[class=''] .app-content {
 	/*-webkit-animation: applicationFlyIn 0.35s;
 	animation: applicationFlyIn 0.35s;*/
 	@include animation(applicationFlyIn 0.35s);
