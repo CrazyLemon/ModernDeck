@@ -1,2 +1,6 @@
 @import "colours";
 @import "animation";
+
+.mdl {
+	@include animation(modalPopover 0.3s);
+}

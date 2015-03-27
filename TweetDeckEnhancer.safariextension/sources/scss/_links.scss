@@ -11,7 +11,7 @@ html { /* For overriding */
 
 	a:hover {
 	  color:$secondary_colour_light_hover;
-	  text-decoration:none;
+	  text-decoration:none!important;
 	}
 
 	.tde-dark a {
@@ -24,6 +24,10 @@ html { /* For overriding */
 
 	a:focus {
 	  outline:none;
+	}
+
+	.link-complex:hover .link-complex-target, .link-complex:focus .link-complex-target, .link-complex:active .link-complex-target {
+		text-decoration:none;
 	}
 
 }

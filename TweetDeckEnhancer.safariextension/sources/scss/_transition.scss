@@ -1,0 +1,6 @@
+@import "animation";
+
+#transition {
+	transition:180ms all;
+	transition-timing-function:cubic-bezier(.55,0,.1,1);
+}

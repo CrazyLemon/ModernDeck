@@ -1,12 +1,26 @@
 @import "colours";
+@import "transition";
 
 html {
 	.stream-item {
 		border-bottom:none;
 		background:#fefefe;
+		@extend #transition;
 	}
 
 	.stream-item:not(.conversation-event) {
 		border-bottom:none;
+	}
+
+	a[rel="viewDetails"] {
+		display:none;
+	}
+
+	.stream-item.is-actionable:hover {
+	    background: #F5F5F5;
+	}
+
+	.stream-item.is-actionable:active {
+	    background: #eee;
 	}
 }

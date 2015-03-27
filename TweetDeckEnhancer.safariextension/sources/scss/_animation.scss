@@ -1,35 +1,36 @@
+@mixin animation($anim) {
+    -webkit-animation:$anim;
+    -webkit-animation-timing-function:cubic-bezier(.55,0,.1,1);
+    animation:$anim;
+    animation-timing-function:cubic-bezier(.55,0,.1,1);
+}
+
 @-webkit-keyframes applicationFlyIn {
     0% {
     	margin-top: 100%;
-    	-webkit-animation-timing-function: cubic-bezier(.55,0,.1,1)
     }
     100% {
     	margin-top: 0%;
-    	-webkit-animation-timing-function: cubic-bezier(.55,0,.1,1)
     }
 }
 
 @keyframes applicationFlyIn {
     0% {
 	    margin-top: 100%;
-	    animation-timing-function: cubic-bezier(.55,0,.1,1);
     }
     100% {
 	    margin-top: 0%;
-	    animation-timing-function: cubic-bezier(.55,0,.1,1);
     }
 }
 
 @-webkit-keyframes modalPopover {
     0% {
         opacity: 0.5;
-        -webkit-transform: scale(1.125,1.125)
-        -webkit-animation-timing-function: cubic-bezier(.55,0,.1,1);
+        -webkit-transform: scale(1.125,1.125);
     }
     100% {
         opacity: 1;
         -webkit-transform: scale(1,1);
-        -webkit-animation-timing-function: cubic-bezier(.55,0,.1,1);
     }
 }
 
