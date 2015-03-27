@@ -1,0 +1,17 @@
+@import "colours";
+
+a {
+  color:$secondary_colour_light;
+}
+
+a:hover {
+  color:$secondary_colour_light_hover;
+}
+
+.tde-dark a {
+  color:$secondary_colour_dark;
+}
+
+.tde-dark a:hover {
+  color:$secondary_colour_dark_hover;
+}
