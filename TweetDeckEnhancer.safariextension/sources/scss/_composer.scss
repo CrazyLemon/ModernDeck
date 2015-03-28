@@ -1,3 +1,5 @@
+@import "colours";
+
 html { /* for overriding some things. ugh */
 
 	.compose-account {
@@ -34,5 +36,13 @@ html { /* for overriding some things. ugh */
 
 	.attach-compose-buttons .tweet-button {
 		background:none;
+	}
+
+	.compose {
+		background:$secondary_colour_light
+	}
+
+	.tde-dark .compose {
+		background:$secondary_colour_dark
 	}
 }

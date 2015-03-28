@@ -1,7 +1,38 @@
 html {
-	.app-columns-container {
+	.tde-light .app-columns-container {
 		background:#eee;
 	}
+		
+	.column-title {
+		margin-right: 35px;
+		font-size: 20px;
+		font-weight: 400;
+		/*color: #FFFFFF;*/
+		text-align: center;
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		padding-top: 2px;
+		margin-left: 0px!important;
+	}
 
-	
+	.column-title .attribution {
+		font-weight: 400;
+		font-size: 13px;
+		/*color: rgba(255, 255, 255, 0.74);*/
+		color:#555;
+	}
+
+	.column-head-title {
+		text-align: center;
+		display: block;
+		height: 18px;
+		margin-top: -8px;
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+	.column-number {
+		display:none;
+	}
 }
