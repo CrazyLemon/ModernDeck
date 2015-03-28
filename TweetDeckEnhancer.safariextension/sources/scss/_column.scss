@@ -1,3 +1,6 @@
+@import "colour";
+@import "sprite";
+
 html {
 	.tde-light .app-columns-container {
 		background:#eee;
@@ -34,5 +37,10 @@ html {
 
 	.column-number {
 		display:none;
+	}
+
+	.column-drag-handle {
+		top:0px;
+		left:0px;
 	}
 }

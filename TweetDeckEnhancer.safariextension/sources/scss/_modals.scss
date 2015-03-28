@@ -1,4 +1,4 @@
-@import "colours";
+@import "colour";
 @import "animation";
 
 html {
@@ -35,5 +35,18 @@ html {
 		font-size:18px;
 		text-align:center;
 		padding-left:0px;
+	}
+
+	.mdl:before {
+		content: " ";
+		width: 100.1%;
+		height: 48px;
+		background-color: $primary_colour_light;
+		position: absolute;
+		z-index: 9;
+	}
+
+	.tde-dark .mdl:before {
+		background-color: $primary_colour_dark;
 	}
 }
