@@ -1,6 +1,39 @@
 @import "colours";
 @import "animation";
 
-.mdl {
-	@include animation(modalPopover 0.3s);
+html {
+	.mdl {
+		@include animation(modalPopover 0.3s);
+		border-radius:2px;
+		box-shadow:0 15px 40px rgba(17,17,17,0.4);
+	}
+
+	.mdl-column-rhs {
+		width:380px;
+	}
+
+	.mdl-buttonbar {
+		padding:10px;
+	}
+
+	.mdl-inner {
+		padding:0px;
+	}
+
+	.mdl-header {
+		color:#fff;
+		background:$primary_colour_light;
+		padding:25px;
+	}
+
+	.tde-dark .mdl-header {
+		background:$primary_colour_dark;
+	}
+
+	.mdl-header-title {
+		font-weight:400;
+		font-size:18px;
+		text-align:center;
+		padding-left:0px;
+	}
 }

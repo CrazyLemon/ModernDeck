@@ -355,11 +355,30 @@ html html .s-following .follow-btn:hover {
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
-.mdl {
+html .mdl {
   -webkit-animation: modalPopover 0.3s;
   -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
   animation: modalPopover 0.3s;
-  animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+  animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  border-radius: 2px;
+  box-shadow: 0 15px 40px rgba(17, 17, 17, 0.4); }
+html .mdl-column-rhs {
+  width: 380px; }
+html .mdl-buttonbar {
+  padding: 10px; }
+html .mdl-inner {
+  padding: 0px; }
+html .mdl-header {
+  color: #fff;
+  background: #03A9F4;
+  padding: 25px; }
+html .tde-dark .mdl-header {
+  background: #263238; }
+html .mdl-header-title {
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  padding-left: 0px; }
 
 html .app-columns-container {
   background: #eee; }
