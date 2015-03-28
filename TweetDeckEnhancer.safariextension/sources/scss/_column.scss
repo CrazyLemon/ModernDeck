@@ -1,5 +1,6 @@
 @import "colour";
 @import "sprite";
+@import "transition";
 
 html {
 	.tde-light .app-columns-container {
@@ -30,7 +31,7 @@ html {
 		text-align: center;
 		display: block;
 		height: 18px;
-		margin-top: -8px;
+		margin-top: -12px;
 		font-size: 16px;
 		font-weight: 500;
 	}
@@ -53,10 +54,8 @@ html {
 		right: 26px;
 		bottom: 26px;
 		box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.25);
-		/* border: 1px rgba(0,0,0,255); */
 		background-color: #26C6DA;
 		border: 1px solid rgba(34, 36, 38, 0.11);
-		/* transform: scale(1,1); */
 	}
 
 	.mdl .js-add-column {
@@ -74,17 +73,18 @@ html {
 		font-size: 24px;
 		content: "+";
 		font-weight: 200;
-		/* margin-bottom: -15px; */
-		/* padding-bottom: 10px; */
 		text-align: center;
 		vertical-align: middle;
 		height: 100%;
 		width: 100%;
 		margin-top: -15px;
 		position: absolute;
-		/* top: 45%; */
 		left: 0px;
 		box-shadow: black;
 		color: rgba(255, 255, 255, 0.94);
+	}
+
+	.column-holder {
+		@extend #transition200;
 	}
 }

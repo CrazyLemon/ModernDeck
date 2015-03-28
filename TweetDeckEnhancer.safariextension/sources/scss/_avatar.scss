@@ -1,9 +1,11 @@
 @import "button";
+@import "transition";
 
 html {
 
 	.avatar,.prf-img,html.tweet-avatar {
 		border-radius:100px;
+		@extend #transition;
 	}
 
 	.avatar:hover:not(:active) {

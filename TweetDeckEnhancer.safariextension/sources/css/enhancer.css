@@ -165,7 +165,7 @@ html .tde-dark .btn:focus:not(:active) {
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
-#transition, html .dropdown-menu, html .stream-item {
+#transition, html .dropdown-menu, html .avatar, html .prf-img, html html.tweet-avatar, html .stream-item {
   transition: 180ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
@@ -246,6 +246,34 @@ html .tde-dark .btn:focus:not(:active) {
   background: transparent;
   color: rgba(38, 50, 56, 0.9); }
 
+@-webkit-keyframes applicationFlyIn {
+  0% {
+    margin-top: 100%; }
+  100% {
+    margin-top: 0%; } }
+@keyframes applicationFlyIn {
+  0% {
+    margin-top: 100%; }
+  100% {
+    margin-top: 0%; } }
+@-webkit-keyframes modalPopover {
+  0% {
+    opacity: 0.5;
+    -webkit-transform: scale(1.125, 1.125); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes modalPopover {
+  0% {
+    opacity: 0.5;
+    transform: scale(1.125, 1.125); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+#transition, html .dropdown-menu, html .avatar, html .prf-img, html html.tweet-avatar, html .stream-item {
+  transition: 180ms all;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+
 html .avatar, html .prf-img, html html.tweet-avatar {
   border-radius: 100px; }
 html .avatar:hover:not(:active) {
@@ -280,7 +308,7 @@ html .avatar:active {
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
-#transition, html .dropdown-menu, html .stream-item {
+#transition, html .dropdown-menu, html .avatar, html .prf-img, html html.tweet-avatar, html .stream-item {
   transition: 180ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
@@ -425,7 +453,7 @@ html .column-head-title {
   text-align: center;
   display: block;
   height: 18px;
-  margin-top: -8px;
+  margin-top: -12px;
   font-size: 16px;
   font-weight: 500; }
 html .column-number {
