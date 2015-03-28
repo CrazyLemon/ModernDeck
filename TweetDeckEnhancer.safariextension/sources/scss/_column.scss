@@ -43,4 +43,48 @@ html {
 		top:0px;
 		left:0px;
 	}
+
+	.js-add-column {
+		border-radius: 30px;
+		font-size: 0;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		right: 26px;
+		bottom: 26px;
+		box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.25);
+		/* border: 1px rgba(0,0,0,255); */
+		background-color: #26C6DA;
+		border: 1px solid rgba(34, 36, 38, 0.11);
+		/* transform: scale(1,1); */
+	}
+
+	.mdl .js-add-column {
+		margin-bottom: 20px;
+		z-index: 99;
+		background-color: #26C6DA;
+	}
+
+	.js-add-column:active {
+		background-color: #00ACC1!important;
+		transition: 100ms all!important;
+	}
+
+	.js-add-column:before {
+		font-size: 24px;
+		content: "+";
+		font-weight: 200;
+		/* margin-bottom: -15px; */
+		/* padding-bottom: 10px; */
+		text-align: center;
+		vertical-align: middle;
+		height: 100%;
+		width: 100%;
+		margin-top: -15px;
+		position: absolute;
+		/* top: 45%; */
+		left: 0px;
+		box-shadow: black;
+		color: rgba(255, 255, 255, 0.94);
+	}
 }
