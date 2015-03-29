@@ -169,4 +169,18 @@ html.js {
 		@extend #perspective500;
 	}
 
+
+	.column-options {
+	    width:328px;
+	    transition:200ms all;
+	}
+
+	.is-wide-columns .column-options {
+	    width:353px;
+	}
+
+	.is-narrow-columns .column-options {
+	    width:283px;
+	}
+
 }
