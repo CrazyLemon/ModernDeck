@@ -1,12 +1,32 @@
 @import "colour";
 @import "transition";
 @import "animation";
+@import "3d";
 
 html {
 	.stream-item {
 		border-bottom:none;
 		background:#fefefe;
 		@extend #transition;
+	}
+
+	.tweet {
+		line-height:1.32em;
+	}
+
+	.tweet-detail-wrapper {
+		border:none;
+		@extend #perspective0;
+	}
+
+	.app-columns-container .stream-item.is-actionable,.tweet-detail-reply .stream-item.is-actionable {
+		@include animation(herecomesthetweet 0.4s);
+		@extend #transition300;
+	}
+
+	.stream-item {
+		@include animation(popgoesthetweet 0.4s);
+		@extend #transition300;
 	}
 
 	.stream-item:not(.conversation-event) {
@@ -43,19 +63,5 @@ html {
 
 	.tweet-stats,.tweet-detail-actions {
 		border-top:none;
-	}
-
-	.tweet-detail-wrapper {
-		border:none;
-	}
-
-	.app-columns-container .stream-item.is-actionable,.tweet-detail-reply .stream-item.is-actionable {
-		@include animation(herecomesthetweet 0.4s);
-		@extend #transition300;
-	}
-
-	.stream-item {
-		@include animation(popgoesthetweet 0.4s);
-		@extend #transition300;
 	}
 }

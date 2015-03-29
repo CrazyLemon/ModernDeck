@@ -90,7 +90,7 @@ html {
 		@extend #transition200;
 	}
 
-	.column-content {
+	.column-content,.column-scroller {
 		@extend #perspective500;
 	}
 }

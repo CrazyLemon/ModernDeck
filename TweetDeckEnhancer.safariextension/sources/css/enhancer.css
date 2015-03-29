@@ -592,9 +592,29 @@ html .avatar:active {
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
+#perspective0, html .tweet-detail-wrapper {
+  perspective: 0px; }
+
+#perspective500, html .column-content, html .column-scroller {
+  perspective: 500px; }
+
 html .stream-item {
   border-bottom: none;
   background: #fefefe; }
+html .tweet {
+  line-height: 1.32em; }
+html .tweet-detail-wrapper {
+  border: none; }
+html .app-columns-container .stream-item.is-actionable, html .tweet-detail-reply .stream-item.is-actionable {
+  -webkit-animation: herecomesthetweet 0.4s;
+  -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  animation: herecomesthetweet 0.4s;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+html .stream-item {
+  -webkit-animation: popgoesthetweet 0.4s;
+  -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  animation: popgoesthetweet 0.4s;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 html .stream-item:not(.conversation-event) {
   border-bottom: none; }
 html a[rel="viewDetails"] {
@@ -613,18 +633,6 @@ html .tweet-detail-wrapper .txt-mute a:not(:hover):not(:focus) {
   color: #777; }
 html .tweet-stats, html .tweet-detail-actions {
   border-top: none; }
-html .tweet-detail-wrapper {
-  border: none; }
-html .app-columns-container .stream-item.is-actionable, html .tweet-detail-reply .stream-item.is-actionable {
-  -webkit-animation: herecomesthetweet 0.4s;
-  -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
-  animation: herecomesthetweet 0.4s;
-  animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
-html .stream-item {
-  -webkit-animation: popgoesthetweet 0.4s;
-  -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
-  animation: popgoesthetweet 0.4s;
-  animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
 html .btn {
   color: #00BCD4;
@@ -863,7 +871,10 @@ html .icon-clear-timeline {
   transition: 200ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
-#perspective500, html .column-content {
+#perspective0, html .tweet-detail-wrapper {
+  perspective: 0px; }
+
+#perspective500, html .column-content, html .column-scroller {
   perspective: 500px; }
 
 html .tde-light .app-columns-container {
