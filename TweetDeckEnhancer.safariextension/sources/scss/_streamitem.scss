@@ -49,7 +49,7 @@ html {
 		visibility:visible;
 	}
 
-	.txt-mute a:not(:hover):not(:focus):not(.account-link):not(.link-complex):not(.url-ext) {
+	.txt-mute a:not(:hover):not(:focus):not(.account-link):not(.link-complex):not(.url-ext):not([rel="user"]) {
 	    color: #CFCFCF;
 	}
 

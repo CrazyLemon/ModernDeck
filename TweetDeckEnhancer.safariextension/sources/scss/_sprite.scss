@@ -1,16 +1,16 @@
 @import "colours";
 
-html {
-	
-	.is-chrome .sprite {
-		background-image:url("chrome-extension://__MSG_@@extension_id__/imgs/sprite_sheet@1x.png");
-	}
+.is-chrome .sprite {
+	background-image:url("chrome-extension://__MSG_@@extension_id__/sources/imgs/sprite_sheet.png");
+}
 
-	@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-	    .is-chrome .sprite {
-	        background-image:url("chrome-extension://__MSG_@@extension_id__/imgs/sprite_sheet@2x.png");
-	    }
-	}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .is-chrome .sprite {
+        background-image:url("chrome-extension://__MSG_@@extension_id__/sources/imgs/sprite_sheet@2x.png");
+    }
+}
+
+html {
 	
 	.sprite-drag-vertical {
 		background-image:none;
