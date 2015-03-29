@@ -44,3 +44,80 @@
         transform: scale(1,1);
     }
 }
+
+@-webkit-keyframes herecomesthetweetdetails {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(0.5,0.5) perspective(600px) rotate3d(1,0,0,-50deg);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1,1);
+    }
+}
+
+@keyframes herecomesthetweetdetails {
+    0% {
+        opacity: 0;
+        transform: scale(0.5,0.5) perspective(600px) rotate3d(1,0,0,-50deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1,1);
+    }
+}
+
+@-webkit-keyframes herecomesthetweet {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(0.4,0.4) perspective(600px) rotate3d(1,0,0,40deg);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1,1);
+    }
+}
+
+@keyframes herecomesthetweet {
+    0% {
+        opacity: 0;
+        transform: scale(0.4,0.4) perspective(600px) rotate3d(1,0,0,40deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1,1);
+    }
+}
+
+@-webkit-keyframes popgoesthetweet {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(0.3,0.3);
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1,1);
+    }
+}
+
+@keyframes popgoesthetweet {
+    0% {
+        opacity: 0;
+        transform: scale(0.3,0.3);
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1,1);
+    }
+}
+

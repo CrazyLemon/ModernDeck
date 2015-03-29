@@ -22,6 +22,52 @@
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
+@-webkit-keyframes herecomesthetweetdetails {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5) perspective(600px) rotate3d(1, 0, 0, -50deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes herecomesthetweetdetails {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5) perspective(600px) rotate3d(1, 0, 0, -50deg); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+@-webkit-keyframes herecomesthetweet {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.4, 0.4) perspective(600px) rotate3d(1, 0, 0, 40deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes herecomesthetweet {
+  0% {
+    opacity: 0;
+    transform: scale(0.4, 0.4) perspective(600px) rotate3d(1, 0, 0, 40deg); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+@-webkit-keyframes popgoesthetweet {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3, 0.3); }
+  50% {
+    opacity: 0.3; }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes popgoesthetweet {
+  0% {
+    opacity: 0;
+    transform: scale(0.3, 0.3); }
+  50% {
+    opacity: 0.3; }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
 html body {
   background: #03A9F4 !important; }
 
@@ -101,14 +147,16 @@ body[class=''] .app-content {
   color: inherit; }
 
 html .sprite {
-  background-image: url("imgs/td_sprite_sheet_2013_@1x.png"); }
+  /*background-image:url("imgs/td_sprite_sheet_2013_@1x.png");*/ }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   html .sprite {
-    background-image: url("imgs/td_sprite_sheet_2013_@2x.png"); } }
+    /*background-image:url("imgs/td_sprite_sheet_2013_@2x.png");*/ } }
 html .sprite-drag-vertical {
   background-image: none;
   width: 50%;
   height: 100%; }
+html .icon-clear-timeline {
+  display: none; }
 
 html .btn {
   color: #00BCD4;
@@ -165,11 +213,61 @@ html .tde-dark .btn:focus:not(:active) {
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
+@-webkit-keyframes herecomesthetweetdetails {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5) perspective(600px) rotate3d(1, 0, 0, -50deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes herecomesthetweetdetails {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5) perspective(600px) rotate3d(1, 0, 0, -50deg); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+@-webkit-keyframes herecomesthetweet {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.4, 0.4) perspective(600px) rotate3d(1, 0, 0, 40deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes herecomesthetweet {
+  0% {
+    opacity: 0;
+    transform: scale(0.4, 0.4) perspective(600px) rotate3d(1, 0, 0, 40deg); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+@-webkit-keyframes popgoesthetweet {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3, 0.3); }
+  50% {
+    opacity: 0.3; }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes popgoesthetweet {
+  0% {
+    opacity: 0;
+    transform: scale(0.3, 0.3); }
+  50% {
+    opacity: 0.3; }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
 #transition, html .dropdown-menu, html .avatar, html .prf-img, html html.tweet-avatar, html .stream-item {
   transition: 180ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
 #transition200, html .column-holder {
+  transition: 200ms all;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+
+#transition300, html .app-columns-container .stream-item.is-actionable, html .tweet-detail-reply .stream-item.is-actionable, html .stream-item {
   transition: 200ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
@@ -274,11 +372,61 @@ html .tde-dark .btn:focus:not(:active) {
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
+@-webkit-keyframes herecomesthetweetdetails {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5) perspective(600px) rotate3d(1, 0, 0, -50deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes herecomesthetweetdetails {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5) perspective(600px) rotate3d(1, 0, 0, -50deg); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+@-webkit-keyframes herecomesthetweet {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.4, 0.4) perspective(600px) rotate3d(1, 0, 0, 40deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes herecomesthetweet {
+  0% {
+    opacity: 0;
+    transform: scale(0.4, 0.4) perspective(600px) rotate3d(1, 0, 0, 40deg); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+@-webkit-keyframes popgoesthetweet {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3, 0.3); }
+  50% {
+    opacity: 0.3; }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes popgoesthetweet {
+  0% {
+    opacity: 0;
+    transform: scale(0.3, 0.3); }
+  50% {
+    opacity: 0.3; }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
 #transition, html .dropdown-menu, html .avatar, html .prf-img, html html.tweet-avatar, html .stream-item {
   transition: 180ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
 #transition200, html .column-holder {
+  transition: 200ms all;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+
+#transition300, html .app-columns-container .stream-item.is-actionable, html .tweet-detail-reply .stream-item.is-actionable, html .stream-item {
   transition: 200ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
@@ -316,6 +464,52 @@ html .avatar:active {
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
+@-webkit-keyframes herecomesthetweetdetails {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5) perspective(600px) rotate3d(1, 0, 0, -50deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes herecomesthetweetdetails {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5) perspective(600px) rotate3d(1, 0, 0, -50deg); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+@-webkit-keyframes herecomesthetweet {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.4, 0.4) perspective(600px) rotate3d(1, 0, 0, 40deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes herecomesthetweet {
+  0% {
+    opacity: 0;
+    transform: scale(0.4, 0.4) perspective(600px) rotate3d(1, 0, 0, 40deg); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+@-webkit-keyframes popgoesthetweet {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3, 0.3); }
+  50% {
+    opacity: 0.3; }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes popgoesthetweet {
+  0% {
+    opacity: 0;
+    transform: scale(0.3, 0.3); }
+  50% {
+    opacity: 0.3; }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
 #transition, html .dropdown-menu, html .avatar, html .prf-img, html html.tweet-avatar, html .stream-item {
   transition: 180ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
@@ -324,6 +518,80 @@ html .avatar:active {
   transition: 200ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
+#transition300, html .app-columns-container .stream-item.is-actionable, html .tweet-detail-reply .stream-item.is-actionable, html .stream-item {
+  transition: 200ms all;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+
+@-webkit-keyframes applicationFlyIn {
+  0% {
+    margin-top: 100%; }
+  100% {
+    margin-top: 0%; } }
+@keyframes applicationFlyIn {
+  0% {
+    margin-top: 100%; }
+  100% {
+    margin-top: 0%; } }
+@-webkit-keyframes modalPopover {
+  0% {
+    opacity: 0.5;
+    -webkit-transform: scale(1.125, 1.125); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes modalPopover {
+  0% {
+    opacity: 0.5;
+    transform: scale(1.125, 1.125); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+@-webkit-keyframes herecomesthetweetdetails {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5) perspective(600px) rotate3d(1, 0, 0, -50deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes herecomesthetweetdetails {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5) perspective(600px) rotate3d(1, 0, 0, -50deg); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+@-webkit-keyframes herecomesthetweet {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.4, 0.4) perspective(600px) rotate3d(1, 0, 0, 40deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes herecomesthetweet {
+  0% {
+    opacity: 0;
+    transform: scale(0.4, 0.4) perspective(600px) rotate3d(1, 0, 0, 40deg); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+@-webkit-keyframes popgoesthetweet {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3, 0.3); }
+  50% {
+    opacity: 0.3; }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes popgoesthetweet {
+  0% {
+    opacity: 0;
+    transform: scale(0.3, 0.3); }
+  50% {
+    opacity: 0.3; }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
 html .stream-item {
   border-bottom: none;
   background: #fefefe; }
@@ -335,6 +603,28 @@ html .stream-item.is-actionable:hover {
   background: #F5F5F5; }
 html .stream-item.is-actionable:active {
   background: #eee; }
+html .stream-item:not(:hover) .tweet-actions {
+  visibility: visible; }
+html .txt-mute a:not(:hover):not(:focus):not(.account-link):not(.link-complex):not(.url-ext) {
+  color: #CFCFCF; }
+html .tweet-action, html .tweet-detail-action {
+  color: #CFCFCF; }
+html .tweet-detail-wrapper .txt-mute a:not(:hover):not(:focus) {
+  color: #777; }
+html .tweet-stats, html .tweet-detail-actions {
+  border-top: none; }
+html .tweet-detail-wrapper {
+  border: none; }
+html .app-columns-container .stream-item.is-actionable, html .tweet-detail-reply .stream-item.is-actionable {
+  -webkit-animation: herecomesthetweet 0.4s;
+  -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  animation: herecomesthetweet 0.4s;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+html .stream-item {
+  -webkit-animation: popgoesthetweet 0.4s;
+  -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  animation: popgoesthetweet 0.4s;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
 html .btn {
   color: #00BCD4;
@@ -399,6 +689,52 @@ html html .s-following .follow-btn:hover {
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
+@-webkit-keyframes herecomesthetweetdetails {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5) perspective(600px) rotate3d(1, 0, 0, -50deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes herecomesthetweetdetails {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5) perspective(600px) rotate3d(1, 0, 0, -50deg); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+@-webkit-keyframes herecomesthetweet {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.4, 0.4) perspective(600px) rotate3d(1, 0, 0, 40deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes herecomesthetweet {
+  0% {
+    opacity: 0;
+    transform: scale(0.4, 0.4) perspective(600px) rotate3d(1, 0, 0, 40deg); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+@-webkit-keyframes popgoesthetweet {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3, 0.3); }
+  50% {
+    opacity: 0.3; }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes popgoesthetweet {
+  0% {
+    opacity: 0;
+    transform: scale(0.3, 0.3); }
+  50% {
+    opacity: 0.3; }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
 html .mdl {
   -webkit-animation: modalPopover 0.3s;
   -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
@@ -434,14 +770,16 @@ html .tde-dark .mdl:before {
   background-color: #263238; }
 
 html .sprite {
-  background-image: url("imgs/td_sprite_sheet_2013_@1x.png"); }
+  /*background-image:url("imgs/td_sprite_sheet_2013_@1x.png");*/ }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   html .sprite {
-    background-image: url("imgs/td_sprite_sheet_2013_@2x.png"); } }
+    /*background-image:url("imgs/td_sprite_sheet_2013_@2x.png");*/ } }
 html .sprite-drag-vertical {
   background-image: none;
   width: 50%;
   height: 100%; }
+html .icon-clear-timeline {
+  display: none; }
 
 @-webkit-keyframes applicationFlyIn {
   0% {
@@ -467,6 +805,52 @@ html .sprite-drag-vertical {
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
+@-webkit-keyframes herecomesthetweetdetails {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5) perspective(600px) rotate3d(1, 0, 0, -50deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes herecomesthetweetdetails {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5) perspective(600px) rotate3d(1, 0, 0, -50deg); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+@-webkit-keyframes herecomesthetweet {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.4, 0.4) perspective(600px) rotate3d(1, 0, 0, 40deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes herecomesthetweet {
+  0% {
+    opacity: 0;
+    transform: scale(0.4, 0.4) perspective(600px) rotate3d(1, 0, 0, 40deg); }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
+@-webkit-keyframes popgoesthetweet {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3, 0.3); }
+  50% {
+    opacity: 0.3; }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1); } }
+@keyframes popgoesthetweet {
+  0% {
+    opacity: 0;
+    transform: scale(0.3, 0.3); }
+  50% {
+    opacity: 0.3; }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1); } }
 #transition, html .dropdown-menu, html .avatar, html .prf-img, html html.tweet-avatar, html .stream-item {
   transition: 180ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
@@ -474,6 +858,13 @@ html .sprite-drag-vertical {
 #transition200, html .column-holder {
   transition: 200ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+
+#transition300, html .app-columns-container .stream-item.is-actionable, html .tweet-detail-reply .stream-item.is-actionable, html .stream-item {
+  transition: 200ms all;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+
+#perspective500, html .column-content {
+  perspective: 500px; }
 
 html .tde-light .app-columns-container {
   background: #eee; }
@@ -487,7 +878,8 @@ html .column-title {
   position: absolute;
   width: 100%;
   padding-top: 2px;
-  margin-left: 0px !important; }
+  margin-left: 0px !important;
+  pointer-events: none; }
 html .column-title .attribution {
   font-weight: 400;
   font-size: 13px;

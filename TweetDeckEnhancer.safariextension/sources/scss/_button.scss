@@ -50,4 +50,8 @@ html {
 		color:$secondary_colour_dark_hover;
 	}
 
+	.btn-on-blue[disabled], .btn-on-blue[disabled]:hover, .btn-on-blue[disabled]:active, .btn-on-blue.is-disabled, .btn-on-blue.is-disabled:hover, .btn-on-blue.is-disabled:focus, .btn-on-blue.is-disabled:active {
+	
+	}
+
 }

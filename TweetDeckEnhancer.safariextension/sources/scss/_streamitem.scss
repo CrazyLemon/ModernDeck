@@ -1,5 +1,6 @@
 @import "colour";
 @import "transition";
+@import "animation";
 
 html {
 	.stream-item {
@@ -22,5 +23,39 @@ html {
 
 	.stream-item.is-actionable:active {
 	    background: #eee;
+	}
+
+	.stream-item:not(:hover) .tweet-actions {
+		visibility:visible;
+	}
+
+	.txt-mute a:not(:hover):not(:focus):not(.account-link):not(.link-complex):not(.url-ext) {
+	    color: #CFCFCF;
+	}
+
+	.tweet-action,.tweet-detail-action {
+	    color: #CFCFCF;
+	}
+
+	.tweet-detail-wrapper .txt-mute a:not(:hover):not(:focus) {
+		color:#777
+	}
+
+	.tweet-stats,.tweet-detail-actions {
+		border-top:none;
+	}
+
+	.tweet-detail-wrapper {
+		border:none;
+	}
+
+	.app-columns-container .stream-item.is-actionable,.tweet-detail-reply .stream-item.is-actionable {
+		@include animation(herecomesthetweet 0.4s);
+		@extend #transition300;
+	}
+
+	.stream-item {
+		@include animation(popgoesthetweet 0.4s);
+		@extend #transition300;
 	}
 }

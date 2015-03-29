@@ -1,6 +1,7 @@
 @import "colour";
 @import "sprite";
 @import "transition";
+@import "3d";
 
 html {
 	.tde-light .app-columns-container {
@@ -18,6 +19,7 @@ html {
 		width: 100%;
 		padding-top: 2px;
 		margin-left: 0px!important;
+		pointer-events:none;
 	}
 
 	.column-title .attribution {
@@ -86,5 +88,9 @@ html {
 
 	.column-holder {
 		@extend #transition200;
+	}
+
+	.column-content {
+		@extend #perspective500;
 	}
 }
