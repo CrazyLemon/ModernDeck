@@ -10,3 +10,6 @@
 TweetDeckEnhancer.safariextension/sources/css/*.css
 
 *.css
+TweetDeckEnhancer.safariextension/sources/css/enhancer.css.map
+
+TweetDeckEnhancer.safariextension/sources/css/enhancer.css
