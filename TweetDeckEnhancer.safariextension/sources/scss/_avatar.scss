@@ -10,14 +10,14 @@ html {
 
 	.avatar:hover:not(:active) {
 		@extend .btn:hover;
-		transform:scale(1.1,1.1);
+		transform:scale(1.15,1.15);
 		box-shadow: 0 5px 10px rgba(17,17,17,0.475);
 	}
 
 	.avatar:active {
 		@extend .btn:active;
 		background:transparent;
-		transform:scale(0.9,0.9);
+		transform:scale(0.8,0.8);
 		box-shadow:none
 	}
 

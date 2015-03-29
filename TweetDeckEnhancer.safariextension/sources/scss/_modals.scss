@@ -2,7 +2,7 @@
 @import "animation";
 
 html {
-	.mdl:not(.prf) {
+	.mdl {
 		@include animation(modalPopover 0.3s);
 		border-radius:2px;
 		box-shadow:0 15px 40px rgba(17,17,17,0.4);
@@ -40,7 +40,7 @@ html {
 		z-index:10;
 	}
 
-	.mdl:before {
+	.mdl:before:not(.prf) {
 		content: " ";
 		width: 100.1%;
 		height: 48px;
