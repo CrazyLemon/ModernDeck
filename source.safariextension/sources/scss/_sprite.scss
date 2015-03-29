@@ -12,7 +12,7 @@
 
 html {
 	
-	.sprite-drag-vertical {
+	body.tde-dark .sprite-drag-vertical,body.tde-light .sprite-drag-vertical {
 		background-image:none;
 		width:50%;
 		height:100%;
