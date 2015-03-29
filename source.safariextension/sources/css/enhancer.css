@@ -276,7 +276,7 @@ html .tde-dark .btn:focus:not(:active) {
   transition: 200ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
-#transitiontiming, html body .column-holder {
+#transitiontiming, html.js body .column-holder {
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
 html .dropdown-menu {
@@ -438,7 +438,7 @@ html .tde-dark .btn:focus:not(:active) {
   transition: 200ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
-#transitiontiming, html body .column-holder {
+#transitiontiming, html.js body .column-holder {
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
 html .avatar, html .prf-img, html html.tweet-avatar {
@@ -533,7 +533,7 @@ html .avatar:active {
   transition: 200ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
-#transitiontiming, html body .column-holder {
+#transitiontiming, html.js body .column-holder {
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
 @-webkit-keyframes applicationFlyIn {
@@ -609,7 +609,7 @@ html .avatar:active {
 #perspective0, html .tweet-detail-wrapper {
   perspective: 0px; }
 
-#perspective500, html .column-content, html .column-scroller {
+#perspective500, html.js .column-content, html.js .column-scroller {
   perspective: 500px; }
 
 html .stream-item {
@@ -895,26 +895,26 @@ html .sprite-drag {
   transition: 200ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
-#transitiontiming, html body .column-holder {
+#transitiontiming, html.js body .column-holder {
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
 #perspective0, html .tweet-detail-wrapper {
   perspective: 0px; }
 
-#perspective500, html .column-content, html .column-scroller {
+#perspective500, html.js .column-content, html.js .column-scroller {
   perspective: 500px; }
 
-html .tde-light .app-columns-container {
+html.js .tde-light .app-columns-container {
   background: #eee; }
-html .tde-light .app-columns, html .tde-dark .app-columns {
+html.js .tde-light .app-columns, html.js .tde-dark .app-columns {
   padding: 0px; }
-html .column-header, html .column-header-temp {
+html.js .column-header, html.js .column-header-temp {
   background: #03A9F4;
   color: #fff;
   height: 54px; }
-html .tde-dark .column-header, html .column-header-temp {
+html.js .tde-dark .column-header, html.js .column-header-temp {
   background: #263238; }
-html .column-title {
+html.js .column-title {
   margin-right: 35px;
   font-size: 20px;
   font-weight: 400;
@@ -926,23 +926,23 @@ html .column-title {
   padding-top: 2px;
   margin-left: 0px !important;
   pointer-events: none; }
-html .column-title .attribution {
+html.js .column-title .attribution {
   font-weight: 400;
   font-size: 13px;
   color: rgba(255, 255, 255, 0.74); }
-html .column-head-title {
+html.js .column-head-title {
   text-align: center;
   display: block;
   height: 18px;
   margin-top: -9px;
   font-size: 16px;
   font-weight: 500; }
-html .column-number {
+html.js .column-number {
   display: none; }
-html .column-drag-handle {
+html.js .column-drag-handle {
   top: 0px;
   left: 0px; }
-html .js-add-column {
+html.js .js-add-column {
   border-radius: 30px;
   font-size: 0;
   width: 50px;
@@ -953,14 +953,14 @@ html .js-add-column {
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.25);
   background-color: #26C6DA;
   border: 1px solid rgba(34, 36, 38, 0.11); }
-html .mdl .js-add-column {
+html.js .mdl .js-add-column {
   margin-bottom: 20px;
   z-index: 99;
   background-color: #26C6DA; }
-html .js-add-column:active {
+html.js .js-add-column:active {
   background-color: #00ACC1 !important;
   transition: 100ms all !important; }
-html .js-add-column:before {
+html.js .js-add-column:before {
   font-size: 24px;
   content: "+";
   font-weight: 200;
@@ -973,14 +973,14 @@ html .js-add-column:before {
   left: 0px;
   box-shadow: black;
   color: rgba(255, 255, 255, 0.94); }
-html .column-header-link {
+html.js .column-header-link {
   color: #fff; }
-html body.tde-light .column, html body.tde-dark .column {
+html.js body .column, html.js body .column {
   margin-right: 0px; }
-html body .column-holder {
+html.js body .column-holder {
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms; }
-html .column-content {
+html.js .column-content {
   width: 99%;
   top: 54px; }
 

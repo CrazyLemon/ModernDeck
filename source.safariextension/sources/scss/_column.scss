@@ -3,7 +3,7 @@
 @import "transition";
 @import "3d";
 
-html {
+html.js {
 	.tde-light .app-columns-container {
 		background:#eee;
 	}
@@ -103,7 +103,7 @@ html {
 		color:#fff;
 	}
 
-	body.tde-light .column,body.tde-dark .column {
+	body .column,body .column {
 		margin-right:0px;
 	}
 
