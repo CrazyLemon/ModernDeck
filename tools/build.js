@@ -7,7 +7,7 @@ var fs = require("fs"),
 	mkdirp = require("mkdirp");
 
 const SOURCE_DIR = path.join(__dirname, "../source");
-const STAGE_DIR = path.join(__dirname, "../stage/TweetDeckEnhancer.safariextension");
+const STAGE_DIR = path.join(__dirname, "../stage/source.safariextension");
 
 try {
 	var css = pleeease.process("", {
