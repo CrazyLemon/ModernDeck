@@ -37,7 +37,7 @@ release: npm clean stage
 stage: npm clean
 	mkdir stage
 
-	rsync -ra source/ $(STAGE) --exclude=sources/scss
+	rsync -ra source.safariextension/ $(STAGE) --exclude=sources/scss
 	cp {LICENSE,PRIVACY.md} $(STAGE)
 
 	npm run build
