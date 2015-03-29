@@ -2,13 +2,13 @@
 
 html {
 	
-	.sprite {
-		/*background-image:url("imgs/td_sprite_sheet_2013_@1x.png");*/
+	.is-chrome .sprite {
+		background-image:url("chrome-extension://__MSG_@@extension_id__/imgs/sprite_sheet@1x.png");
 	}
 
 	@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-	    .sprite {
-	        /*background-image:url("imgs/td_sprite_sheet_2013_@2x.png");*/
+	    .is-chrome .sprite {
+	        background-image:url("chrome-extension://__MSG_@@extension_id__/imgs/sprite_sheet@2x.png");
 	    }
 	}
 	
