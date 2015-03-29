@@ -1,15 +1,10 @@
+# Node.js
+node_modules
 
-*.zip
-
-*.crx
-
-*.pem
-
+# Sass
 .sass-cache
 
-TweetDeckEnhancer.safariextension/sources/css/*.css
-
-*.css
-TweetDeckEnhancer.safariextension/sources/css/enhancer.css.map
-
-TweetDeckEnhancer.safariextension/sources/css/enhancer.css
+# Build
+stage
+release
+*.pem
