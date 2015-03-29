@@ -1,5 +1,3 @@
-CSS=$(wildcard source/resources/*.css)
-
 ifeq ($(shell uname -s),Darwin)
 CHROME=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 else
@@ -21,11 +19,11 @@ ifeq ($(shell [[ -d "node_modules" ]] && echo 1),)
 	npm install
 endif
 
-lint:
+lint: stage
 	node_modules/csslint/cli.js \
 		--ignore=box-sizing,bulletproof-font-face,fallback-colors \
 		--errors=duplicate-properties,empty-rules,regex-selectors,vendor-prefix \
-		$(CSS)
+		$(wildcard stage/sources/css/*.css)
 
 release: npm clean stage
 	mkdir release
