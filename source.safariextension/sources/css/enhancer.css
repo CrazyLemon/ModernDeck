@@ -68,6 +68,26 @@
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
+@-webkit-keyframes backgroundanimation {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes backgroundanimation {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes backgroundanimationout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes backgroundanimationout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 html body {
   background: #03A9F4 !important; }
 
@@ -264,8 +284,32 @@ html .tde-dark .btn:focus:not(:active) {
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
+@-webkit-keyframes backgroundanimation {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes backgroundanimation {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes backgroundanimationout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes backgroundanimationout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 #transition, html .dropdown-menu, html .avatar, html .prf-img, html html.tweet-avatar, html .stream-item {
   transition: 180ms all;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+
+#transition100, html.js .js-add-column:active {
+  transition: 100ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
 #transition200 {
@@ -303,8 +347,8 @@ html .dropdown-menu li {
   height: 32px; }
 html .dropdown-menu li.is-selectable:hover {
   background-color: rgba(16, 16, 16, 0.05) !important; }
-html .ovl, html .overlay {
-  background: rgba(100, 100, 100, 0.4); }
+html .caret-outer, html .caret-inner {
+  display: none; }
 
 html {
   /* For overriding */ }
@@ -324,6 +368,9 @@ html {
     outline: none; }
   html .link-complex:hover .link-complex-target, html .link-complex:focus .link-complex-target, html .link-complex:active .link-complex-target {
     text-decoration: none; }
+
+.mdl-links .inline-block:after {
+  content: "TweetDeck Enhancer 6 not even alpha yet"; }
 
 html .btn {
   color: #00BCD4;
@@ -426,8 +473,32 @@ html .tde-dark .btn:focus:not(:active) {
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
+@-webkit-keyframes backgroundanimation {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes backgroundanimation {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes backgroundanimationout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes backgroundanimationout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 #transition, html .dropdown-menu, html .avatar, html .prf-img, html html.tweet-avatar, html .stream-item {
   transition: 180ms all;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+
+#transition100, html.js .js-add-column:active {
+  transition: 100ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
 #transition200 {
@@ -521,8 +592,32 @@ html .avatar:active {
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
+@-webkit-keyframes backgroundanimation {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes backgroundanimation {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes backgroundanimationout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes backgroundanimationout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 #transition, html .dropdown-menu, html .avatar, html .prf-img, html html.tweet-avatar, html .stream-item {
   transition: 180ms all;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+
+#transition100, html.js .js-add-column:active {
+  transition: 100ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
 #transition200 {
@@ -606,6 +701,26 @@ html .avatar:active {
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
+@-webkit-keyframes backgroundanimation {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes backgroundanimation {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes backgroundanimationout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes backgroundanimationout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 #perspective0, html .tweet-detail-wrapper {
   perspective: 0px; }
 
@@ -615,6 +730,8 @@ html .avatar:active {
 html .stream-item {
   border-bottom: none;
   background: #fefefe; }
+html .tde-dark .stream-item {
+  background: transparent; }
 html .tweet {
   line-height: 1.32em; }
 html .tweet-detail-wrapper {
@@ -649,6 +766,8 @@ html .tweet-stats, html .tweet-detail-actions {
   border-top: none; }
 html .js-tweet-translation-text {
   font-family: inherit; }
+html .tde-dark a.account-link {
+  color: #eee; }
 
 html .btn {
   color: #00BCD4;
@@ -759,6 +878,26 @@ html html .s-following .follow-btn:hover {
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
+@-webkit-keyframes backgroundanimation {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes backgroundanimation {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes backgroundanimationout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes backgroundanimationout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 html .mdl {
   -webkit-animation: modalPopover 0.3s;
   -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
@@ -774,8 +913,7 @@ html .mdl-inner {
   padding: 0px; }
 html .mdl-header {
   color: #fff;
-  /*background:$primary_colour_light;*/
-  background: transparent;
+  background: #03A9F4;
   z-index: 10;
   padding: 25px; }
 html .tde-dark .mdl-header {
@@ -795,6 +933,14 @@ html .mdl:before:not(.prf) {
   z-index: 9; }
 html .tde-dark .mdl:before {
   background-color: #263238; }
+html .js-dismiss.btn-positive, html .mdl-dismiss {
+  display: none; }
+html .ovl, html .overlay {
+  background: rgba(100, 100, 100, 0.4);
+  -webkit-animation: backgroundanimation 0.25s;
+  -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  animation: backgroundanimation 0.25s;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
 .is-chrome .sprite {
   background-image: url("chrome-extension://__MSG_@@extension_id__/sources/imgs/sprite_sheet.png"); }
@@ -883,8 +1029,32 @@ html .sprite-drag {
   100% {
     opacity: 1;
     transform: scale(1, 1); } }
+@-webkit-keyframes backgroundanimation {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes backgroundanimation {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes backgroundanimationout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes backgroundanimationout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 #transition, html .dropdown-menu, html .avatar, html .prf-img, html html.tweet-avatar, html .stream-item {
   transition: 180ms all;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
+
+#transition100, html.js .js-add-column:active {
+  transition: 100ms all;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); }
 
 #transition200 {
@@ -909,11 +1079,29 @@ html.js .tde-light .app-columns-container {
 html.js .tde-light .app-columns, html.js .tde-dark .app-columns {
   padding: 0px; }
 html.js .column-header, html.js .column-header-temp {
-  background: #03A9F4;
+  background: linear-gradient(#03A9F4, #03A9F4);
   color: #fff;
-  height: 54px; }
-html.js .tde-dark .column-header, html.js .column-header-temp {
+  height: 54px;
+  border-bottom: none;
+  box-shadow: 0 1px 10px rgba(17, 17, 17, 0.35); }
+html.js .is-new .column-header, html.js .is-new .column-header-temp {
+  background: linear-gradient(#03A9F4, #00BCD4); }
+html.js .tde-dark .column-header, html.js .tde-dark .column-header-temp {
+  background: linear-gradient(#263238, #263238); }
+html.js .tde-dark .is-new .column-header, html.js .tde-dark .is-new .column-header-temp {
+  background: linear-gradient(#263238, #00838F); }
+html.js .column-message {
+  background: #03A9F4; }
+html.js .tde-dark .column-message {
   background: #263238; }
+html.js .is-new .column-message {
+  background: #00BCD4; }
+html.js .tde-dark .is-new .column-message {
+  background: #00838F; }
+html.js .column-message p {
+  color: #fff; }
+html.js .facet-content {
+  color: #F4DEDD; }
 html.js .column-title {
   margin-right: 35px;
   font-size: 20px;
@@ -951,15 +1139,14 @@ html.js .js-add-column {
   right: 26px;
   bottom: 26px;
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.25);
-  background-color: #26C6DA;
+  background-color: #26C6DA !important;
   border: 1px solid rgba(34, 36, 38, 0.11); }
 html.js .mdl .js-add-column {
   margin-bottom: 20px;
   z-index: 99;
   background-color: #26C6DA; }
 html.js .js-add-column:active {
-  background-color: #00ACC1 !important;
-  transition: 100ms all !important; }
+  background-color: #00ACC1 !important; }
 html.js .js-add-column:before {
   font-size: 24px;
   content: "+";
@@ -973,16 +1160,25 @@ html.js .js-add-column:before {
   left: 0px;
   box-shadow: black;
   color: rgba(255, 255, 255, 0.94); }
-html.js .column-header-link {
+html.js .column-header-link, html.js .is-new .column-type-icon {
   color: #fff; }
 html.js body .column, html.js body .column {
-  margin-right: 0px; }
+  margin-right: 0px;
+  border: none; }
+html.js .tde-dark .column {
+  background: #344248; }
+html.js .tde-light .column {
+  background: #fefefe; }
 html.js body .column-holder {
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms; }
 html.js .column-content {
   width: 99%;
-  top: 54px; }
+  top: 54px;
+  border-right: 3px solid #e9e9e9; }
+
+.numbered-badge-onnav {
+  display: none; }
 
 html {
   /* for overriding some things. ugh */ }

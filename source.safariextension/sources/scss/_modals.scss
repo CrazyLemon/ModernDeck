@@ -22,8 +22,7 @@ html {
 
 	.mdl-header {
 		color:#fff;
-		/*background:$primary_colour_light;*/
-		background:transparent;
+		background:$primary_colour_light;
 		z-index:10;
 		padding:25px;
 	}
@@ -51,6 +50,15 @@ html {
 
 	.tde-dark .mdl:before {
 		background-color: $primary_colour_dark;
+	}
+
+	.js-dismiss.btn-positive,.mdl-dismiss {
+		display:none;
+	}
+
+	.ovl, .overlay {
+		background:rgba(100, 100, 100, 0.4);
+		@include animation(backgroundanimation 0.25s);
 	}
 
 }

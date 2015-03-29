@@ -10,6 +10,10 @@ html {
 		@extend #transition;
 	}
 
+	.tde-dark .stream-item {
+		background:transparent;
+	}
+
 	.tweet {
 		line-height:1.32em;
 	}
@@ -67,5 +71,9 @@ html {
 
 	.js-tweet-translation-text {
 		font-family:inherit;
+	}
+
+	.tde-dark a.account-link {
+		color:#eee
 	}
 }

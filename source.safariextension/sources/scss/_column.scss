@@ -13,13 +13,48 @@ html.js {
 	}
 
 	.column-header, .column-header-temp {
-		background:$primary_colour_light;
+		background:linear-gradient($primary_colour_light,$primary_colour_light);
 		color:#fff;
-		height:54px
+		height:54px;
+		border-bottom:none;
+		box-shadow:0 1px 10px rgba(17,17,17,0.35);
 	}
 
-	.tde-dark .column-header, .column-header-temp {
+
+	.is-new .column-header,.is-new .column-header-temp {
+		background: linear-gradient($primary_colour_light,$secondary_colour_light);
+	}
+
+	.tde-dark .column-header,.tde-dark .column-header-temp {
+		background:linear-gradient($primary_colour_dark,$primary_colour_dark);
+	}
+
+	.tde-dark .is-new .column-header,.tde-dark .is-new .column-header-temp {
+		background: linear-gradient($primary_colour_dark,$secondary_colour_dark);
+	}
+
+	.column-message {
+		background:$primary_colour_light;
+	}
+
+	.tde-dark .column-message {
 		background:$primary_colour_dark;
+	}
+
+	.is-new .column-message {
+		background:$secondary_colour_light;
+	}
+
+	.tde-dark .is-new .column-message {
+		background:$secondary_colour_dark;
+	}
+
+	.column-message p {
+		color:#fff
+	}
+
+	.facet-content {
+		color: #F4DEDD
 	}
 		
 	.column-title {
@@ -69,7 +104,7 @@ html.js {
 		right: 26px;
 		bottom: 26px;
 		box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.25);
-		background-color: #26C6DA;
+		background-color: #26C6DA!important;
 		border: 1px solid rgba(34, 36, 38, 0.11);
 	}
 
@@ -81,7 +116,7 @@ html.js {
 
 	.js-add-column:active {
 		background-color: #00ACC1!important;
-		transition: 100ms all!important;
+		@extend #transition100;
 	}
 
 	.js-add-column:before {
@@ -99,12 +134,22 @@ html.js {
 		color: rgba(255, 255, 255, 0.94);
 	}
 
-	.column-header-link {
+	.column-header-link,.is-new .column-type-icon {
 		color:#fff;
 	}
 
 	body .column,body .column {
 		margin-right:0px;
+		border:none;
+
+	}
+
+	.tde-dark .column {
+		background:rgba(52, 66, 72, 1);
+	}
+
+	.tde-light .column {
+		background:#fefefe
 	}
 
 	body .column-holder {
@@ -117,6 +162,7 @@ html.js {
 		@extend #perspective500;
 		width:99%;
 		top:54px;
+		border-right:3px solid rgba(233, 233, 233, 1);
 	}
 
 	.column-scroller {

@@ -121,3 +121,22 @@
     }
 }
 
+@-webkit-keyframes backgroundanimation {
+    0% {opacity:0}
+    100% {opacity:1}
+}
+
+@keyframes backgroundanimation {
+    0% {opacity:0}
+    100% {opacity:1}
+}
+
+@-webkit-keyframes backgroundanimationout {
+    0% {opacity:1}
+    100% {opacity:0}
+}
+
+@keyframes backgroundanimationout {
+    0% {opacity:1}
+    100% {opacity:0}
+}
