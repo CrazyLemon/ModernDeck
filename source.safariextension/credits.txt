@@ -1,0 +1,30 @@
+Copyright 2015 The TweetDeck Enhancer Open Source Project
+
+Dangered Wolf
+Adam D. (kirb)
+
+Also these devs but they've committed nothing so far for some reason:
+
+coolstarorg
+Jumono
+
+
+Built on these fabulous technologies:
+
+TweetDeck
+Copyright 2015 Twitter, Inc.
+
+Node.js
+Copyright 2015 Joyent, Inc.
+
+Sass
+Copyright 2006–2015 Hampton Catlin, Natalie Weizenbaum, Chris Eppstein, and other contributors.
+
+GNU Make Command
+Copyright 1996-2015 Free Software Foundation, Inc.
+
+Chromium Extension APIs
+Copyright 2015 Google, Inc.
+
+WebKit
+Copyright 2015 Apple, Inc. and others
