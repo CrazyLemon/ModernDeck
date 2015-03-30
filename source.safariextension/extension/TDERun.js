@@ -1,5 +1,6 @@
 // TDERun.js
-// TweetDeck Enhancer
+
+// TweetDeck Enhancer 6.0 not even alpha [Codename Frost]
 // Copyright (c) 2015 Dangered Wolf & The TweetDeck Enhancer Open Source Project
 
 function ReloadTheme() {
