@@ -31,6 +31,17 @@ html {
 		height: 32px;
 	}
 
+	.dropdown-menu .drp-h-divider {
+	  border-bottom:1px solid #e5e5e5;
+	  margin-top: 7.5px;
+	  margin-bottom: 7.5px;
+	  height: 0px!important;
+	}
+
+	.tde-dark .dropdown-menu .drp-h-divider {
+		
+	}
+
 	.dropdown-menu li.is-selectable:hover {
 		background-color: rgba(16,16,16,0.05)!important;
 	}

@@ -158,17 +158,20 @@ html.js {
 		-webkit-transition-duration:250ms;
 	}
 
-	.column-content{
+	.column-content {
 		@extend #perspective500;
 		width:99%;
 		top:54px;
 		border-right:3px solid rgba(233, 233, 233, 1);
 	}
 
+	.tde-dark .column-content {
+		border-right:3px solid $primary_colour_dark;
+	}
+
 	.column-scroller {
 		@extend #perspective500;
 	}
-
 
 	.column-options {
 	    width:328px;
@@ -181,6 +184,29 @@ html.js {
 
 	.is-narrow-columns .column-options {
 	    width:283px;
+	}
+
+	.js-column-back {
+		color:#fff;
+	}
+
+	.column-title-back {
+		color:#fff;
+	}
+
+	.conversation-title .title-content {
+		font-size:17px;
+	}
+
+	.column-title-back .link-complex-target {
+	    font-size:0px
+	}
+
+	.column-title-back .link-complex-target:before {
+	    font-size:16px;
+	    content:"Back";
+	    margin-top:2px;
+	    display:block;
 	}
 
 }

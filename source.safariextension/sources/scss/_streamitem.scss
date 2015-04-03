@@ -6,7 +6,7 @@
 html {
 	.stream-item {
 		border-bottom:none;
-		background:#fefefe;
+		background:transparent;
 		@extend #transition;
 	}
 
@@ -45,20 +45,44 @@ html {
 	    background: #F5F5F5;
 	}
 
+	.tde-dark .stream-item.is-actionable:hover {
+		background: rgba(0, 0, 0, 0.04);
+	}
+
 	.stream-item.is-actionable:active {
-	    background: #eee;
+	    background: $mute_colour_light_too_many_shades;
+	}
+
+	.tde-dark .stream-item.is-actionable:hover {
+		background: rgba(0, 0, 0, 0.08);
 	}
 
 	.stream-item:not(:hover) .tweet-actions {
 		visibility:visible;
 	}
 
-	.txt-mute a:not(:hover):not(:focus):not(.account-link):not(.link-complex):not(.url-ext):not([rel="user"]) {
-	    color: #CFCFCF;
+	.txt-mute a:not(:hover):not(:focus):not(.account-link):not(.link-complex):not(.url-ext):not([rel="user"]):not(.tweet-action):not(.tweet-detail-action):not([rel="url"]) {
+	    color:$mute_colour_light_somethingelse;
 	}
 
-	.tweet-action,.tweet-detail-action {
-	    color: #CFCFCF;
+	.stream-item.is-actionable .tweet-action:hover, .stream-item.is-actionable .tweet-detail-action:hover, .stream-item.is-actionable .tweet-action:focus, .stream-item.is-actionable .tweet-detail-action:focus, .stream-item.is-actionable .tweet-action:active, .stream-item.is-actionable .tweet-detail-action:active, .stream-item.is-actionable .tweet-action.is-selected, .stream-item.is-actionable .is-selected.tweet-detail-action {
+		color:#777;
+	}
+
+	.tde-dark .stream-item.is-actionable .tweet-action:hover, .tde-dark .stream-item.is-actionable .tweet-detail-action:hover, .tde-dark .stream-item.is-actionable .tweet-action:focus, .tde-dark .stream-item.is-actionable .tweet-detail-action:focus, .tde-dark .stream-item.is-actionable .tweet-action:active, .tde-dark .stream-item.is-actionable .tweet-detail-action:active, .tde-dark .stream-item.is-actionable .tweet-action.is-selected, .tde-dark .stream-item.is-actionable .is-selected.tweet-detail-action {
+		color:#91A5B2;
+	}
+
+	a.tweet-action:not(:hover):not(:focus) {
+	    color:$mute_colour_light_somethingelse;
+	}
+
+	.tweet-detail-action {
+		color:$mute_colour_light_optimise_legibility;
+	}
+
+	.tde-dark .tweet-action,.tde-dark .tweet-detail-action {
+		color:$mute_colour_dark;
 	}
 
 	.tweet-detail-wrapper .txt-mute a:not(:hover):not(:focus) {
@@ -74,6 +98,20 @@ html {
 	}
 
 	.tde-dark a.account-link {
-		color:#eee
+		color:$mute_colour_light_too_many_shades
+	}
+
+	.tweet-actions>li {
+		margin:0px 0 0 35px
+	}
+
+	.tweet-footer {
+   	 	margin-top: 6px;
+	    width: 250px;
+	    margin-left: -50px;
+	}
+
+	.media-sensitive {
+		background:transparent;
 	}
 }
