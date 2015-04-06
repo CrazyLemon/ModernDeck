@@ -22,30 +22,22 @@ html {
 
 	.mdl-header {
 		color:#fff;
-		background:$primary_colour_light;
+		/*background:$primary_colour_light;*/
 		z-index:10;
 		padding:25px;
 	}
-
+	/*
 	.tde-dark .mdl-header {
 		background:$primary_colour_dark;
 	}
-
+	*/
 	.mdl-header-title {
 		font-weight:400;
 		font-size:18px;
 		text-align:center;
 		padding-left:0px;
 		z-index:10;
-	}
-
-	.mdl:before:not(.prf) {
-		content: " ";
-		width: 100.1%;
-		height: 48px;
-		background-color: $primary_colour_light;
-		position: absolute;
-		z-index: 9;
+		margin-top:-10px;
 	}
 
 	.tde-dark .mdl:before {
@@ -59,6 +51,23 @@ html {
 	.ovl, .overlay {
 		background:rgba(100, 100, 100, 0.4);
 		@include animation(backgroundanimation 0.25s);
+	}
+
+	.mdl:before {
+	  content: " ";
+	  width: 100.1%;
+	  height: 48px;
+	  background-color: $primary_colour_light;
+	  position: absolute;
+	  z-index: 9;
+	}
+
+	.tde-dark .mdl:before {
+		background-color: $primary_colour_dark;
+	}
+
+	.mdl.s-profile:before {
+		background-color:transparent;
 	}
 
 }

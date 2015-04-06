@@ -16,6 +16,7 @@ html {
 
 	.tweet {
 		line-height:1.32em;
+		font-weight:400;
 	}
 
 	.tweet-detail-wrapper {
@@ -81,7 +82,7 @@ html {
 		color:$mute_colour_light_optimise_legibility;
 	}
 
-	.tde-dark .tweet-action,.tde-dark .tweet-detail-action {
+	.tde-dark .tweet-action:not(:hover):not(:focus),.tde-dark .tweet-detail-action {
 		color:$mute_colour_dark;
 	}
 
@@ -97,7 +98,7 @@ html {
 		font-family:inherit;
 	}
 
-	.tde-dark a.account-link {
+	.tde-dark a.account-link:not(:active):not(:focus) {
 		color:$mute_colour_light_too_many_shades
 	}
 

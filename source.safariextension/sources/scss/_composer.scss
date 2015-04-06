@@ -45,4 +45,8 @@ html { /* for overriding some things. ugh */
 	.tde-dark .compose {
 		background:$secondary_colour_dark
 	}
+
+	.compose-account-selected {
+		display:none;
+	}
 }

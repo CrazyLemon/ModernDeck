@@ -30,4 +30,12 @@ html { /* For overriding */
 		text-decoration:none;
 	}
 
+	.txt-mute a:not(:hover):not(:focus) {
+		color:$mute_colour_light
+	}
+
+	.tde-dark .txt-mute a:not(:hover):not(:focus) {
+		color:$mute_colour_dark
+	}
+
 }
