@@ -50,4 +50,14 @@ html {
 		display:none;
 	}
 
+	a[data-action=mute] {
+		font-size:0px;
+	}
+
+	a[data-action=mute]:before {
+	    font-size: 14px;
+	    content: "Mute in TweetDeck";
+	    display:block;
+	}
+
 }
