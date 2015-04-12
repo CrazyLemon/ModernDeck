@@ -10,3 +10,5 @@ release
 *.pem
 
 npm-debug.log
+
+*.map
