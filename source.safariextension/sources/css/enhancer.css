@@ -1304,8 +1304,8 @@ html {
   html .compose-text-title {
     display: none; }
   html .compose-content > .scroll-v {
-    padding-left: 5px !important;
-    padding-right: 5px !important; }
+    padding-left: 20px !important;
+    padding-right: 20px !important; }
   html .compose-accounts {
     margin-left: 5px; }
   html .attach-compose-buttons .tweet-button {
