@@ -9,12 +9,4 @@ stage
 release
 *.pem
 
-sources.safariextension/sources/css/enhancer.css
-
-sources.safariextension/sources/css/enhancer.css.map
-
-source.safariextension/sources/css/enhancer.css
-
-source.safariextension/sources/css/enhancer.css.map
-
 npm-debug.log
