@@ -24,7 +24,7 @@
 		<array>
 			<dict>
 				<key>Filename</key>
-				<string>sources/launcher/launcher.html</string>
+				<string>chrome/launcher/launcher.html</string>
 				<key>Height</key>
 				<real>700</real>
 				<key>Identifier</key>
@@ -41,7 +41,7 @@
 				<key>Identifier</key>
 				<string>com.dangeredwolf.TweetDeckEnhancer.tdquicklaunch</string>
 				<key>Image</key>
-				<string>sources/imgs/tweetdecksmall.png</string>
+				<string>chrome/imgs/tweetdecksmall.png</string>
 				<key>Label</key>
 				<string>TweetDeck</string>
 				<key>Palette Label</key>
@@ -59,12 +59,12 @@
 		<dict>
 			<key>End</key>
 			<array>
-				<string>extension/TDERun.js</string>
+				<string>chrome/extension/TDERun.js</string>
 			</array>
 		</dict>
 		<key>Stylesheets</key>
 		<array>
-			<string>sources/css/enhancer.css</string>
+			<string>chrome/css/enhancer.css</string>
 		</array>
 		<key>Whitelist</key>
 		<array>

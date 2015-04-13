@@ -168,11 +168,13 @@ body[class=''] .app-content {
 /*rgba(38, 50, 56, 0.9);*/
 /*rgba(38, 50, 56, 0.9);*/
 .is-chrome .sprite {
-  background-image: url("chrome-extension://__MSG_@@extension_id__/sources/imgs/sprite_sheet.png"); }
+  background-image: url("chrome-extension://__MSG_@@extension_id__/chrome/imgs/sprite_sheet.png");
+  background-image: url("chrome://tweetdeckenhancer/imgs/sprite_sheet.png"); }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .is-chrome .sprite {
-    background-image: url("chrome-extension://__MSG_@@extension_id__/sources/imgs/sprite_sheet@2x.png"); } }
+    background-image: url("chrome-extension://__MSG_@@extension_id__/chrome/imgs/sprite_sheet@2x.png");
+    background-image: url("chrome://tweetdeckenhancer/imgs/sprite_sheet@2x.png"); } }
 html body.tde-dark .sprite-drag-vertical, html body.tde-light .sprite-drag-vertical {
   background-image: none;
   width: 50%;
@@ -1030,11 +1032,13 @@ html {
 /*rgba(38, 50, 56, 0.9);*/
 /*rgba(38, 50, 56, 0.9);*/
 .is-chrome .sprite {
-  background-image: url("chrome-extension://__MSG_@@extension_id__/sources/imgs/sprite_sheet.png"); }
+  background-image: url("chrome-extension://__MSG_@@extension_id__/chrome/imgs/sprite_sheet.png");
+  background-image: url("chrome://tweetdeckenhancer/imgs/sprite_sheet.png"); }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .is-chrome .sprite {
-    background-image: url("chrome-extension://__MSG_@@extension_id__/sources/imgs/sprite_sheet@2x.png"); } }
+    background-image: url("chrome-extension://__MSG_@@extension_id__/chrome/imgs/sprite_sheet@2x.png");
+    background-image: url("chrome://tweetdeckenhancer/imgs/sprite_sheet@2x.png"); } }
 html body.tde-dark .sprite-drag-vertical, html body.tde-light .sprite-drag-vertical {
   background-image: none;
   width: 50%;

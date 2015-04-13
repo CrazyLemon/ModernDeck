@@ -1,12 +1,14 @@
 @import "colours";
 
 .is-chrome .sprite {
-	background-image:url("chrome-extension://__MSG_@@extension_id__/sources/imgs/sprite_sheet.png");
+	background-image:url("chrome-extension://__MSG_@@extension_id__/chrome/imgs/sprite_sheet.png");
+	background-image:url("chrome://tweetdeckenhancer/imgs/sprite_sheet.png");
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .is-chrome .sprite {
-        background-image:url("chrome-extension://__MSG_@@extension_id__/sources/imgs/sprite_sheet@2x.png");
+        background-image:url("chrome-extension://__MSG_@@extension_id__/chrome/imgs/sprite_sheet@2x.png");
+        background-image:url("chrome://tweetdeckenhancer/imgs/sprite_sheet@2x.png");
     }
 }
 

@@ -10,14 +10,16 @@
   "permissions": [
     "webRequest",
     "webRequestBlocking",
-    "https://tweetdeck.twitter.com/"
+    "https://tweetdeck.twitter.com/",
+    "https://dangeredwolf.com",
+    "https://tweetdeckenhancer.com"
   ],
 
   "content_scripts": [
     {
       "matches": ["https://tweetdeck.twitter.com/"],
-      "js": ["extension/TDERun.js"],
-      "css": ["sources/css/enhancer.css"],
+      "js": ["chrome/extension/TDERun.js"],
+      "css": ["chrome/css/enhancer.css"],
       "run_at": "document_end"
     }
   ],
@@ -32,13 +34,13 @@
    },
 
   "web_accessible_resources": [
-    "sources",
-    "sources/*"
+    "chrome",
+    "chrome/*"
   ],
 
   "browser_action": {
-    "default_icon": "sources/imgs/launcher.png",
-    "default_popup": "sources/launcher/launcher.html",
+    "default_icon": "chrome/imgs/launcher.png",
+    "default_popup": "chrome/launcher/launcher.html",
     "default_title": "__MSG_ButtonHoverTitle__"
   },
 
