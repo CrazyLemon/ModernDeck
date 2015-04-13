@@ -11,8 +11,8 @@
     "webRequest",
     "webRequestBlocking",
     "https://tweetdeck.twitter.com/",
-    "https://dangeredwolf.com",
-    "https://tweetdeckenhancer.com"
+    "https://dangeredwolf.com/",
+    "https://tweetdeckenhancer.com/"
   ],
 
   "content_scripts": [
