@@ -60,4 +60,11 @@ html {
 	    display:block;
 	}
 
+	.s-profile .pos-l {
+	    bottom: 160%;
+	    top: auto;
+	    -webkit-animation: dropmenucomeup 0.2s 1;
+	    animation: dropmenucomeup 0.2s 1;
+	}
+
 }

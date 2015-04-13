@@ -53,7 +53,7 @@ html {
 		@include animation(backgroundanimation 0.25s);
 	}
 
-	.mdl:before {
+	.mdl:not(.med-fullpanel):before {
 	  content: " ";
 	  width: 100.1%;
 	  height: 48px;
@@ -68,6 +68,15 @@ html {
 
 	.mdl.s-profile:before {
 		background-color:transparent;
+	}
+
+	.mdl-content {
+		border:none;
+		background:#fafafa
+	}
+
+	.tde-dark .mdl-content {
+
 	}
 
 }

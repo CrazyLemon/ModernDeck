@@ -46,7 +46,7 @@ html { /* for overriding some things. ugh */
 		background:$secondary_colour_dark
 	}
 
-	.compose-account-selected {
+	.is-selected .compose-account-selected {
 		display:none;
 	}
 
@@ -83,7 +83,43 @@ html { /* for overriding some things. ugh */
 	  margin-top: -60px;
 	  transition-timing-function: cubic-bezier(.55,0,.1,1);
 	  margin-left: -5px;
-	  width: 271px;
+	  /*width: 271px;*/
 	}
 
+	.prf-card-inner .location strong {
+	    opacity: 0;
+	}
+
+	.js-add-image-button-label, .js-dm-button .label, .js-tweet-button-label, .js-schedule-button-label,  {
+	    display: none;
+	}
+
+	.js-tweet-button, .js-dm-button, .js-schedule-button, .js-add-image-button {
+	    width: 35px;
+	    height: 35px;
+	    margin-top: -80px;
+	    background:transparent;
+	    box-shadow:none;
+	}
+
+	.js-tweet-button .icon-twitter-bird, .js-dm-button .icon-message, .js-schedule-button .icon-schedule, .js-add-image-button .icon-camera {
+	    font-size:24px;
+	}
+
+	.js-send-tweet-button {
+	    font-size: 0px;
+	}
+
+	.js-send-tweet-button:after {
+	    font-size: 14px;
+	    content: "Tweet";
+	}
+
+	.js-add-image-button {
+		margin-left:10px;
+	}
+
+	.margin-t--12.margin-b--30 {
+	  margin-top:-60px!important
+	}
 }

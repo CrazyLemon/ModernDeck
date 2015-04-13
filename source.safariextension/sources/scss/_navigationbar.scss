@@ -1,3 +1,20 @@
 .numbered-badge-onnav {
 	display:none;
 }
+
+.app-search-fake .icon {
+  display:block;
+  font-size: 24px;
+  margin-left: -4px;
+  margin-top: -7px;
+}
+
+.app-header .app-search-fake {
+  margin: 0;
+  margin-top: 2px;
+  margin-left: 0px;
+  pointer-events: all;
+  color:#fff;
+  background-color:transparent;
+  box-shadow:none;
+}
