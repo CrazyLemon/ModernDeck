@@ -3,12 +3,13 @@ node_modules
 
 # Sass
 .sass-cache
+*.map
 
 # Build
 stage
 release
 *.pem
+*.crx
+*.zip
 
 npm-debug.log
-
-*.map
