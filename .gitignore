@@ -13,3 +13,5 @@ release
 *.zip
 
 npm-debug.log
+
+com.dangeredwolf.TweetDeckEnhancer.safariextension/Info.plist

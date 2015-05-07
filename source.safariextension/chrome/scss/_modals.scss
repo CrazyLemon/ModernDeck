@@ -1,11 +1,13 @@
 @import "colour";
 @import "animation";
+@import "transition";
 
 html {
 	.mdl {
 		@include animation(modalPopover 0.3s);
 		border-radius:2px;
 		box-shadow:0 15px 40px rgba(17,17,17,0.4);
+		@extend #transitiondragging100;
 	}
 
 	.mdl-column-rhs {
@@ -18,6 +20,8 @@ html {
 
 	.mdl-inner {
 		padding:0px;
+		top:47px;
+		bottom:0px;
 	}
 
 	.mdl-header {
@@ -76,7 +80,50 @@ html {
 	}
 
 	.tde-dark .mdl-content {
+		
+	}
 
+	.mdl.draggable-dragging {
+	    transform: scale(1.05,1.05);
+	    box-shadow: 0 30px 70px rgba(17,17,17,0.6);
+	    @extend #transitiondragging200;
+	    z-index: 99;
+	}
+
+	.mdl .mdl-col-settings form.frm fieldset {
+	    @include animation(dropmenucomeupnopad 0.25s);
+	}
+
+	.tde-light .mdl .mdl-column-sml {
+	  background-color:#F8F8F8
+	}
+
+	.mdl .selected a:hover {
+	  background: rgba(0, 0, 0, 0.1);
+	  transition:200ms all;
+	}
+
+	.mdl .selected a:focus {
+	  text-decoration:none;
+	}
+
+	.mdl .selected {
+	  background: rgba(0, 195, 220, 0.87);
+	  color: #FFF;
+	}
+
+	.mdl .list-link strong {
+	  font-weight:400
+	}
+
+	.mdl .list-link:active {
+	  transform: scale(0.875,0.875);
+	  background-color:rgba(0,0,0,0.05);
+	  color:inherit;
+	}
+
+	.mdl li {
+	  @extend #transition200;
 	}
 
 }

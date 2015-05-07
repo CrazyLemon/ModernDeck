@@ -63,8 +63,7 @@ html {
 	.s-profile .pos-l {
 	    bottom: 160%;
 	    top: auto;
-	    -webkit-animation: dropmenucomeup 0.2s 1;
-	    animation: dropmenucomeup 0.2s 1;
+	    @include animation(dropmenucomeup 0.2s);
 	}
 
 }

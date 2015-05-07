@@ -23,3 +23,11 @@
 #transitiontiming {
 	transition-timing-function:cubic-bezier(.55,0,.1,1);
 }
+
+#transitiondragging100 {
+	transition:100ms box-shadow, 100ms transform!important;
+}
+
+#transitiondragging200 {
+	transition:200ms box-shadow, 200ms transform!important;
+}
