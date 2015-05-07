@@ -34,6 +34,12 @@ release: npm clean stage
 	$(CHROME) --no-message-box --pack-extension=$(PWD)/stage --pack-extension-key=tools/key.pem
 	mv stage.crx release/tde-$(VERSION).crx
 
+	xar -czf release/tde-$(VERSION).safariextz --distribution stage/TweetDeckEnhancer.safariextension/
+	xar --sign -f release/tde-$(VERSION).safariextz --digestinfo-to-sign digest.dat --sig-size $(openssl dgst -sign tools/safari.pem -binary < tools/safari.pem | wc -c) --cert-loc tools/safari.der --cert-loc tools/safari01 --cert-loc tools/safari02
+	openssl rsautl -sign -inkey certs/key.pem -in digest.dat -out sig.dat
+	xar --inject-sig sig.dat -f release/tde-$(VERSION).safariextz
+	rm -f sig.dat digest.dat
+
 stage: npm clean
 	mkdir stage
 
