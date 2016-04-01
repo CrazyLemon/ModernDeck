@@ -10796,3 +10796,13 @@ button.mtd-no-transform-case {
 .tweet-text {
 	margin-bottom:8px
 }
+/* my changes */
+.is-wide-columns .column {
+	width:25% !important;
+}
+.is-wide-columns .column-content {
+	width:100% !important;
+}
+.is-wide-columns .column-header,.is-wide-columns .column-header-temp {
+	width:100% !important;
+}
