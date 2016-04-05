@@ -10762,3 +10762,9 @@ button.mtd-no-transform-case {
 .is-wide-columns .column-content, .is-wide-columns .column-header,.is-wide-columns .column-header-temp {
 	width:100% !important;
 }
+.toggle-switch-label {
+	margin-bottom: 5px !important;
+}
+.toggle-switch {
+	margin-right: 10px !important;
+}

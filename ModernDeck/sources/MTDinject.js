@@ -21,7 +21,7 @@ var FindProfButton;
 var TreatGeckoWithCare = false;
 var profileProblem = false;
 var wasTweetSheetOpen = false;
-var WantsToBlockCommunications = false;
+var WantsToBlockCommunications = true;
 var WantsToDisableSecureStylesheets = false;
 
 var FetchProfileInfo = 0;
