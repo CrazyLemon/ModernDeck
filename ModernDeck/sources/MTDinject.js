@@ -37,6 +37,41 @@ var head = $(document.head);
 var body = $(document.body);
 var html = $(document.querySelector("html")); // Only 1 result; faster to find
 
+// Asks MTDLoad for the storage
+window.postMessage({
+	type: "getStorage"
+}, "*");
+
+// Adds each key in the extension storage to localStorage
+window.addEventListener("message", function(e) {
+	console.log(e.data);
+	if (e.source == window) {
+		if (e.data.type == "sendStorage") {
+			var settings = e.data.message;
+			for (var key in settings) {
+				localStorage.setItem(key, settings[key]);
+			}
+		}
+	}
+});
+
+window.addEventListener("beforeunload", function(e){
+	var storage = {}
+	for(var i = 0; i < localStorage.length; i++){
+		var key = localStorage.key(i);
+		if (key == "guestID" || key == "metrics.realtimeData") {
+			continue;
+		} else {
+			storage[key] = localStorage[key];
+		}
+	}
+
+	window.postMessage({
+		type: "setStorage",
+		message: storage
+	}, "*");
+})
+
 Preferences.Appearance = [
 	[
 		"flag",
@@ -69,7 +104,13 @@ if (typeof chrome === "undefined" && typeof safari === "undefined") {
 }
 
 function getPref(id) {
-	return localStorage[id] === "true" && true || localStorage[id] === "false" && false || localStorage[id];
+	if (localStorage[id] === "true") {
+		return true;
+	} else if (localStorage[id] === "false") {
+		return false;
+	} else {
+		return localStorage[id];
+	}
 }
 
 function setPref(id,p) {
@@ -90,8 +131,8 @@ function fontParseHelper(a) {
 
 function MTDInit(){
 
-	if (document.getElementsByClassName("js-signin-ui")[0] !== "undefined" && !replacedLoadingSpinnerNew) {
-		document.getElementsByClassName("js-signin-ui")[0].innerHTML = '<div class="preloader-wrapper big active"><div class="spinner-layer"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div>';
+	if (typeof document.getElementsByClassName("js-signin-ui block")[0] !== "undefined" && !replacedLoadingSpinnerNew) {
+		document.getElementsByClassName("js-signin-ui block")[0].innerHTML = '<div class="preloader-wrapper big active"><div class="spinner-layer"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div>';
 		replacedLoadingSpinnerNew = true;
 	}
 	if (
@@ -106,9 +147,9 @@ function MTDInit(){
 		return;
 	}
 
-	TD.controller.stats.dataminrApiRequest = function(){};
-	TD.controller.stats.dataminrAuthRequest = function(){};
-	TD.controller.stats.dataminrClickImpression = function(){};
+	// TD.controller.stats.dataminrApiRequest = function(){};
+	// TD.controller.stats.dataminrAuthRequest = function(){};
+	// TD.controller.stats.dataminrClickImpression = function(){};
 
 	$(document.head).append(make("style").html(
 		fontParseHelper({name:"Roboto300latin",range:"U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000"}) +
@@ -181,6 +222,8 @@ function MTDInit(){
 		html.addClass("mtd-acc-focus-ring");
 	else
 		setPref("mtd_outlines",false);
+
+	html.addClass("mtd-back-" + getPref("mtd_theme"));
 
 	TD.util.prettyTimeString = function(e) {
 		return TD.i("{{hours12}}:{{minutes}} {{amPm}}, {{day}} {{month}} {{fullYear}}", TD.util.prettyTime(e));
@@ -319,6 +362,12 @@ function PrefsListener() {
 			html.removeClass("mtd-acc-focus-ring");
 		}
 
+		if (localStorage.mtd_theme !== $("#mtd-theme-control option:selected")[0].value) {
+			html.removeClass("mtd-back-" + localStorage.mtd_theme);
+			localStorage.mtd_theme = $("#mtd-theme-control option:selected")[0].value;
+			html.addClass("mtd-back-" + $("#mtd-theme-control option:selected")[0].value);
+		}
+
 		setTimeout(PrefsListener,500);
 	}
 }
@@ -344,7 +393,7 @@ function MTDSettings() {
 			</ul> </div> </div> <div class="l-column mdl-column mdl-column-lrg"> <div class="l-column-scrollv scroll-v	scroll-alt mdl-col-settings">\
 			\
 			\
-			<form action="#" id="mtd-appearance-form" accept-charset="utf-8" class="frm"><fieldset id="general_settings"><div class="control-group" style="padding-top:10px;"><label class="checkbox">Use rounded profile pictures<input type="checkbox" name="streaming-updates" checked="checked" id="mtd-round-avatars-control"> </label><label class="checkbox">Dark media viewer in light mode<input type="checkbox" name="streaming-updates" checked="checked" id="mtd-dark-media-control"> </label></div></fieldset></form>\
+			<form action="#" id="mtd-appearance-form" accept-charset="utf-8" class="frm"><fieldset id="general_settings"><div class="control-group" style="padding-top:10px;"><label class="checkbox">Use rounded profile pictures<input type="checkbox" name="streaming-updates" checked="checked" id="mtd-round-avatars-control"> </label><label class="checkbox">Dark media viewer in light mode<input type="checkbox" name="streaming-updates" checked="checked" id="mtd-dark-media-control"> </label><label class="control-label">Theme<select name="streaming-updates" id="mtd-theme-control" type="select"><option value="none">Default</option><option value="paper">Paper</option><option value="grey">Grey</option><option value="red">Red</option><option value="pink">Pink</option><option value="orange">Orange</option><option value="violet">Violet</option><option value="teal">Teal</option><option value="green">Green</option><option value="yellow">Yellow</option><option value="cyan">Cyan</option><option value="black">Black</option><option value="blue">Blue</option></select></label></div></fieldset></form>\
 			\
 			<form action="#" id="mtd-accessibility-form" accept-charset="utf-8" class="frm" style="display:none;"><fieldset id="general_settings"><label class="checkbox">Always show outlines on focussed items<input type="checkbox" checked="checked" id="mtd-outlines-control"> </label></fieldset></form>\
 			\
@@ -355,6 +404,8 @@ function MTDSettings() {
 			$("#mtd-round-avatars-control").attr("checked",localStorage.mtd_round_avatars === "true" && true || false);
 			$("#mtd-outlines-control").attr("checked",localStorage.mtd_outlines === "true" && true || false);
 			$("#mtd-dark-media-control").attr("checked",localStorage.mtd_dark_media === "true" && true || false);
+			$("#mtd-theme-control").val(localStorage.mtd_theme);
+
 
 			PrefsListener();
 
@@ -429,6 +480,9 @@ function FinaliseLoginStuffs() {
 	$(mtd_nd_header_username).html($(".prf-card-inner .username").html()); // Fetch twitter handle and place in nav drawer
 
 	console.log("Finished login stuffs! you are in the nav drawer, I think!");
+
+	// TD.storage.clientController.client = [];
+	// TD.storage.clientController.client.isDirty = false; // Attempts to get around TD bug
 
 	if (profileProblem) {
 		profileProblem = false;
@@ -625,13 +679,15 @@ function ReloadTheme() {
 		var stuff = $(".application,html");
 		stuff.removeClass("mtd-light mtd-dark");
 
-		if ($("link[title='dark'][disabled]").length > 0) {
+		if (document.querySelector("meta[http-equiv='default-style']").content === "light") {
 			stuff.addClass("mtd-light");
 			MTDDark = false;
 		} else {
 			stuff.addClass("mtd-dark");
 			MTDDark = true;
 		}
+
+		$("html").addClass("mtd-back-" + localStorage.mtd_theme);
 }
 
 function DisableSecureStylesheets() {
@@ -858,6 +914,6 @@ window.addEventListener("keyup",KeyboardShortcutHandler,false);
 	mutations.forEach(function(mutation) {
 		ReloadTheme();
 	});
-})).observe(document.querySelector("link[title='dark']"), {attributes:true});
+})).observe(document.querySelector("meta[http-equiv='default-style']"), {attributes:true});
 
 console.log("MTDinject loaded");
