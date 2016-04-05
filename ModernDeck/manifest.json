@@ -13,8 +13,7 @@
     "https://dangeredwolf.com/",
     "https://ton.twimg.com/",
     "contextMenus",
-    "tabs",
-    "storage"
+    "tabs"
   ],
 
   "content_scripts": [
