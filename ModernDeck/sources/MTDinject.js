@@ -5,7 +5,7 @@
 
 "use strict";
 
-var SystemVersion = "6.0";
+var SystemVersion = "6.0 Beta 3";
 var MTDBaseURL = "https://dangeredwolf.com/assets/mtdtest/"; // Defaults to streaming if nothing else is available (i.e. legacy firefox)
 
 var msgID = 0;
@@ -24,6 +24,8 @@ var wasTweetSheetOpen = false;
 var WantsToBlockCommunications = true;
 var WantsToDisableSecureStylesheets = false;
 
+var loadedPreferences = false;
+
 var FetchProfileInfo = 0;
 
 var elements = function(a,b,c){return $(document.getElementsByClassName(a,b,c))};
@@ -37,27 +39,27 @@ var head = $(document.head);
 var body = $(document.body);
 var html = $(document.querySelector("html")); // Only 1 result; faster to find
 
-Preferences.Appearance = [
-	[
-		"flag",
-		"mtd-round-avatars",
-		"mtd_round_avatars",
-		"mtd-rounded-profiles-control",
-		"Use rounded profile pictures",
-		true
-	],
-]
+// Asks MTDLoad for the storage
+window.postMessage({
+	type: "getStorage"
+}, "*");
 
-Preferences.Accessibility = [
-	[
-		"flag",
-		"mtd-outlines",
-		"mtd_outlines",
-		"mtd-outlines-control",
-		"Always show outlines on focussed items",
-		false
-	]
-]
+// Adds each key in the extension storage to localStorage
+window.addEventListener("message", function(e) {
+	console.log(e.data);
+	if (e.source == window) {
+		if (e.data.type == "sendStorage") {
+			var settings = e.data.message;
+			for (var key in settings) {
+				localStorage.setItem(key, settings[key]);
+			}
+		}
+	}
+});
+
+window.addEventListener("beforeunload", function(e){
+	savePreferencesToDisk();
+})
 
 if (typeof MTDURLExchange === "object" && typeof MTDURLExchange.getAttribute === "function") {
 	MTDBaseURL = MTDURLExchange.getAttribute("type") || "https://dangeredwolf.com/assets/mtdtest/";
@@ -68,8 +70,74 @@ if (typeof chrome === "undefined" && typeof safari === "undefined") {
 	TreatGeckoWithCare = true;
 }
 
+function savePreferencesToDisk() {
+	var storage = {}
+	for(var i = 0; i < localStorage.length; i++){
+		var key = localStorage.key(i);
+		if (key == "guestID" || key == "metrics.realtimeData") {
+			continue;
+		} else {
+			storage[key] = localStorage[key];
+		}
+	}
+
+	window.postMessage({
+		type: "setStorage",
+		message: storage
+	}, "*");
+}
+
+function enableStylesheetExtension(name) {
+	var url = MTDBaseURL + "sources/cssextensions/" + name + ".css";
+
+	if (document.querySelector('head>link[href="' + url + '"]') === null) {
+		head.append(
+			make("link")
+			.attr("rel","stylesheet")
+			.attr("href",url)
+			.addClass("mtd-stylesheet-extension")
+		)
+	} else {
+		return;
+	}
+}
+
+function disableStylesheetExtension(name) {
+	$('head>link[href="' + MTDBaseURL + "sources/cssextensions/" + name + '.css"]').remove();
+}
+
+function disableExtraStylesheetExtensions() {
+	$("head>link.mtd-stylesheet-extension:not([href='" + MTDBaseURL + "sources/cssextensions/dark.css']):not([href='" + MTDBaseURL + "sources/cssextensions/light.css'])").remove();
+}
+
+function loadPreferences() {
+	if (getPref("mtd_round_avatars") === false)
+		html.addClass("mtd-no-round-avatars");
+	else
+		setPref("mtd_round_avatars",true);
+
+	if (getPref("mtd_dark_media") === true)
+		html.addClass("mtd-dark-media-previews");
+	else
+		setPref("mtd_dark_media",false);
+
+	if (getPref("mtd_outlines") === true)
+		html.addClass("mtd-acc-focus-ring");
+	else
+		setPref("mtd_outlines",false);
+
+	if (getPref("mtd_theme") !== "" && getPref("mtd_theme") !== null && typeof getPref("mtd_theme") !== "undefined")
+		enableStylesheetExtension(getPref("mtd_theme"));
+}
+
 function getPref(id) {
-	return localStorage[id] === "true" && true || localStorage[id] === "false" && false || localStorage[id];
+	if (localStorage[id] === "true") {
+		return true;
+	} else if (localStorage[id] === "false") {
+		return false;
+	} else {
+		return localStorage[id];
+	}
 }
 
 function setPref(id,p) {
@@ -85,13 +153,14 @@ function fontParseHelper(a) {
 		throw "you forgot to pass the object";
 	}
 
-	return "@font-face{font-family:'" + (a.family || "Roboto") + "';font-style:" + (a.style || "normal") + ";font-weight:" + (a.weight || "300") + ";src:url(" + MTDBaseURL + "sources/fonts/" + a.name + ".woff2) format('woff2');unicode-range:" + (a.range || "U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF") + "}";
+	return "@font-face{font-family:'"+(a.family||"Roboto")+"';font-style:"+(a.style||"normal")+";font-weight:"+(a.weight || "300")+";src:url("+MTDBaseURL+"sources/fonts/"+a.name+".woff2) format('woff2');unicode-range:"+(a.range||
+		"U+0100-024F,U+1E00-1EFF,U+20A0-20CF,U+2C60-2C7F,U+A720-A7FF")+"}";
 }
 
 function MTDInit(){
 
-	if (document.getElementsByClassName("js-signin-ui")[0] !== "undefined" && !replacedLoadingSpinnerNew) {
-		document.getElementsByClassName("js-signin-ui")[0].innerHTML = '<div class="preloader-wrapper big active"><div class="spinner-layer"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div>';
+	if (typeof document.getElementsByClassName("js-signin-ui block")[0] !== "undefined" && !replacedLoadingSpinnerNew) {
+		document.getElementsByClassName("js-signin-ui block")[0].innerHTML = '<div class="preloader-wrapper big active"><div class="spinner-layer"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div>';
 		replacedLoadingSpinnerNew = true;
 	}
 	if (
@@ -106,9 +175,11 @@ function MTDInit(){
 		return;
 	}
 
-	TD.controller.stats.dataminrApiRequest = function(){};
-	TD.controller.stats.dataminrAuthRequest = function(){};
-	TD.controller.stats.dataminrClickImpression = function(){};
+	enableStylesheetExtension("dark")
+
+	// TD.controller.stats.dataminrApiRequest = function(){};
+	// TD.controller.stats.dataminrAuthRequest = function(){};
+	// TD.controller.stats.dataminrClickImpression = function(){};
 
 	$(document.head).append(make("style").html(
 		fontParseHelper({name:"Roboto300latin",range:"U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000"}) +
@@ -117,7 +188,7 @@ function MTDInit(){
 		fontParseHelper({weight:"400",name:"Roboto400latinext"}) +
 		fontParseHelper({weight:"500",name:"Roboto500latin",range:"U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000"}) +
 		fontParseHelper({weight:"500",name:"Roboto500latinext"}) +
-		fontParseHelper({family:"Material Icons",weight:"400",name:"MaterialIcons",range:"U+0000-F000"}) +
+		fontParseHelper({family:"Material",weight:"400",name:"MaterialIcons",range:"U+0000-F000"}) +
 		fontParseHelper({family:"Font Awesome",weight:"400",name:"fontawesome",range:"U+0000-F000"})
 	));
 
@@ -166,21 +237,6 @@ function MTDInit(){
 	TD_mustaches["login/2fa_verification_code.mustache"] = TD_mustaches["login/2fa_verification_code.mustache"].replace('<i class="js-spinner-button-active icon-center-16 spinner-button-icon-spinner is-hidden"></i>','<div class="js-spinner-button-active icon-center-16 spinner-button-icon-spinner is-hidden preloader-wrapper active tiny"><div class="spinner-layer small"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div>');
 	TD_mustaches["login/login_form_footer.mustache"] = TD_mustaches["login/login_form_footer.mustache"].replace('<i class="js-spinner-button-active icon-center-16 spinner-button-icon-spinner is-hidden"></i>','<div class="js-spinner-button-active icon-center-16 spinner-button-icon-spinner is-hidden preloader-wrapper active tiny"><div class="spinner-layer small"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div>');
 	TD_mustaches["compose/docked_compose.mustache"] = TD_mustaches["compose/docked_compose.mustache"].replace('<i class="js-spinner-button-active icon-center-16 spinner-button-icon-spinner is-hidden"></i>','<div class="js-spinner-button-active icon-center-16 spinner-button-icon-spinner is-hidden preloader-wrapper active tiny"><div class="spinner-layer small"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div>');
-
-	if (getPref("mtd_round_avatars") === false)
-		html.addClass("mtd-no-round-avatars");
-	else
-		setPref("mtd_round_avatars",true);
-
-	if (getPref("mtd_dark_media") === true)
-		html.addClass("mtd-dark-media-previews");
-	else
-		setPref("mtd_dark_media",false);
-
-	if (getPref("mtd_outlines") === true)
-		html.addClass("mtd-acc-focus-ring");
-	else
-		setPref("mtd_outlines",false);
 
 	TD.util.prettyTimeString = function(e) {
 		return TD.i("{{hours12}}:{{minutes}} {{amPm}}, {{day}} {{month}} {{fullYear}}", TD.util.prettyTime(e));
@@ -235,7 +291,7 @@ function WorldTick(){
 					dropdown.remove();
 				},200);
 			}
-    } else if (tar.hasClass("status-message")) {
+    }/* else if (tar.hasClass("status-message")) {
 			console.log("status-message!!!");
 			if (typeof messagesAccounted[this] === "undefined") {
 				var thing = this;
@@ -244,7 +300,7 @@ function WorldTick(){
 				WaitForNotificationDismiss(thing,msgID);
 				messagesAccounted[this] = true;
 			}
-		} else if (tar.hasClass("overlay")) {
+		}*/ else if (tar.hasClass("overlay")) {
 			console.log("overlay!!!");
 			if (!tar.hasClass("is-hidden")) {
 				if (tar.hasClass("is-hidden")) {
@@ -284,39 +340,53 @@ function PrefsListener() {
 		console.log("waiting...");
 
 		if (localStorage.mtd_round_avatars === "true" && !$("#mtd-round-avatars-control")[0].checked) {
-			console.log("Hey false!!");
+			console.log("someone unchecked me!!");
 			localStorage.mtd_round_avatars = false;
 			html.addClass("mtd-no-round-avatars");
+			savePreferencesToDisk();
 		}
 
 		if (localStorage.mtd_round_avatars === "false" && $("#mtd-round-avatars-control")[0].checked) {
-			console.log("Hey true!!");
+			console.log("someone checked me!!");
 			localStorage.mtd_round_avatars = true;
 			html.removeClass("mtd-no-round-avatars");
+			savePreferencesToDisk();
 		}
 
 		if (localStorage.mtd_dark_media === "false" && $("#mtd-dark-media-control")[0].checked) {
-			console.log("Hey true!!");
+			console.log("someone checked me!!");
 			localStorage.mtd_dark_media = true;
 			html.addClass("mtd-dark-media-previews");
+			savePreferencesToDisk();
 		}
 
 		if (localStorage.mtd_dark_media === "true" && !$("#mtd-dark-media-control")[0].checked) {
-			console.log("Hey false!!");
+			console.log("someone unchecked me!!");
 			localStorage.mtd_dark_media = false;
 			html.removeClass("mtd-dark-media-previews");
+			savePreferencesToDisk();
 		}
 
 		if (localStorage.mtd_outlines === "false" && $("#mtd-outlines-control")[0].checked) {
-			console.log("Hey true!!");
+			console.log("someone checked me!!");
 			localStorage.mtd_outlines = true;
 			html.addClass("mtd-acc-focus-ring");
+			savePreferencesToDisk();
 		}
 
 		if (localStorage.mtd_outlines === "true" && !$("#mtd-outlines-control")[0].checked) {
-			console.log("Hey false!!");
+			console.log("someone unchecked me!!");
 			localStorage.mtd_outlines = false;
 			html.removeClass("mtd-acc-focus-ring");
+			savePreferencesToDisk();
+		}
+
+		if ($("#mtd-theme-control option:selected").length > 0 && localStorage.mtd_theme !== $("#mtd-theme-control option:selected")[0].value) {
+			//html.removeClass("mtd-back-" + localStorage.mtd_theme);
+			localStorage.mtd_theme = $("#mtd-theme-control option:selected")[0].value;
+			html.addClass("mtd-back-" + $("#mtd-theme-control option:selected")[0].value);
+			enableStylesheetExtension($("#mtd-theme-control option:selected")[0].value || "default");
+			savePreferencesToDisk();
 		}
 
 		setTimeout(PrefsListener,500);
@@ -344,7 +414,7 @@ function MTDSettings() {
 			</ul> </div> </div> <div class="l-column mdl-column mdl-column-lrg"> <div class="l-column-scrollv scroll-v	scroll-alt mdl-col-settings">\
 			\
 			\
-			<form action="#" id="mtd-appearance-form" accept-charset="utf-8" class="frm"><fieldset id="general_settings"><div class="control-group" style="padding-top:10px;"><label class="checkbox">Use rounded profile pictures<input type="checkbox" name="streaming-updates" checked="checked" id="mtd-round-avatars-control"> </label><label class="checkbox">Dark media viewer in light mode<input type="checkbox" name="streaming-updates" checked="checked" id="mtd-dark-media-control"> </label></div></fieldset></form>\
+			<form action="#" id="mtd-appearance-form" accept-charset="utf-8" class="frm"><fieldset id="general_settings"><div class="control-group" style="padding-top:10px;"><label class="checkbox">Use rounded profile pictures<input type="checkbox" name="streaming-updates" checked="checked" id="mtd-round-avatars-control"> </label><label class="checkbox">Dark media viewer in light mode<input type="checkbox" name="streaming-updates" checked="checked" id="mtd-dark-media-control"> </label><label class="control-label">Theme<select id="mtd-theme-control" type="select"><option value="default" selected="selected">Default</option><option value="paper">Paper</option><option value="grey">Grey</option><option value="red">Red</option><option value="pink">Pink</option><option value="orange">Orange</option><option value="violet">Violet</option><option value="teal">Teal</option><option value="green">Green</option><option value="yellow">Yellow</option><option value="cyan">Cyan</option><option value="black">Black</option><option value="blue">Blue</option></select></label></div></fieldset></form>\
 			\
 			<form action="#" id="mtd-accessibility-form" accept-charset="utf-8" class="frm" style="display:none;"><fieldset id="general_settings"><label class="checkbox">Always show outlines on focussed items<input type="checkbox" checked="checked" id="mtd-outlines-control"> </label></fieldset></form>\
 			\
@@ -355,6 +425,8 @@ function MTDSettings() {
 			$("#mtd-round-avatars-control").attr("checked",localStorage.mtd_round_avatars === "true" && true || false);
 			$("#mtd-outlines-control").attr("checked",localStorage.mtd_outlines === "true" && true || false);
 			$("#mtd-dark-media-control").attr("checked",localStorage.mtd_dark_media === "true" && true || false);
+			$("#mtd-theme-control").val(localStorage.mtd_theme || "default");
+
 
 			PrefsListener();
 
@@ -430,6 +502,11 @@ function FinaliseLoginStuffs() {
 
 	console.log("Finished login stuffs! you are in the nav drawer, I think!");
 
+	loadPreferences();
+
+	// TD.storage.clientController.client = [];
+	// TD.storage.clientController.client.isDirty = false; // Attempts to get around TD bug
+
 	if (profileProblem) {
 		profileProblem = false;
 		if (wasTweetSheetOpen) {
@@ -446,6 +523,8 @@ function NavigationSetup() {
 		setTimeout(NavigationSetup,100);
 		return;
 	}
+
+	loadPreferences();
 
 	$(".app-header-inner").append(
 		make("a")
@@ -622,34 +701,20 @@ function KeyboardShortcutHandler(e) {
 }
 
 function ReloadTheme() {
-		var stuff = $(".application,html");
-		stuff.removeClass("mtd-light mtd-dark");
 
-		if ($("link[title='dark'][disabled]").length > 0) {
-			stuff.addClass("mtd-light");
+		if (document.querySelector("meta[http-equiv='default-style']").content === "light") {
+			disableStylesheetExtension("dark");
+			enableStylesheetExtension("light");
+			html.addClass("mtd-light").removeClass("mtd-dark")
 			MTDDark = false;
 		} else {
-			stuff.addClass("mtd-dark");
+			enableStylesheetExtension("dark");
+			disableStylesheetExtension("light");
+			html.addClass("mtd-dark").removeClass("mtd-light")
 			MTDDark = true;
 		}
-}
 
-function DisableSecureStylesheets() {
-	if (!WantsToDisableSecureStylesheets) {
-		console.log("Are you sure you want to disable secure stylesheets?");
-		console.log("Bugfix and security updates will become slower and rely on core extension updates.");
-		console.log("Run this command again to disable it.");
-		WantsToDisableSecureStylesheets = true;
-		return;
-	} else {
-		localStorage.mtd_flag_block_secure_ss = true;
-		console.log("Secure stylesheets have been disabled");
-	}
-}
-
-function EnableSecureStylesheets() {
-	localStorage.mtd_flag_block_secure_ss = false;
-	console.log("Thanks! For quicker updates and improvements, you have now enabled optional secure stylesheets.");
+		enableStylesheetExtension(localStorage.mtd_theme || "default");
 }
 
 function diag() {
@@ -858,6 +923,6 @@ window.addEventListener("keyup",KeyboardShortcutHandler,false);
 	mutations.forEach(function(mutation) {
 		ReloadTheme();
 	});
-})).observe(document.querySelector("link[title='dark']"), {attributes:true});
+})).observe(document.querySelector("meta[http-equiv='default-style']"), {attributes:true});
 
 console.log("MTDinject loaded");

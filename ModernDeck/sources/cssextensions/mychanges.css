@@ -1,0 +1,7 @@
+/* my changes */
+.is-wide-columns .column {
+	width:25% !important;
+}
+.is-wide-columns .column-content, .is-wide-columns .column-header,.is-wide-columns .column-header-temp {
+	width:100% !important;
+}
