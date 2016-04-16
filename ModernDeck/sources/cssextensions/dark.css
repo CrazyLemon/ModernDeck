@@ -5,8 +5,7 @@
   Released under the MIT Licence
 */
 
-
-.media-sensitive,.account-summary-text .fullname,.prf-stats a strong,.js-item-launch a.btn:not([disabled]):not(.is-disabled),html,.media-sensitive-content p,.compose .typeahead-item strong.fullname,.account-remove-check-message,.media-sensitive-title {
+.list-item,.list-item.is-actionable.item-box.is-selected,.tooltip-inner,.list-account .fullname,option,.dropdown-menu a[href][data-action],.frm,.med-fullpanel,.media-sensitive,.account-summary-text .fullname,.prf-stats a strong,.js-item-launch a.btn:not([disabled]):not(.is-disabled),html,.media-sensitive-content p,.compose .typeahead-item strong.fullname,.account-remove-check-message,.media-sensitive-title {
   color:#eee
 }
 
@@ -14,77 +13,69 @@
 	color:rgba(255,255,255,.3)
 }
 
-.tweet-action[data-actions-menu-position]:focus,.tweet-actions .tweet-action.is-selected,.tweet-detail-actions .tweet-action.is-selected,.tweet-detail-actions .js-reply-action.is-selected{
+.dropdown-menu a[href][data-action]:active,.column,.column-scroller,.column-detail-level-2,.js-account-manager-container,.contributor-manager,.js-contributor-manager-container,.contributor-adder-block,.contributor-row {
+	background:#344248
+}
+
+.gap-chirp-text,.sprite:before,.compose-send-button-success,.more-tweets-btn:focus,.more-tweets-btn:hover,.more-tweets-btn:active,.account-stats a,.prf .lst-profile a,.icon-follow-color,.tweet-action[data-actions-menu-position]:focus,.tweet-actions .tweet-action.is-selected,.tweet-detail-actions .tweet-action.is-selected,.tweet-detail-actions .js-reply-action.is-selected{
 	color:#00838F
 }
 
-.mtd-back-default .js-setting-list>li:not(.selected)>.list-link strong {
+.more-tweets-btn,.more-tweets-btn:hover {
+  background:#00838f
+}
+
+.tweet-detail-wrapper .media-sensitive,.stream-item.is-actionable:hover,.tweet-detail-wrapper {
+	background:#3A4B54
+}
+
+div.drawer[data-drawer="compose"],.lst-group .selected,#calcurrent,.btn-compose,.compose,.column-options .button-tray,.column-options,.facet-type,.is-options-open .column-settings-link,.inline-reply,.is-favorite.is-retweet .tweet-dogear,.is-unread,.js-add-column,.mdl .js-add-column {
+	background:#00838F
+}
+
+.mtd-back-default .js-setting-list>li:not(.selected)>.list-link strong,.txt-mute,.txt-r-dark-gray,.typeahead .username,.l-column.mdl-column.mdl-column-sml .list-link {
 	color:#6D808B
 }
 
-.js-setting-list .selected strong {
+.search-input,textarea:not(.compose-text):not(.js-compose-text),.lst-group .selected,.search-input,.mtd-nav-button,.js-setting-list .selected strong,.lst-group.js-setting-list .selected,.character-count-compose,.btn-options-tray:not([disabled]):not(.is-disabled) {
 	color:#fff
 }
 
-.mtd-about-title {
-	color:#ddd
+.is-new .column-message,.is-unread:active {
+	background:#0E4B50
 }
 
-.edit-conversation-name {
+.application,.tooltip-inner,.dropdown-menu,.app-navigator .js-hide-drawer,.app-columns-container,.column-message,body[class=""],html.js,.prf-header,body,.mdl-column.mdl-column-rhs,.mdl-header,.text-like-keyboard-key,.js-quote-tweet-holder .quoted-tweet,.app-content,.compose-media-bar-holder,optgroup,.edit-conversation-name,.popover,.compose-text-container,.drawer-header,.compose-reply-tweet,.compose-message-recipient-list,.compose-message-recipient-input-container,.compose-media-grid-holder {
 	background:#263238
 }
 
 .column-header,.column-header-temp {
-	background:linear-gradient(rgb(38,50,56),rgb(38,50,56));
-	overflow:hidden
+	background:linear-gradient(#263238,#263238)
 }
 
 .is-new .column-header,.is-new .column-header-temp {
-	background:linear-gradient(rgb(38,50,56),#0E4B50)
+	background:linear-gradient(#263238,#0E4B50)
 }
 
-.txt-mute,.txt-r-dark-gray,.typeahead .username,.l-column.mdl-column.mdl-column-sml .list-link {
-	color:#6D808B
-}
-
-.column-title .attribution {
-	font-weight:400;
-	font-size:13px;
-	color:rgba(255,255,255,.74)
-}
-
-.column {
-	background:rgb(52,66,72)
-}
-
-.account-link {
+.account-link,.account-link:hover,.account-link:focus,.mtd-about-title,.cal,select,input,.txt-normal {
 	color:#D3DBE1
 }
 
-body[class=""],html.js {
-	background:rgb(38,50,56)
-}
-
-a,a:hover {
+a,a:hover,.btn:not([disabled]):not(.is-disabled) {
 	color:#009EAD
 }
 
 a:active,a:focus {
-	color:rgb(0,115,126);
+	color:#00737E;
 	background-color:rgba(0,0,0,.05)
 }
 
-.txt-mute a:not(:hover):not(:focus):not(.tweet-action):not([data-action]) {
-	color:#708795;
-	text-decoration:none
-}
-
-.is-new .column-message {
-	background:#0E4B50
+.txt-mute a:not(:hover):not(:focus):not(.tweet-action):not([data-action]),.lst-group h3 {
+	color:#708795
 }
 
 .column-content {
-	border-right:3px solid rgb(38,50,56)
+	border-right:3px solid #263238
 }
 
 .tweet-action,.tweet-detail-action {
@@ -92,65 +83,23 @@ a:active,a:focus {
 }
 
 .tweet-action:active,.tweet-action:hover,.tweet-detail-action:active,.tweet-detail-action:hover,.stream-item.is-actionable .tweet-action:hover,.stream-item.is-actionable .tweet-detail-action:hover,.stream-item.is-actionable .tweet-action:focus,.stream-item.is-actionable .tweet-detail-action:focus,.stream-item.is-actionable .tweet-action:active,.stream-item.is-actionable .tweet-detail-action:active,.stream-item.is-actionable .tweet-action.is-selected,.stream-item.is-actionable a.is-selected.tweet-detail-action {
-	color:#8498A5;
-	text-decoration:none
+	color:#8498A5
 }
 
-.column-options .button-tray,.column-options,.facet-type,.is-options-open .column-settings-link {
-	background:#00838F
-}
-
-.btn-compose,.compose {
-	background:#00838F
-}
-
-.btn:not([disabled]):not(.is-disabled) {
-	color:#00838F
-}
-
-.compose-text-container {
-	background:#263238
-}
-
-.character-count-compose {
-	text-shadow:none;
-	color:#fff
-}
-
-.invalid-char-count {
-	color:#EC6262
-}
-
-.btn:active,.btn.is-selected {
+.btn:active,.btn.is-selected,.dropdown-menu .is-selected {
 	background-color:rgba(255,255,255,.1)
-}
-
-body.scroll-v .btn:active,body.scroll-v .btn.is-selected {
-	background-color:rgba(0,0,0,.04)!important
 }
 
 .app-nav-link.is-selected,.app-nav-link:hover,.column-nav-link.is-selected,.column-nav-link:hover {
 	color:inherit
 }
 
-.app-columns-container {
-	background:rgb(38,50,56)
-}
-
-.btn-options-tray:not([disabled]):not(.is-disabled) {
-	color:#fff
-}
-
-.mtd-nav-drawer {
+option,.mtd-nav-drawer,.mdl,.prf-meta,.mdl-column,.med-fullpanel {
 	background:#2E3B41
 }
 
-.mtd-nav-divider {
+.mtd-nav-divider,.tweet-detail .margin-tl.txt-small:before,.cmp-replyto,.column-background-fill {
 	background:#38454B
-}
-
-.mtd-nav-button {
-	color:#E7E7E7!important
 }
 
 .mtd-nav-drawer-icon {
@@ -158,32 +107,9 @@ body.scroll-v .btn:active,body.scroll-v .btn.is-selected {
 	filter:brightness(400%)
 }
 
-.account-bio {
-	color:#798488
-}
-
-.column-message {
-	background:rgb(38,50,56)
-}
-
-.mdl {
-	background:#2E3B41
-}
-
-.med-fullpanel {
-	background:rgb(53,63,70);
-	color:#eee
-}
-
-.btn[disabled],.btn[disabled]:hover,.btn[disabled]:active,.btn.is-disabled,.btn.is-disabled:hover,.btn.is-disabled:focus,.btn.is-disabled:active {
+.social-proof-for-tweet-title,.account-bio,.list-account .username,.btn[disabled],.btn[disabled]:hover,.btn[disabled]:active,.btn.is-disabled,.btn.is-disabled:hover,.btn.is-disabled:focus,.btn.is-disabled:active {
 	color:#54707F;
 	transition:.2s all
-}
-
-a[rel=user]:active {
-	transform:none!important;
-	background:transparent!important;
-	transition:.15s all
 }
 
 ::-moz-selection {
@@ -196,113 +122,19 @@ a[rel=user]:active {
 	color:#eee
 }
 
-.cmp-replyto {
-	background:#3D4F59
-}
-
-.prf .lst-profile a {
-	color:#00838F
-}
-
-.prf-meta {
-	background:#2E3B41
-}
-
-.column-background-fill {
-	background:rgb(55,71,79)
-}
-
-.lst-group h3 {
-	color: #546671
-}
-
-.list-account .fullname {
-	color:#e8e8e8
-}
-
-.list-account .username {
-	color:#798488
-}
-
-.lst-group .selected {
-	background:#00838F;
-	color:#fff
-}
-
-
 .lst-group .selected a .username {
 	color:rgba(255,255,255,.5)
 }
 
-.js-add-column,.mdl .js-add-column {
-	background:#00838F
-}
-
-.js-add-column:active {
-	background:#429BA6!important
-}
-
-.tweet-detail-wrapper {
-	background:#3A4B54
-}
-
-.txt-normal {
-	color:#DADADA
-}
-
-.social-proof-for-tweet-title {
-	color:#8899A6
-}
-
-.dropdown-menu {
-	background:#263238;
-	box-shadow:0 2px 5px rgba(0,0,0,.34)
-}
-
-.dropdown-menu li.is-selectable:hover {
-	background:rgba(16,16,16,.5)!important
-}
-
-.dropdown-menu a[href][data-action] {
-	color:#E0E0E0
-}
-
-.dropdown-menu a[href][data-action]:active {
-	background-color:rgb(52,66,72)
-}
-
-.dropdown-menu .is-selected {
-	background:#242F35
+.js-add-column:active,.btn-compose:active,.btn-compose:focus,.lst-group .selected:active {
+	background:#429BA6
 }
 
 .tooltip-inner {
-	background:#263238;
-	color:#DEDEDE;
-	box-shadow:0 3px 10px rgba(41,41,41,.35);
-	border-radius:2px
+	box-shadow:0 3px 10px rgba(41,41,41,.35)
 }
 
-.account-stats a {
-	color:#00838F
-}
-
-.drawer-header {
-	background:#263238
-}
-
-.js-account-manager-container {
-	background:#344248
-}
-
-.contributor-manager,.js-contributor-manager-container,.contributor-adder-block {
-	background:#344248
-}
-
-.contributor-row {
-	background:#344248!important
-}
-
-.btn-negative:not([disabled]):not(.is-disabled) {
+.invalid-char-count,.btn-negative:not([disabled]):not(.is-disabled) {
 	color:#EA6B6B
 }
 
@@ -316,10 +148,6 @@ a[rel=user]:active {
 
 .btn-negative[disabled],.btn-negative[disabled]:hover,.btn-negative[disabled]:active,.btn-negative.is-disabled,.btn-negative.is-disabled:hover,.btn-negative.is-disabled:focus,.btn-negative.is-disabled:active {
 	color:rgba(244,101,101,.45)
-}
-
-.signin-sheet-now-present .btn-positive,.signin-sheet-now-present .btn-positive-alt,.signin-sheet-now-present .btn-fav.s-favorited,.signin-sheet-now-present .s-following .follow-btn {
-	color:#29B6F6
 }
 
 .contributor-adder input.js-username-input.js-submittable-input {
@@ -336,107 +164,40 @@ a[rel=user]:active {
 }
 
 .app-search .compose-text::-moz-placeholder {
-	color:#6D7B83;
-	opacity:1
+	color:#6D7B83
 }
 
-textarea:not(.compose-text):not(.js-compose-text) {
-	display:inline-block;
-	width:100%;
-	padding:4px 8px;
-	font-size:13px;
-	line-height:18px;
-	color:#fff;
-	border-bottom:2px solid #667A86;
-	border-radius:0;
-	background:transparent
+textarea {
+	border-color:#667A86
 }
 
 .social-proof-container {
-	border-top:2px solid rgba(0,0,0,.1);
-	border-bottom:2px solid rgba(0,0,0,.1)
+	border-color:rgba(0,0,0,.1)
 }
 
 .drp-h-divider {
-	border-bottom:1px solid #323E43
+	border-color:#323E43
 }
 
 .is-unread .txt-mute,.is-unread .conversation-indicator {
-	color:rgba(255,255,255,.7);
-	text-decoration:none
-}
-
-.is-unread {
-	background:#00838F
+	color:rgba(255,255,255,.7)
 }
 
 .is-unread:hover {
 	background:#20A0AC
 }
 
-.is-unread:active {
-	background:#30787F
-}
-
-body.scroll-v ::selection {
-	background:rgba(102,227,228,.57);
-	color:inherit
-}
-
-body.scroll-v .mdl,body.scroll-v .modal-content {
-	background:#fff
-}
-
-body.scroll-v .btn:not([disabled]):not(.is-disabled),body.scroll-v .btn-positive,body.scroll-v .btn-positive-alt,body.scroll-v .btn-fav.s-favorited,body.scroll-v .s-following .follow-btn {
-	color:#00CBE5;
-	border-color:transparent;
-	z-index:5;
-	transition:.2s all,.4s background,.4s width!important
-}
-
-body.scroll-v a {
-	color:#00BCD4
-}
-
-body.scroll-v a:hover,body.scroll-v a:focus {
-	color:rgb(11,202,226)
-}
-
-body.scroll-v a:active {
-	color:rgb(13,168,188)
-}
-
 .lst-group .list-link:active {
-	background:rgba(25,112,120,.41)!important
-}
-
-.mdl-column.mdl-column-rhs {
-	background: rgb(38,50,56)
-}
-
-.mdl-column {
-	background:#2E3B41
-}
-
-.gap-chirp-text {
-	color:#00838F
+	background:rgba(25,112,120,.5)
 }
 
 .mdl.s-profile::-webkit-scrollbar-thumb,.mtd-nav-drawer::-webkit-scrollbar-thumb,.lst-launcher::-webkit-scrollbar-thumb,.scroll-styled-v::-webkit-scrollbar-thumb,.scroll-v::-webkit-scrollbar-thumb,.scroll-styled-h::-webkit-scrollbar-thumb,.s-tall-fixed::-webkit-scrollbar-thumb {
   border-radius:5px;
-  background:rgba(149,175,191,.52)
+  background:rgba(149,175,191,.5)
 }
 
 .mdl.s-profile::-webkit-scrollbar-thumb:hover,.mtd-nav-drawer::-webkit-scrollbar-thumb:hover,.lst-launcher::-webkit-scrollbar-thumb:hover,.scroll-styled-v::-webkit-scrollbar-thumb:hover,.scroll-v::-webkit-scrollbar-thumb:hover,.scroll-styled-h::-webkit-scrollbar-thumb:hover {
-	background:rgb(132,152,165)
-}
-
-.sprite:before {
-	color:#00838F
-}
-
-.btn-compose:active,.btn-compose:focus {
-	background:#009CB0
+	background:#8498A5
 }
 
 .s-following .follow-btn:hover {
@@ -445,18 +206,6 @@ body.scroll-v a:active {
 
 .modal-content {
 	background:rgb(37,50,56)
-}
-
-.column-scroller,.column-detail-level-2 {
-	background:rgb(52,66,72)
-}
-
-.stream-item.is-actionable:hover {
-	background:#3A4B54
-}
-
-.list-item,.list-item.is-actionable.item-box.is-selected {
-	color:#dbdbdb
 }
 
 .list-item.is-actionable.item-box.is-selected,.js-typeahead-recent-search-clear.js-typeahead-item.is-selected {
@@ -481,10 +230,6 @@ body.scroll-v a:active {
 	background:#3A4F56
 }
 
-.tweet-translation-original-text {
-	color:#697F8C
-}
-
 .typeahead .fullname {
 	color:#ccc
 }
@@ -493,48 +238,16 @@ body.scroll-v a:active {
 	background:rgba(88,100,107,.4)
 }
 
-.mdl-header {
-	background:rgb(38,50,56)
-}
-
-.compose-send-button-success {
-	color:#00838F
-}
-
-.compose-reply-tweet {
-	background:#263238
-}
-
-.tweet-detail-wrapper .media-sensitive {
-	background:#3A4B54
-}
-
 .lst-modal,.typeahead {
 	background:#1E272C
 }
 
-.more-tweets-btn {
-	background:#00838F
-}
-
-.more-tweets-btn:focus,.more-tweets-btn:hover,.more-tweets-btn:active {
-	background:#00838F!important
-}
-
-.more-tweets-btn:active {
+.more-tweets-btn:active,.more-tweets-btn:focus {
 	background:#2F9099!important
-}
-
-.compose-message-recipient-list,.compose-message-recipient-input-container {
-	background:#263238
 }
 
 .add-participant .js-username-input.js-submittable-input {
 	border-bottom:2px solid #667A86
-}
-
-.compose-media-grid-holder {
-	background:#263238
 }
 
 .add-participant input::-webkit-input-placeholder {
@@ -547,7 +260,6 @@ body.scroll-v a:active {
 }
 
 .app-navigator .js-hide-drawer {
-	 background:#263238;
 	 box-shadow:0 -5px 10px rgba(17,17,17,.35)
 }
 
@@ -567,59 +279,20 @@ body.scroll-v a:active {
 	background-color:#1A7780
 }
 
-body {
-	background:rgb(38,50,56)
-}
-
 .emoji-popover .category-chooser {
 	background:#263238!important
-}
-
-body.scroll-v select,body.scroll-v input {
-	color:#333;
-	border-bottom:2px solid #ccc;
-	border-radius:0!important
-}
-
-.js-quote-tweet-holder .quoted-tweet {
-	background:#263238
 }
 
 html.mtd-acc-focus-ring a:focus,html.mtd-acc-focus-ring button:focus {
 	outline:rgb(16,148,160) solid 3px
 }
 
-.is-favorite.is-retweet .tweet-dogear {
-	background:#00838F
-}
-
 option {
-	color:#eee;
-	background:#2E3B41
-}
-
-.icon-follow-color {
-	color:#00838F
-}
-
-.app-content {
-	background:#263238
-}
-
-.compose-media-bar-holder {
-	background:#263238
-}
-
-.inline-reply {
-	background:#00838F
+	color:#eee
 }
 
 .med-tweet {
   background:rgb(37,50,56);
-}
-
-.text-like-keyboard-key {
-	background:#263238
 }
 
 .list-twitter-list .inner strong {
@@ -630,43 +303,17 @@ option {
 	color:#637983
 }
 
-select,input {
-	color:#ddd
-}
-
-optgroup {
-	background:#263238
-}
-
 input,textarea,select,.uneditable-input {
 	border-bottom:2px solid #54707F
 }
 
-.frm {
-	color:#e5e5e5
-}
-
 .search-input {
-	color:#fff;
 	border-bottom:2px solid rgba(255,255,255,.7)
 }
 
 .mdl-column.l-column .search-input {
 	background:#43525A;
   color:#fff;
-}
-
-.mdl-column.l-column .search-input::-webkit-input-placeholder {
-	color:#fff
-}
-
-.mdl-column.l-column .search-input::-moz-placeholder {
-	color:#fff;
-	opacity:1
-}
-
-.mdl-column.l-column .search-input:input-placeholder {
-	color:#fff
 }
 
 .recent-search-clear.is-actionable.list-item-last {
@@ -679,19 +326,11 @@ input,textarea,select,.uneditable-input {
 }
 
 .caldisabled[href],.caldisabled[href]:hover,.caldisabled[href]:active {
-	color:rgb(102,122,134)!important
-}
-
-#calcurrent {
-	background:#00838F!important
-}
-
-.cal {
-	color:#ddd
+	color:#667A86!important
 }
 
 .prf-header {
-	background-color:rgb(38,50,56)
+	background-color:#263238 /* IMPORTANT: This needs to be background colour because background image is SOMETIMES laid over it */
 }
 
 .prf-follow-status {
@@ -699,24 +338,12 @@ input,textarea,select,.uneditable-input {
 	color:#eee
 }
 
-.lst-group .selected:active {
-	background:#429BA6
-}
-
-.popover {
-	background:#263238
-}
-
 .mdl-links span {
 	color:#50717F
 }
 
-.js-translate-call-to-action {
+.js-translate-call-to-action,.tweet-translation-original-text {
 	color:#697F8C
-}
-
-.tweet-detail .margin-tl.txt-small:before {
-	background:#4D6D7F
 }
 
 .btn-login[type="submit"],.login-container .btn-positive {
@@ -724,22 +351,19 @@ input,textarea,select,.uneditable-input {
 }
 
 .btn-login[type="submit"]:active,.login-container .btn-positive:active {
-	background:#00CDE8!important;
-	transform:none!important
+	background:#00CDE8
 }
 
 .js-toggle.padding-al button>span {
-	color:#647883;
-	font-size:15px;
-	font-weight:500
-}
-
-.lst-group.js-setting-list .selected {
-	color:#fff
+	color:#647883
 }
 
 .js-column-social-proof .username {
-	color:#d3dbe1!important
+	color:#d3dbe1
+}
+
+.spinner-layer {
+	border-color:#26a69a
 }
 
 .startflow ::selection {
@@ -752,6 +376,14 @@ input,textarea,select,.uneditable-input {
 	color:#666
 }
 
-.spinner-layer {
-	border-color:#26a69a
+.mdl-column.l-column .search-input::-webkit-input-placeholder {
+	color:#fff
+}
+
+.mdl-column.l-column .search-input::-moz-placeholder {
+	color:#fff
+}
+
+.mdl-column.l-column .search-input:input-placeholder {
+	color:#fff
 }
