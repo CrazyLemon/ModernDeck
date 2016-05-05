@@ -139,9 +139,8 @@ body.scroll-v {
 
 .l-table {
 	display:table;
-	width:100%;
 	height:100%;
-	margin-bottom:2px
+	margin-bottom:2px;
 }
 
 .l-row {
@@ -215,23 +214,10 @@ body.scroll-v {
 
 .account-link>.nbfc {
 	overflow:hidden;
-	margin-left:-70px;
 	word-break:break-word;
 	word-wrap:break-word;
 	margin-top:0;
-	padding:0
-}
-
-.stream-item>.js-show-detail .account-summary .nbfc>a {
-	font-weight:500;
-	font-size:14px;
-	padding-left:10px
-}
-
-.stream-item .nbfc>a:not(.gif-pause):not(.gif-play) {
-	font-weight:500;
-	font-size:14px;
-	padding-left:10px
+	padding:5px 5px 0 0
 }
 
 .align-below-header+.nbfc {
@@ -872,10 +858,6 @@ button .label,button i {
 	vertical-align:middle
 }
 
-button[disabled],button.is-disabled {
-	opacity:.3
-}
-
 .btn-positive,.btn-positive-alt,.btn-fav.s-favorited,.s-following .follow-btn {
 	z-index:5;
 	transition:.2s all,.4s background,.4s width!important
@@ -1091,7 +1073,7 @@ button[disabled],button.is-disabled {
 	width:100%;
 	opacity:0;
 	pointer-events:none;
-	z-index:5
+	z-index: 10;
 }
 
 .column-holder .column-panel:nth-child(2) .js-column-back,.is-shifted-1 .column-detail-level-2 .js-column-back,.column-holder .column-panel:nth-child(2)>.column-header,.is-shifted-1 .column-detail-level-2>.column-header {
@@ -1107,7 +1089,8 @@ button[disabled],button.is-disabled {
 	width:100%;
 	pointer-events:all;
 	top:0;
-	opacity:1
+	opacity:1;
+	bottom: 0;
 }
 
 .is-shifted-1 .column-detail-level-2 {
@@ -1268,20 +1251,6 @@ a .column-title-back .icon:after {
 	margin-left:0;
 	text-align:left;
 	display:block!important
-}
-
-
-.link-complex.txt-medium.block.cf:hover .link-complex.txt-medium.block.cf:active {
-	color:#7DCEFF
-}
-
-.js-column-back:active {
-	color:rgba(76,188,255,.3);
-	transition:.15s all
-}
-
-.column-temp .column-title-back {
-	color:inherit
 }
 
 .column-type-icon {
@@ -1616,8 +1585,7 @@ a .column-title-back .icon:after {
 }
 
 .account-link,.account-link:hover,.account-link:active {
-	max-width:100%;
-	transition:.3s color
+	max-width:100%
 }
 
 .account-link .username {
@@ -1632,37 +1600,18 @@ a .column-title-back .icon:after {
 	box-sizing:border-box;
 	position:relative;
 	max-width:100%;
-	text-overflow:clip
+	text-overflow:ellipsis;
 }
 
-.account-inline .fullname,.account-inline .username {
+.account-inline .fullname,.account-inline .username,.account-link.txt-bold {
 	line-height:1;
-	margin-left:5px;
-	text-overflow:clip;
-	font-size:12px
-}
-
-.account-inline .fullname {
+	text-overflow:ellipsis;
 	font-size:14px;
-	margin-left:14px
+	margin-left:5px
 }
 
-.quoted-tweet .fullname {
-	margin-left:70px
-}
-
-.med-tweet .fullname {
-	margin-left:76px
-}
-
-.account-inline.is-protected {
-	padding-right:18px
-}
-
-.account-inline .icon-protected {
-	position:absolute;
-	right:0;
-	font-size:16px
+.account-inline .username {
+	font-size:12px
 }
 
 .fullname-badged-container,.fullname-badged {
@@ -1909,16 +1858,7 @@ a .column-title-back .icon:after {
 	margin:0 0 5px 5px
 }
 
-.activity-header-wrapping+.txt-mute>.tweet {
-	padding-left:5px
-}
-
-.activity-header-wrapping+.txt-mute>.tweet .fullname {
-	margin-left:70px
-}
-
 .tweet {
-	padding-left:58px;
 	line-height:1.28578em;
 	word-break:break-word;
 	word-wrap:break-word;
@@ -1937,7 +1877,7 @@ a .column-title-back .icon:after {
 .emoji {
 	width:1em;
 	height:1em;
-	padding:0 05em 0 .1em;
+	padding:0 .5em 0 .1em;
 	vertical-align:-.1em
 }
 
@@ -1953,24 +1893,12 @@ a .column-title-back .icon:after {
 	transition:margin .1s;
 	position:absolute;
 	right:10px;
+	line-height:1em;
 	font-size:12px
 }
 
 .is-retweet .tweet-timestamp,.is-favorite .tweet-timestamp {
 	margin-right:2px
-}
-
-.tweet-img {
-	margin-left:-58px;
-	margin-top:20px
-}
-
-.quoted-tweet .tweet-img {
-	margin-left:0
-}
-
-.tweet-context {
-	margin-left:-70px
 }
 
 .tweet-context .nbfc>a {
@@ -2041,8 +1969,9 @@ a .column-title-back .icon:after {
 .tweet-footer {
 	left:15%;
 	right:0;
-	margin-top:-30px;
-	margin-bottom:35px;
+	bottom:0;
+	margin-top:40px;
+	margin-bottom:25px;
 	position:absolute;
 	height:10px
 }
@@ -2158,7 +2087,8 @@ a .column-title-back .icon:after {
 }
 
 .tweet-message .tweet-body {
-	padding-right:8px
+	padding-right:8px;
+	padding-left:8px
 }
 
 .conversation-indicator {
@@ -4238,8 +4168,9 @@ input[type="checkbox"] {
 	margin-top:4px
 }
 
-.calweek {
-	clear:left
+.calweek,#caltitle {
+	clear:left;
+	animation:menuDownLarge .3s cubic-bezier(.19,1,.22,1)
 }
 
 .calweek a {
@@ -4264,7 +4195,6 @@ input[type="checkbox"] {
 }
 
 .cal header {
-	border-bottom:1px soild #eee;
 	padding:5px;
 	text-align:center
 }
@@ -5167,7 +5097,7 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 	padding-top:15px
 }
 
-#next-month .icon,#prevmonth i {
+#next-month i,#prev-month i {
 	font-size:20px;
 	font-weight:700
 }
@@ -5219,10 +5149,6 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 
 .tweet-action .icon-retweet,.tweet-detail-action .icon-retweet {
 	font-size:24px
-}
-
-.tweet-body {
-	margin-top:2px
 }
 
 .media-sensitive-content {
@@ -5311,11 +5237,6 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 	line-height:.8
 }
 
-.js-contributor-manager-back span:after {
-	font-size:16px;
-	content:"Manage Team";
-	font-weight:400
-}
 
 .js-contributor-manager-back {
 	width:100%
@@ -5993,7 +5914,7 @@ fieldset .fixed-width-label:not(.radio),fieldset:not(.js-search-filter) .control
 	pointer-events:none
 }
 
-a.js-column-back,a.js-column-back:hover,a.js-column-back:active,a.js-column-back:focus {
+.js-column-back,.js-column-back:hover,.js-column-back:active,.js-column-back:focus {
 	background:transparent;
 	transform:none
 }
@@ -6601,16 +6522,8 @@ button.mtd-no-transform-case {
 	color:#d3dbe1!important
 }
 
-.tweet-text {
-	margin-bottom:8px
-}
-
 .activity-header+.account-summary .fullname {
 	padding-left:3px
-}
-
-.activity-header+.account-summary>.account-summary-text.nbfc {
-	padding-left:55px
 }
 
 .list-account>:nth-child(2).nbfc {
@@ -6822,10 +6735,15 @@ textarea:not(.compose-text):not(.js-compose-text) {
 
 .tweet-text.with-linebreaks {
 	margin-bottom:35px;
-	margin-top:0
+	margin-top:0;
+	padding-left:53px
 }
 
-.js-dropdown-content>ul {
+.txt-mute .tweet-text {
+	padding-left:6px
+}
+
+.js-dropdown-content>ul,.tweet-message .tweet-text,.quoted-tweet .tweet-text,.tweet-detail-wrapper .tweet-text {
 	padding-left:0
 }
 
@@ -6854,14 +6772,6 @@ textarea:not(.compose-text):not(.js-compose-text) {
 	min-height:20px
 }
 
-.cmp-replyto .tweet-text {
-	padding-top:10px;
-	padding-left:10px
-}
-
-.cmp-replyto .account-inline {
-	margin-left:69px
-}
 
 /* Theme standard message banners */
 
@@ -6869,6 +6779,9 @@ body>.message-banner[style="color: rgb(85, 85, 85); background-color: rgb(178, 2
 	background-color:transparent!important;
 	color:inherit!important
 }
+
+
+
 
 .s-following .following-text,.s-following .unfollow-text {
 	transition:margin-left 0.3s cubic-bezier(.19,1,.22,1),opacity 0.3s cubic-bezier(.19,1,.22,1);
@@ -6892,4 +6805,8 @@ body>.message-banner[style="color: rgb(85, 85, 85); background-color: rgb(178, 2
 
 .s-following .follow-btn:hover .following-text {
 	margin-left:18px
+}
+
+.activity-header-wrapping.activity-header.has-source-avatar>.nbfc {
+	font-size:0
 }

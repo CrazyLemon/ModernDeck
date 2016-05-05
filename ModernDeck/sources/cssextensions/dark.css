@@ -6,12 +6,15 @@
 */
 
 a,
-a:hover,
-.btn:not([disabled]):not(.is-disabled):not(.btn-options-tray):not(.mtd-nav-button):not(.btn-bg-negative),
+a:not(.column-header-link):not(.js-column-back):hover,
 .calweek a:hover,
+.btn:not([disabled]):not(.is-disabled):not(.btn-options-tray):not(.mtd-nav-button):not(.btn-bg-negative):not(.btn-negative),
+.compose-send-button-success,
+.icon-follow-color,
 #caltoday
 {
-	color:#009EAD
+	color:#009EAD;
+	transition:color .3s
 }
 
 a:active,
@@ -104,7 +107,7 @@ html,
 div.drawer[data-drawer="compose"],
 .lst-group .selected,
 #calcurrent,
-.btn-compose,
+.btn-compose:not(.js-hide-drawer),
 .compose,
 .column-options .button-tray,
 .column-options,
@@ -191,7 +194,7 @@ optgroup,
 	background:linear-gradient(#263238,#0E4B50)
 }
 
-.txt-mute a:not(:hover):not(:focus):not(.tweet-action):not([data-action]),
+.txt-mute a:not(:focus):not(.tweet-action):not([data-action]),
 .lst-group h3
 {
 	color:#708795
@@ -298,8 +301,8 @@ option,
 }
 
 .js-add-column:active,
-.btn-compose:active,
-.btn-compose:focus,
+.btn-compose:not(.js-hide-drawer):active,
+.btn-compose:not(.js-hide-drawer):focus,
 .lst-group .selected:active
 {
 	background:#429BA6
@@ -568,14 +571,15 @@ select,
 	color:#DBDBDB
 }
 
-#caldays span
+#caldays span,
+.caloff
 {
 	color:#677B86
 }
 
-.caldisabled[href],
-.caldisabled[href]:hover,
-.caldisabled[href]:active
+.caldisabled,
+.caldisabled:hover,
+.caldisabled:active
 {
 	color:#667A86!important
 }
