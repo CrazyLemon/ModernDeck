@@ -1430,6 +1430,10 @@ a .column-title-back .icon:after {
 	transition:.3s box-shadow,.3s background
 }
 
+.js-message-detail>.stream-item {
+	animation:none
+}
+
 .stream-item.is-actionable:hover {
 	box-shadow:0 2px 5px rgba(0,0,0,.4)
 }
@@ -1747,17 +1751,17 @@ a .column-title-back .icon:after {
 
 .is-wide-columns .media-size-large {
 	max-height:350px;
-	min-height:150px
+	min-height:160px
 }
 
 .is-wide-columns .media-size-medium {
-	max-height:136px;
-	min-height:80px
+	max-height:180px;
+	min-height:136px
 }
 
 .is-wide-columns .media-size-small {
-	max-height:91px;
-	min-height:50px
+	max-height:130px;
+	min-height:91px
 }
 
 .media-size-small,.media-size-medium,.quoted-tweet {
@@ -1795,17 +1799,16 @@ a .column-title-back .icon:after {
 }
 
 .media-grid-container {
-	border-radius:2px
+	border-radius:2px;
+	position:relative
 }
 
 .media-grid-2,.media-grid-3,.media-grid-4 {
-	position:static;
-	height:100%;
+	position:absolute;
 	top:0;
 	bottom:0;
 	left:0;
-	right:0;
-	padding:0
+	right:0
 }
 
 .media-image {
@@ -1937,6 +1940,11 @@ a .column-title-back .icon:after {
 	min-height:10px;
 }
 
+.message-stream-item .tweet-actions {
+	max-width:0;
+	margin-right: 35px;
+}
+
 .med-fullpanel .tweet-actions {
 	margin:0;
 	float:left;
@@ -2029,7 +2037,8 @@ a .column-title-back .icon:after {
 }
 
 .tweet-detail-media {
-	margin:15px 0
+	margin:15px 0;
+	position:relative
 }
 
 .tweet-stats li {
@@ -4128,8 +4137,9 @@ input[type="checkbox"] {
 .prf-header {
 	position:relative;
 	border-radius:0;
-	min-height:260px;
-	background-size:100%;
+	min-height:322px;
+	background-size:100%!important;
+	background-repeat:no-repeat!important;
 	text-align:center;
 	text-shadow:0 2px 7px #000;
 	overflow:hidden
@@ -6564,6 +6574,10 @@ textarea:not(.compose-text):not(.js-compose-text) {
 	margin-bottom:5px;
 	margin-top:0;
 	padding-left:53px
+}
+
+.tweet-text:not(.with-linebreaks) {
+	margin-top:8px
 }
 
 .compose-reply-tweet .tweet-text {
