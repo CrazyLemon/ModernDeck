@@ -12,6 +12,3 @@
 .is-favorite .icon-favorite-toggle,.btn:not(.btn-fav-fav-text)>.icon-favorite-color,.obj-left>.icon-favorite-color {
 	color:#BE1931 !important;
 }
-.obj-left {
-	padding-right: 5px;
-}
