@@ -11,6 +11,7 @@
 
 @import "cssextensions/coredefinitions.css";
 @import "cssextensions/animations.css";
+@import "cssextensions/transitions.css";
 @import "cssextensions/spinner.css";
 @import "cssextensions/superclasses.css";
 @import "cssextensions/marginclasses.css";
@@ -28,17 +29,15 @@ body.scroll-v {
 .application {
 	min-width:320px;
 	position:absolute;
-	top:0;
-	left:0;
-	bottom:0;
-	right:0;
 	overflow:hidden;
 	pointer-events:none
 }
 
-.txt-ellipsis {
+.txt-ellipsis,
+.conversation-title .title-content,
+.conversation-title .username,
+.conversation-title b {
 	max-width:100%;
-	vertical-align:bottom;
 	white-space:nowrap;
 	word-wrap:normal;
 	text-overflow:ellipsis
@@ -82,17 +81,7 @@ html.scroll-v {
 	pointer-events:all
 }
 
-.antiscroll-wrap {
-	position:relative;
-	overflow:hidden
-}
-
 .antiscroll-inner {
-	position:absolute;
-	top:0;
-	bottom:0;
-	left:0;
-	right:0;
 	overflow-y:scroll;
 	overflow-x:hidden
 }
@@ -112,8 +101,7 @@ html.scroll-v {
 	background:rgba(255,255,255,.2);
 	border-radius:7px;
 	position:absolute;
-	opacity:0;
-	transition:.3s opacity
+	opacity:0
 }
 
 .antiscroll-scrollbar-horizontal {
@@ -152,9 +140,7 @@ html.scroll-v {
 }
 
 .l-cell {
-	display:table-cell;
-	pointer-events:none;
-	vertical-align:middle
+	display:table-cell
 }
 
 .l-cell-modal {
@@ -183,6 +169,10 @@ html.scroll-v {
 	z-index:4
 }
 
+.mdl-column-lrg>.l-column-scrollv.scroll-styled-v {
+	pointer-events:all
+}
+
 .l-fullheight {
 	height:100%
 }
@@ -193,8 +183,7 @@ html.scroll-v {
 }
 
 .s-with-reply {
-	top:58px;
-	transition:top .4s ease-out
+	top:58px
 }
 
 .s-extended {
@@ -218,8 +207,6 @@ html.scroll-v {
 
 .account-link>.nbfc {
 	overflow:hidden;
-	word-break:break-word;
-	word-wrap:break-word;
 	margin-top:0;
 	padding:5px 5px 0 0
 }
@@ -234,18 +221,12 @@ html.scroll-v {
 
 .nbfc-alt {
 	display:table-cell;
-	width:300px;
-	word-break:break-word;
-	word-wrap:break-word
+	width:300px
 }
 
 .cf:before,.cf:after {
 	display:block;
 	content:" "
-}
-
-.cf:after {
-	clear:both
 }
 
 .obj-center {
@@ -335,14 +316,6 @@ html.scroll-v {
 	right:0
 }
 
-.pin-all {
-	position:absolute;
-	top:0;
-	bottom:0;
-	left:0;
-	right:0
-}
-
 .pin-v {
 	position:absolute;
 	top:0;
@@ -365,10 +338,6 @@ html.scroll-v {
 	min-height:1em
 }
 
-.align-middle {
-	vertical-align:middle!important
-}
-
 .align-top {
 	vertical-align:top!important
 }
@@ -377,14 +346,8 @@ html.scroll-v {
 	box-sizing:border-box
 }
 
-.is-actionable {
+.is-actionable,.is-actionable:active {
 	cursor:pointer;
-	transition:.2s all;
-	transform:initial
-}
-
-.is-actionable:active {
-	transition:.2s all;
 	transform:initial
 }
 
@@ -436,11 +399,16 @@ i {
 }
 
 .icon-twitter-bird:before,.icon-hashtag:before,.icon-retweet:before {
-	font-family:"TD"
+	font-family:"TD";
+	margin-top:20px
 }
 
 .icon-twitter-bird:before {
 	content:"\f000"
+}
+
+.icon-mention:before {
+	content:"\e0c9"
 }
 
 .icon-hashtag:before {
@@ -449,10 +417,6 @@ i {
 
 .icon-retweet:before {
 	content:"\f008"
-}
-
-.icon-mention:before {
-	content:"\e0c9"
 }
 
 .icon-message:before {
@@ -541,7 +505,7 @@ i {
 }
 
 .sprite-translator:before,.icon-translator:before {
-	content:"\e894"
+	content:"\e80b"
 }
 
 .icon-check:before {
@@ -738,23 +702,6 @@ i {
 	height:1em
 }
 
-.icon-tt {
-	vertical-align:text-top
-}
-
-.icon-tb {
-	vertical-align:text-bottom
-}
-
-.icon-bot {
-	vertical-align:bottom
-}
-
-.icon-middle {
-	line-height:1em;
-	vertical-align:middle
-}
-
 .icon-small-valigned {
 	font-size:16px!important;
 	height:16px;
@@ -836,7 +783,6 @@ button,a.btn,a.js-create-list {
 	pointer-events:all;
 	padding:4px 10px;
 	min-height:30px;
-	vertical-align:middle;
 	text-align:center;
 	text-decoration:none;
 	cursor:pointer;
@@ -846,8 +792,7 @@ button,a.btn,a.js-create-list {
 	border-color:transparent;
 	background:transparent;
 	text-shadow:none;
-	text-transform:uppercase;
-	transition:.2s all
+	text-transform:uppercase
 }
 
 button:hover,button:focus {
@@ -859,17 +804,8 @@ button:hover,button:focus {
 	transform:scale(.95)
 }
 
-button i {
-	line-height:1em
-}
-
-button .label,button i {
-	vertical-align:middle
-}
-
 .btn-positive,.btn-positive-alt,.btn-fav.s-favorited,.s-following .follow-btn {
-	z-index:5;
-	transition:.2s all,.4s background,.4s width!important
+	z-index:5
 }
 
 .btn-options-tray i {
@@ -899,8 +835,8 @@ button .label,button i {
 }
 
 .btn-options-tray-space,.btn-options-tray {
-	padding:8px;
-	padding-bottom:12px
+	padding:15px;
+	margin-right:20px
 }
 
 .follow-btn,.btn-fav {
@@ -911,11 +847,6 @@ button .label,button i {
 	display:block;
 	min-width:auto;
 	margin-left:1px
-}
-
-.button-group {
-	display:inline-block;
-	vertical-align:middle
 }
 
 .button-group .btn {
@@ -940,11 +871,6 @@ button .label,button i {
 	min-height:30px
 }
 
-.account-remove-check-open .account-remove-check {
-	display:block;
-	animation:windowDown .2s cubic-bezier(.19,1,.22,1)
-}
-
 .js-account-invited-accounts {
 	position:relative;
 	top:-1px
@@ -957,7 +883,6 @@ button .label,button i {
 }
 
 .column {
-	transition:.2s box-shadow,.2s transform;
 	border-radius:0;
 	position:relative;
 	z-index:1;
@@ -967,8 +892,7 @@ button .label,button i {
 	height:100%;
 	font-size:0.9rem;
 	white-space:normal;
-	border-right:none!important;
-	animation: windowSlider 1s cubic-bezier(.19,1,.22,1)!important;
+	border-right:none!important
 }
 
 .is-narrow-columns .column {
@@ -980,28 +904,20 @@ button .label,button i {
 }
 
 .column-temp {
-	word-break:break-word;
-	word-wrap:break-word;
 	position:relative;
 	height:100%
 }
 
 .column-holder {
-	transition:transform .25s cubic-bezier(.19,1,.22,1);
 	width:100%;
 	height:100%;
 	margin:auto;
-	top:0;
-	bottom:0;
-	left:0;
-	right:0;
 	position:relative
 }
 
 .mdl-inner .column-content {
 	width:100%!important;
-	top:0;
-	border:0
+	top:0
 }
 
 .column-content {
@@ -1043,10 +959,6 @@ button .label,button i {
 
 .column-panel {
 	position:absolute;
-	left:0;
-	top:0;
-	bottom:0;
-	transition:opacity cubic-bezier(.19,1,.22,1) .5s,left cubic-bezier(.19,1,.22,1) .5s;
 	z-index:5;
 	width:100%
 }
@@ -1061,23 +973,9 @@ button .label,button i {
 	width:100%
 }
 
-.js-dropdown,.js-popover {
-	animation:fadeIn .3s cubic-bezier(.19,1,.22,1)
-}
-
-.is-unread .link-complex-target {
-	transition:.15s all
-}
-
 .column-scroller {
-	position:absolute;
-	top:0;
-	bottom:0;
-	left:0;
 	width:100%;
 	overflow-x:hidden;
-	word-break:break-word;
-	word-wrap:break-word;
 	opacity:1!important
 }
 
@@ -1085,7 +983,6 @@ button .label,button i {
 	width:100%;
 	left:100%;
 	pointer-events:none;
-	transition:left cubic-bezier(.19,1,.22,1) .3s;
 	z-index:9
 }
 
@@ -1103,9 +1000,7 @@ button .label,button i {
 	width:100%;
 	pointer-events:all;
 	left:0;
-	opacity:1;
-	transition:left cubic-bezier(.19,1,.22,1) .3s;
-	animation:none;
+	opacity:1
 }
 
 .is-shifted-1 .column-detail-level-2 {
@@ -1131,7 +1026,6 @@ button .label,button i {
 	line-height:50px;
 	box-shadow:0 1px 10px rgba(17,17,17,.35);
 	z-index:7;
-	transition:.2s all;
 	pointer-events:all;
 	width:328px
 }
@@ -1237,8 +1131,7 @@ a:active .column-title-back .icon:after {
 	margin-left:-48px;
 	margin-top:-7px;
 	transform:scale(1);
-	opacity:1;
-	transition:.07s all,.08s margin
+	opacity:1
 }
 
 a .column-title-back .icon:after {
@@ -1251,8 +1144,7 @@ a .column-title-back .icon:after {
 	margin-top:-10px;
 	z-index:5;
 	transform:scale(.5);
-	opacity:0;
-	transition:.5s all,.15s opacity
+	opacity:0
 }
 
 .column-title-back .column-head-title {
@@ -1269,7 +1161,6 @@ a .column-title-back .icon:after {
 	font-size:24px;
 	width:24px;
 	height:24px;
-	transition:.2s all
 }
 
 .column-header-link {
@@ -1277,8 +1168,7 @@ a .column-title-back .icon:after {
 	top:5px;
 	bottom:-1px;
 	padding:0 4px;
-	font-size:13px;
-	transition:.2s all
+	font-size:13px
 }
 
 .column-header-link i {
@@ -1309,11 +1199,6 @@ a .column-title-back .icon:after {
 	right:60px
 }
 
-.is-options-open .column-settings-link {
-	border:0;
-	transition:.3s background
-}
-
 .list-edit-button {
 	margin-top:10px;
 	z-index:5
@@ -1326,7 +1211,6 @@ a .column-title-back .icon:after {
 	box-shadow:0 1px 10px rgba(0,0,0,.25);
 	z-index:7;
 	position:relative;
-	transition:.2s all;
 	padding-top:0!important
 }
 
@@ -1343,22 +1227,13 @@ a .column-title-back .icon:after {
 	z-index:4
 }
 
-.is-accordion-panel-animating {
-	transition:.3s box-shadow cubic-bezier(.19,1,.22,1),.2s height cubic-bezier(.19,1,.22,1)
-}
-
 .column-options .button-tray {
-	text-align:justify
+	text-align:right
 }
 
 .button-tray:before,.button-tray:after {
 	content:'';
 	width:100%
-}
-
-.contributor-row {
-	transition:background .2s cubic-bezier(.19,1,.22,1),height .2s cubic-bezier(.19,1,.22,1),opacity .2s cubic-bezier(.19,1,.22,1);
-	overflow:hidden
 }
 
 .contributor-row .tweet-avatar,.contributor-row .item-img {
@@ -1386,8 +1261,7 @@ a .column-title-back .icon:after {
 }
 
 .contributor-row[data-state="initial"] {
-	height:0;
-	opacity:0
+	height:0
 }
 
 .contributor-row[data-state="settings"],.contributor-row[data-state="confirmAdd"],.contributor-row[data-state="confirmAdd-added"],.contributor-row[data-state="confirmRemove-removing"],.contributor-row[data-state="confirmDeadmin"],.contributor-row[data-state="confirmDeadmin"] {
@@ -1404,34 +1278,11 @@ a .column-title-back .icon:after {
 }
 
 .chirp-container {
-	transition:padding-top .3s ease-in-out;
 	opacity:1!important
 }
 
-.draggable-dragging .chirp-container {
-	animation:none!important
-}
-
-.overlay.mtd-modal-window-fade-out,.dropdown-menu.mtd-dropdown-fade-out {
-	animation:fadeOut .2s cubic-bezier(.19,1,.22,1);
-	display:block
-}
-
-.popover.is-hidden {
-	display:block!important;
-	opacity:0;
-	animation:none;
-	pointer-events:none
-}
-
 .stream-item {
-	animation:tweetIncomingTimeline .4s cubic-bezier(.19,1,.22,1);
-	margin-top:6px;
-	transition:.3s box-shadow,.3s background
-}
-
-.js-message-detail>.stream-item {
-	animation:none
+	margin-top:3px
 }
 
 .stream-item.is-actionable:hover {
@@ -1474,8 +1325,7 @@ a .column-title-back .icon:after {
 	width:1em;
 	height:1em;
 	font-size:16px;
-	line-height:1em;
-	vertical-align:text-top
+	line-height:1em
 }
 
 .activity-indicator.activity-icon-aligned {
@@ -1518,12 +1368,7 @@ a .column-title-back .icon:after {
 .avatar {
 	width:48px;
 	height:48px;
-	border-radius:24px;
-	transition:.2s all
-}
-
-.mtd-no-round-avatars .avatar {
-	border-radius:5px!important
+	border-radius:24px
 }
 
 .list-account .avatar {
@@ -1533,11 +1378,10 @@ a .column-title-back .icon:after {
 }
 
 .avatar.compose-account-img:active {
-	transform:scale(1,1)!important
+	transform:scale(1)!important
 }
 
 .avatar:hover {
-	transition:.2s all;
 	box-shadow:0 5px 10px rgba(17,17,17,.475)
 }
 
@@ -1595,8 +1439,7 @@ a .column-title-back .icon:after {
 }
 
 .avatar.frm-justify-row {
-	margin:0 2px;
-	vertical-align:middle
+	margin:0 2px
 }
 
 .account-link,.account-link:hover,.account-link:active {
@@ -1608,14 +1451,14 @@ a .column-title-back .icon:after {
 }
 
 .account-link .fullname {
-	line-height:1;
+	line-height:1
 }
 
 .account-inline {
 	box-sizing:border-box;
 	position:relative;
 	max-width:100%;
-	text-overflow:ellipsis;
+	text-overflow:ellipsis
 }
 
 .account-inline .fullname,.account-inline .username,.account-link.txt-bold {
@@ -1671,7 +1514,6 @@ a .column-title-back .icon:after {
 	background:transparent;
 	font-size:13px;
 	line-height:1.2em;
-	transition:opacity .2s;
 	opacity:1;
 	border-radius:0!important
 }
@@ -1803,14 +1645,6 @@ a .column-title-back .icon:after {
 	position:relative
 }
 
-.media-grid-2,.media-grid-3,.media-grid-4 {
-	position:absolute;
-	top:0;
-	bottom:0;
-	left:0;
-	right:0
-}
-
 .media-image {
 	background:no-repeat center center;
 	background-size:cover
@@ -1874,8 +1708,6 @@ a .column-title-back .icon:after {
 
 .tweet {
 	line-height:1.28578em;
-	word-break:break-word;
-	word-wrap:break-word;
 	display:block
 }
 
@@ -1895,24 +1727,15 @@ a .column-title-back .icon:after {
 	vertical-align:-.1em
 }
 
-.tweet:after {
-	clear:both
-}
-
 .tweet:hover .tweet-actions,.is-selected-tweet .tweet-actions {
 	padding-top:4px
 }
 
 .tweet-timestamp {
-	transition:margin .1s;
 	position:absolute;
 	right:10px;
 	line-height:1em;
 	font-size:12px
-}
-
-.is-retweet .tweet-timestamp,.is-favorite .tweet-timestamp {
-	margin-right:2px
 }
 
 .tweet-context .nbfc>a {
@@ -1936,13 +1759,18 @@ a .column-title-back .icon:after {
 	margin-right:auto;
 	width:auto!important;
 	max-width:213px;
+	margin-top:15px;
 	padding-top:0!important;
-	min-height:10px;
+	min-height:12px
+}
+
+.is-wide-columns .tweet-actions {
+	margin-top:0
 }
 
 .message-stream-item .tweet-actions {
 	max-width:0;
-	margin-right: 35px;
+	margin-right:35px
 }
 
 .med-fullpanel .tweet-actions {
@@ -1962,8 +1790,7 @@ a .column-title-back .icon:after {
 	display:block;
 	line-height:20px;
 	height:20px;
-	width:20px;
-	transition:.15s all
+	width:20px
 }
 
 .tweet-action .icon-favorite,.tweet-detail-action .icon-favorite,.tweet-action .icon-close,.tweet-detail-action .icon-close,.tweet-action .icon-move,.tweet-detail-action .icon-move {
@@ -1972,7 +1799,7 @@ a .column-title-back .icon:after {
 
 .tweet-action .icon-retweet,.tweet-detail-action .icon-retweet {
 	font-size:22px;
-	margin-top:1px
+	line-height:0em
 }
 
 .tweet-action .icon-favorite,.tweet-detail-action .icon-favorite,.tweet-action .icon-more,.tweet-detail-action .icon-more {
@@ -1980,7 +1807,8 @@ a .column-title-back .icon:after {
 }
 
 .tweet-footer {
-	margin-top:10px
+	margin-top:10px;
+	margin-bottom:-10px;
 }
 
 .js-mediatable .tweet-footer {
@@ -2028,12 +1856,7 @@ a .column-title-back .icon:after {
 	border-top:5px solid transparent;
 	box-sizing:border-box;
 	padding:5px;
-	animation:fadeIn .15s;
 	margin-top:7px
-}
-
-.tweet-detail-wrapper .stream-item {
-	animation:none
 }
 
 .tweet-detail-media {
@@ -2065,13 +1888,12 @@ a .column-title-back .icon:after {
 	display:block;
 	width:100%;
 	padding-left:0;
-	margin-top:45px
+	margin-top:80px
 }
 
 .tweet-detail-action-item {
 	display:inline-block;
 	vertical-align:auto;
-	zoom:1;
 	width:25%;
 	margin-top:8px;
 	text-align:center
@@ -2114,15 +1936,9 @@ a .column-title-back .icon:after {
 	padding:10px
 }
 
-.rpl textarea {
-	border:0;
-	transition:height .25s cubic-bezier(.19,1,.22,1);
-}
-
 .rpl input {
 	width:50px;
-	padding-top:8px;
-	border:0;
+	padding-top:8px
 }
 
 .rpl.s-replying textarea {
@@ -2134,17 +1950,12 @@ a .column-title-back .icon:after {
 	display:inline
 }
 
-.spinner-button-is-active,.text-hidden.btn-positive {
-	opacity:0
-}
-
 .spinner-button-icon-spinner {
 	z-index:5;
 	height:26px;
 	width:26px;
 	margin-left:-15px;
-	opacity:1;
-	transition:.1s all
+	opacity:1
 }
 
 .spinner-button-icon-spinner.is-hidden {
@@ -2169,22 +1980,9 @@ a .column-title-back .icon:after {
 }
 
 .app-content {
-	position:absolute;
 	top:40px;
-	left:0;
-	right:0;
-	bottom:0;
 	margin-left:0;
-	overflow:visible;
-	transition:transform .2s cubic-bezier(.19,1,.22,1)
-}
-
-.app-columns-container {
-	position:absolute;
-	top:0;
-	left:0;
-	right:0;
-	bottom:0
+	overflow:visible
 }
 
 .is-chrome .app-columns-container {
@@ -2208,8 +2006,7 @@ a .column-title-back .icon:after {
 	height:30px;
 	top:0;
 	position:absolute;
-	opacity:0;
-	animation:fadeIn .4s cubic-bezier(.19,1,.22,1) forwards 2s
+	opacity:0
 }
 
 .app-nav-link i {
@@ -2230,7 +2027,6 @@ a .column-title-back .icon:after {
 	cursor:pointer;
 	border-top-left-radius:2px;
 	border-bottom-left-radius:2px;
-	transition:.2s all;
 	display:block;
 	position:absolute;
 	top:12px
@@ -2249,14 +2045,12 @@ a .column-title-back .icon:after {
 	margin-left:45px;
 	border-radius:32px;
 	transform:scale(0);
-	z-index:5;
-	animation:popIn .5s cubic-bezier(.19,1,.22,1) forwards 2s
+	z-index:5
 }
 
 .tweet-button>i {
 	font-size:30px;
 	margin-left:-5px;
-	transition:.3s all;
 	margin-top:-3px
 }
 
@@ -2266,7 +2060,6 @@ a .column-title-back .icon:after {
 	width:26px;
 	height:26px;
 	position:absolute;
-	transition:.15s all cubic-bezier(.19,1,.22,1);
 	transform:scale(.85,.85);
 	text-align:center
 }
@@ -2280,7 +2073,6 @@ a .column-title-back .icon:after {
 	position:absolute;
 	z-index:7;
 	background-size:26px 26px;
-	transition:.25s all cubic-bezier(.19,1,.22,1);
 	font-style:normal;
 	opacity:0
 }
@@ -2292,8 +2084,7 @@ a .column-title-back .icon:after {
 
 .tweet-button.is-hidden>i:before {
 	margin-left:108px;
-	transform:scale(1);
-	transition:.25s all cubic-bezier(.19,1,.22,1)
+	transform:scale(1)
 }
 
 .attach-compose-buttons {
@@ -2301,7 +2092,6 @@ a .column-title-back .icon:after {
 }
 
 .attach-compose-buttons .tweet-button {
-	transition:.141s all cubic-bezier(.19,1,.22,1);
 	border-radius:0;
 	margin-top:-65px;
 	margin-left:-5px;
@@ -2309,8 +2099,7 @@ a .column-title-back .icon:after {
 }
 
 .attach-compose-buttons .icon-compose-dm {
-	margin-left:-4px;
-	transition:.2s all
+	margin-left:-4px
 }
 
 .with-nav-border-t:before {
@@ -2359,8 +2148,7 @@ a .column-title-back .icon:after {
 	font-size:28px;
 	margin-left:-4px;
 	margin-top:-4px;
-	opacity:0;
-	animation:fadeIn .4s cubic-bezier(.19,1,.22,1) forwards 2s
+	opacity:0
 }
 
 .app-search-tweet-results {
@@ -2382,7 +2170,6 @@ a .column-title-back .icon:after {
 
 .message-banner {
 	position:relative;
-	clear:both;
 	text-align:center
 }
 
@@ -2404,10 +2191,9 @@ a .column-title-back .icon:after {
 
 .message-text {
 	display:table-cell;
-	vertical-align:middle;
 	padding-right:10px;
 	word-break:break-all;
-	word-wrap:break-word
+	word-wrap:break-all /* NOT break-word */
 }
 
 .typeahead {
@@ -2417,7 +2203,6 @@ a .column-title-back .icon:after {
 	left:0;
 	right:0;
 	border-radius:0;
-	animation:menuDown .4s cubic-bezier(.19,1,.22,1);
 	width:auto
 }
 
@@ -2442,8 +2227,7 @@ a .column-title-back .icon:after {
 
 .accordion-header {
 	padding:9px 5px 9px 8px;
-	pointer-events:all;
-	transition:.2s all
+	pointer-events:all
 }
 
 .accordion .icon-arrow-d,.accordion .icon-arrow-u {
@@ -2454,13 +2238,12 @@ a .column-title-back .icon:after {
 
 .facet-type {
 	position:relative;
-	transition:.5s background cubic-bezier(.19,1,.22,1),.7s box-shadow cubic-bezier(.19,1,.22,1),.2s transform cubic-bezier(.19,1,.22,1);
 	box-shadow:none
 }
 
 .facet-type.is-active,.facet-type:active {
 	z-index:5;
-	box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 5px 0 rgba(0,0,0,.23)
+	box-shadow:0 2px 7px 0 rgba(0,0,0,.5),0 2px 7px 0 rgba(55,55,55,.75)
 }
 
 .facet-type-icon {
@@ -2472,7 +2255,8 @@ a .column-title-back .icon:after {
 
 .facet-title {
 	width:70px;
-	padding-left:28px
+	padding-left:28px;
+	text-transform:uppercase
 }
 
 .facet-subtitle {
@@ -2480,13 +2264,7 @@ a .column-title-back .icon:after {
 	text-align:center;
 	font-size:12px;
 	display:block;
-	transition:.25s opacity;
 	opacity:1
-}
-
-.accordion .is-active .facet-subtitle {
-	transition:.25s opacity;
-	opacity:0
 }
 
 .control-label-checkbox {
@@ -2505,35 +2283,22 @@ a .column-title-back .icon:after {
 	right:0
 }
 
-.account-settings-row.is-highlighted {
-	background:#e1e8ed;
-	border-top:1px solid #aab8c2
-}
-
-.account-settings-row.is-highlighted:last-child {
-	border-bottom:1px solid #aab8c2
+.account-row-separator-b:after,.separator-a:before {
+	content:" ";
+	display:block;
+	position:absolute;
+	left:16px;
+	right:16px
 }
 
 .account-row-separator-b:after {
-	content:" ";
-	display:block;
 	height:0;
-	position:absolute;
-	bottom:0;
-	left:16px;
-	right:16px;
-	background:#aab8c2
+	bottom:0
 }
 
 .separator-a:before {
-	content:" ";
-	display:block;
 	height:1px;
-	position:absolute;
-	top:0;
-	left:16px;
-	right:16px;
-	background:#aab8c2
+	top:0
 }
 
 .tooltip {
@@ -2548,7 +2313,6 @@ a .column-title-back .icon:after {
 	max-width:200px;
 	padding:5px 8px 4px;
 	text-align:center;
-	animation:windowDown .3s 1 cubic-bezier(.19,1,.22,1);
 	border-radius:2px
 }
 
@@ -2558,18 +2322,16 @@ a .column-title-back .icon:after {
 	padding:0;
 	border:0;
 	font-size:16px;
-	vertical-align:middle;
 	background:transparent;
 	text-shadow:none;
 	height:auto;
-	padding-bottom:3px;
-	transition:.2s all
+	padding-bottom:3px
 }
 
 .character-count-compose {
 	text-align:right;
 	display:inline;
-	position:relative;
+	position:relative
 }
 
 .compose-media-bar .compose-media-bar-thumb {
@@ -2594,8 +2356,7 @@ a .column-title-back .icon:after {
 	width:1px;
 	height:3px;
 	margin-right:5px;
-	opacity:0;
-	transition:.3s all 2s
+	opacity:0
 }
 
 .drawer {
@@ -2605,8 +2366,7 @@ a .column-title-back .icon:after {
 	left:-270px;
 	height:100%;
 	margin-right:0;
-	overflow:hidden;
-	transition:.2s all
+	overflow:hidden
 }
 
 .drawer-header-title {
@@ -2623,35 +2383,25 @@ a .column-title-back .icon:after {
 }
 
 .ovl-plain,.ovl,.overlay {
-	display:none;
-	position:fixed;
-	top:0;
-	left:0;
-	right:0;
-	bottom:0;
 	z-index:6
 }
 
 .ovl,.overlay {
 	min-width:320px;
 	text-align:center;
-	transition:.2s opacity,0s margin-top!important;
 	opacity:1;
-	animation:fadeIn .25s 1 cubic-bezier(.19,1,.22,1);
 	margin-top:0;
 	overflow-y:hidden
 }
 
-.ovl-plain:before,.ovl:before,.overlay:before,.ovl:before,.overlay:before {
+.ovl-plain:before,.ovl:before,.overlay:before {
 	content:'';
 	display:inline-block;
-	vertical-align:middle;
 	height:100%
 }
 
 .ovl-block {
 	display:inline-block;
-	vertical-align:middle;
 	zoom:1;
 	text-align:left
 }
@@ -2664,12 +2414,10 @@ a .column-title-back .icon:after {
 
 .mdl {
 	display:inline-block;
-	vertical-align:middle;
 	width:580px;
 	text-align:left;
 	opacity:1;
 	border-radius:4px;
-	animation:windowSlider .3s cubic-bezier(.19,1,.22,1);
 	box-shadow:0 30px 70px rgba(17,17,17,.6);
 	height:100%;
 	border-radius:0;
@@ -2679,10 +2427,6 @@ a .column-title-back .icon:after {
 	position:absolute;
 	margin:0;
 	max-height:100%
-}
-
-.s-profile .s-profile {
-	animation:profileSlide .7s cubic-bezier(.19,1,.22,1)
 }
 
 .mdl-header {
@@ -2750,7 +2494,6 @@ a .column-title-back .icon:after {
 	font-size:28px;
 	padding-left:10px;
 	padding-right:10px;
-	vertical-align:middle;
 	font-weight:300
 }
 
@@ -2829,7 +2572,6 @@ a .column-title-back .icon:after {
 	width:271px;
 	height:46px;
 	text-align:left;
-	vertical-align:middle;
 	margin-left:24px;
 	margin-right:0;
 	margin-bottom:15px
@@ -2863,16 +2605,13 @@ a .column-title-back .icon:after {
 .lst-profile li {
 	float:left;
 	margin:16px;
-	text-align:center;
-	vertical-align:bottom
+	text-align:center
 }
 
 .lst-profile a,.lst-profile a:hover,.lst-profile a:focus,.lst-profile a:active {
 	display:block;
 	width:80px;
-	height:85px;
-	color:#00BCD4;
-	transition:.2s all
+	height:85px
 }
 
 .lst-profile span {
@@ -2880,28 +2619,20 @@ a .column-title-back .icon:after {
 	bottom:5px
 }
 
-.txt-center.txt-bold.is-active {
-	color:#D2DAE0;
-	text-transform:uppercase
-}
-
 .settings-modal .js-header-title:after {
 	content:"TweetDeck Settings"
 }
 
 .mdl-links {
-	position:absolute;
+	position:fixed;
 	bottom:0;
-	right:15px;
-	left:15px;
+	left:0;
+	width:500px;
 	color:transparent;
 	font-size:12px;
 	padding-bottom:15px;
-	text-align:center
-}
-
-.cmp {
-	width:550px
+	text-align:center;
+	opacity:0.5
 }
 
 .cmp textarea {
@@ -2909,8 +2640,7 @@ a .column-title-back .icon:after {
 	height:85px;
 	max-height:200px;
 	resize:none;
-	padding:6px 8px;
-	border:0
+	padding:6px 8px
 }
 
 .cmp .cmp-file-upload {
@@ -2951,14 +2681,7 @@ a .column-title-back .icon:after {
 	border:0;
 	padding:0;
 	font-size:16px;
-	text-align:right;
-	vertical-align:middle
-}
-
-.cmp-replyto {
-	display:none;
-	padding:15px;
-	background:rgb(247,250,251)
+	text-align:right
 }
 
 .s-photo-added .cmp-input-container,.s-link-added .cmp-input-container {
@@ -2981,12 +2704,6 @@ a .column-title-back .icon:after {
 	height:60px
 }
 
-.s-sending .cmp-spinner {
-	display:inline-block;
-	vertical-align:middle;
-	zoom:1
-}
-
 .l-no-txtarea .mdl-buttonbar {
 	margin-top:0
 }
@@ -2998,8 +2715,7 @@ a .column-title-back .icon:after {
 	margin-left:-15px;
 	padding-top:10px;
 	height:40px;
-	margin-top:0;
-	animation:fadein 0.2s
+	margin-top:0
 }
 
 .accs-header>h3 {
@@ -3026,8 +2742,8 @@ a .column-title-back .icon:after {
 	pointer-events:all;
 	cursor:pointer;
 	background:transparent;
-	transition:.15s all;
 	-webkit-filter:grayscale(100%) brightness(100%);
+	-moz-filter:grayscale(100%) brightness(100%);
 	filter:grayscale(100%) brightness(100%);
 	opacity:.5;
 	border-radius:57px
@@ -3040,8 +2756,8 @@ a .column-title-back .icon:after {
 }
 
 .accs .acc-selected {
-	transition:.15s all;
 	-webkit-filter:grayscale(0%);
+	-moz-filter:grayscale(0%);
 	filter:grayscale(0%);
 	opacity:1
 }
@@ -3070,7 +2786,6 @@ a .column-title-back .icon:after {
 .compose-title {
 	box-sizing:border-box;
 	margin-top:8px;
-	transition:margin,.25s;
 	left:27%;
 	width:65%
 }
@@ -3104,8 +2819,7 @@ a .column-title-back .icon:after {
 	bottom:40px;
 	left:0;
 	right:0;
-	top:50px;
-	transition:.5s all cubic-bezier(.19,1,.22,1)
+	top:50px
 }
 
 .is-open .compose-content {
@@ -3136,8 +2850,7 @@ a .column-title-back .icon:after {
 	margin-top:-17px;
 	z-index:5;
 	font-size:30px;
-	opacity:1;
-	transition:.12s all
+	opacity:1
 }
 
 .compose-send-button-success.is-hidden {
@@ -3150,14 +2863,11 @@ a .column-title-back .icon:after {
 	position:relative;
 	font-size:12px;
 	font-weight:400;
-	word-wrap:break-word;
-	word-break:break-word;
 	width:220px;
 	margin-left:10px;
 	z-index:5;
 	box-shadow:0 3px 7px rgba(17,17,17,.5);
 	opacity:1;
-	transition:.15s all cubic-bezier(.19,1,.22,1);
 	margin-top:0
 }
 
@@ -3228,7 +2938,6 @@ a .column-title-back .icon:after {
 	float:left;
 	margin-right:10px;
 	border-radius:3px;
-	transition:.2s all;
 	margin-bottom:5px;
 	-webkit-filter:grayscale(100%);
 	filter:grayscale(100%);
@@ -3243,13 +2952,7 @@ a .column-title-back .icon:after {
 	float:none;
 	margin-right:0;
 	margin-bottom:4px;
-	background:transparent;
-	transition:.2s all
-}
-
-.compose-account-img {
-	display:block;
-	transition:.2s all
+	background:transparent
 }
 
 .is-grid .compose-account:nth-child(4n+4),.is-minigrid .compose-account:nth-child(6n+6) {
@@ -3284,7 +2987,6 @@ a .column-title-back .icon:after {
 }
 
 .inline-reply {
-	transition:all .2s;
 	cursor:default;
 	height:180px;
 	overflow:hidden;
@@ -3312,7 +3014,7 @@ a .column-title-back .icon:after {
 }
 
 .js-inline-reply .pull-right[for] {
-	margin-top:-80px;
+	margin-top:-80px
 }
 
 .inline-reply .compose-text-container {
@@ -3326,7 +3028,6 @@ a .column-title-back .icon:after {
 	margin-left:5px;
 	margin-top:-95px;
 	position:relative;
-	transition:.2s all;
 	padding:5px
 }
 
@@ -3345,7 +3046,7 @@ a .column-title-back .icon:after {
 .inline-reply .compose-text {
 	padding:10px;
 	height:140px!important;
-	width:100%;
+	width:100%
 }
 
 .detail-view-inline {
@@ -3391,7 +3092,6 @@ a .column-title-back .icon:after {
 
 .med-fullpanel iframe {
 	display:inline-block;
-	vertical-align:middle;
 	zoom:1;
 	max-width:700px;
 	max-height:500px
@@ -3405,7 +3105,6 @@ a .column-title-back .icon:after {
 	bottom:0;
 	box-shadow:0 3px 6px rgba(0,0,0,.7);
 	border-radius:4px 4px 0 0;
-	animation:mediaSlideUp .4s cubic-bezier(.19,1,.22,1);
 	pointer-events:all
 }
 
@@ -3419,7 +3118,6 @@ a .column-title-back .icon:after {
 
 .med-tray {
 	display:inline-block;
-	vertical-align:middle;
 	box-sizing:border-box;
 	position:relative;
 	height:auto;
@@ -3427,8 +3125,7 @@ a .column-title-back .icon:after {
 	width:auto;
 	padding-bottom:0;
 	opacity:0;
-	pointer-events:all;
-	animation:windowDown .4s cubic-bezier(.19,1,.22,1)
+	pointer-events:all
 }
 
 .med-img {
@@ -3477,19 +3174,12 @@ a:hover .icn-button-next {
 	padding-left:18px!important
 }
 
-.embed-modal {
-	height:350px;
-	max-width:518px;
-	transition:height .4s
-}
-
 .embed-modal .mdl-inner {
 	padding:0
 }
 
 .embed-modal .mdl-content {
-	height:auto;
-	border:0
+	height:auto
 }
 
 .embed-modal textarea {
@@ -3499,8 +3189,7 @@ a:hover .icn-button-next {
 }
 
 .embed-iframe {
-	width:100%;
-	border:0
+	width:100%
 }
 
 .embed-iframe-container {
@@ -3591,8 +3280,7 @@ a:hover .icn-button-next {
 }
 
 .list-account {
-	padding:6px 0;
-	border:0
+	padding:6px 0
 }
 
 .list-listmember {
@@ -3634,7 +3322,6 @@ a:hover .icn-button-next {
 
 .list-option-type h4 {
 	display:inline-block;
-	vertical-align:middle;
 	zoom:1;
 	width:195px;
 	padding-right:25px;
@@ -3762,38 +3449,6 @@ textarea,.l-fullwidth {
 	font-style:italic
 }
 
-label {
-	display:block;
-	margin-bottom:12px;
-	line-height:inherit
-}
-
-fieldset {
-	padding:0;
-	margin:0;
-	border:0
-}
-
-select {
-	-webkit-appearance:menulist;
-	-moz-appearance:menulist
-}
-
-input:before,textarea:before,select:before {
-	-webkit-appearance:initial;
-	-moz-appearance:initial;
-	color:#ddd
-}
-
-textarea {
-	resize:none
-}
-
-input,select {
-	word-break:normal!important;
-	word-wrap:normal!important
-}
-
 input[type="checkbox"] {
 	height:auto
 }
@@ -3803,7 +3458,12 @@ input[type="checkbox"] {
 }
 
 .control-group {
-	padding-bottom:10px
+	margin-bottom:13px;
+	height:auto;
+	min-height:40px;
+	width:100%;
+	pointer-events:none;
+	position:relative
 }
 
 .controls-space-58 {
@@ -3833,9 +3493,7 @@ input[type="checkbox"] {
 
 .control-label {
 	float:left;
-	width:75px;
-	padding-top:15px;
-	padding-left:5px;
+	width:auto;
 	text-align:left
 }
 
@@ -3852,7 +3510,7 @@ input[type="checkbox"] {
 }
 
 .control-s .controls {
-	margin-left:0;
+	margin-left:0
 }
 
 .control-m .control-label {
@@ -3886,10 +3544,6 @@ input[type="checkbox"] {
 	padding-right:25px;
 	padding-left:20px;
 	width:340px
-}
-
-.is-hidden * {
-	pointer-events:none
 }
 
 .search-input-control:before {
@@ -3936,20 +3590,14 @@ input[type="checkbox"] {
 	box-shadow:0 5px 15px 1px rgba(0,0,0,.25)
 }
 
-.js-add-column:active {
-	transform:none;
-	transition:.1s all
-}
-
 .js-add-column:before {
 	font-size:24px;
 	content:"+";
 	font-weight:200;
 	text-align:center;
-	vertical-align:middle;
 	height:100%;
 	width:100%;
-	margin-top:-15px;
+	margin-top:-5px;
 	position:absolute;
 	left:0;
 	color:rgba(255,255,255,.94)
@@ -4021,11 +3669,6 @@ input[type="checkbox"] {
 	cursor:default
 }
 
-.input-prepend {
-	vertical-align:middle;
-	display:inline-block
-}
-
 #calroot {
 	width:100%;
 	font-size:12px
@@ -4051,6 +3694,11 @@ input[type="checkbox"] {
 	font-size:10px
 }
 
+.calweek,#caltitle
+{
+	clear:left
+}
+
 #caldays {
 	height:20px
 }
@@ -4064,11 +3712,6 @@ input[type="checkbox"] {
 
 #calweeks {
 	margin-top:4px
-}
-
-.calweek,#caltitle {
-	clear:left;
-	animation:menuDownLarge .3s cubic-bezier(.19,1,.22,1)
 }
 
 .calweek a {
@@ -4191,17 +3834,11 @@ input[type="checkbox"] {
 
 .prf-img {
 	display:inline-block;
-	vertical-align:middle;
 	zoom:1;
 	border-radius:5px;
 	padding:4px;
 	margin:20px 0 6px;
-	transition:.2s transform;
-	transform:scale(1,1)
-}
-
-.prf-img:active,.prf-img:hover {
-	transition:.2s transform
+	transform:scale(1)
 }
 
 .prf-meta {
@@ -4230,8 +3867,6 @@ input[type="checkbox"] {
 }
 
 .prf-bio {
-	word-break:break-word;
-	word-wrap:break-word;
 	font-size:15px;
 	line-height:18px;
 	text-align:center;
@@ -4255,9 +3890,7 @@ input[type="checkbox"] {
 
 .prf-stats>li {
 	display:inline-block;
-	vertical-align:middle;
 	zoom:1;
-	transition:.2s all;
 	padding-right:0
 }
 
@@ -4303,13 +3936,11 @@ input[type="checkbox"] {
 	font-weight:500;
 	display:inline;
 	position:relative;
-	vertical-align:middle;
 	height:0;
 	color:inherit;
 	max-width:100px;
 	line-height:3px;
-	margin-left:10px;
-	transition:.2s all
+	margin-left:10px
 }
 
 .lst-profile .icon-mention+.txt-ellipsis {
@@ -4319,20 +3950,15 @@ input[type="checkbox"] {
 .prf .lst-profile i {
 	color:inherit;
 	font-size:28px;
-	transition:.2s all;
 	display:inline;
 	line-height:3px;
-	vertical-align:middle;
 	box-sizing:border-box
 }
 
 .prf .lst-profile a {
 	height:40px;
-	color:#00BCD4;
 	width:auto;
-	padding-top:20px;
-	vertical-align:middle;
-	border:0
+	padding-top:20px
 }
 
 .prf-follow-status {
@@ -4353,9 +3979,9 @@ input[type="checkbox"] {
 
 .social-proof-container {
 	line-height:18px;
-	text-align:center;
-	border-top:2px solid transparent;
-	border-bottom:2px solid transparent
+	text-align:left;
+	position:fixed;
+	top:328px
 }
 
 .social-proof-names {
@@ -4366,8 +3992,7 @@ input[type="checkbox"] {
 
 .social-proof-animating {
 	height:0;
-	overflow-y:hidden;
-	transition:height .2s
+	overflow-y:hidden
 }
 
 .profile-full {
@@ -4399,12 +4024,7 @@ input[type="checkbox"] {
 .lst li {
 	position:relative;
 	display:block;
-	padding:5px;
-	transition:.2s all
-}
-
-.lst .avatar {
-	vertical-align:middle
+	padding:5px
 }
 
 .lst .inner {
@@ -4420,8 +4040,7 @@ input[type="checkbox"] {
 	box-shadow:0 3px 7px rgba(17,17,17,.5);
 	display:none;
 	position:absolute;
-	z-index:5;
-	transition:.2s all
+	z-index:5
 }
 
 .lst-row {
@@ -4432,7 +4051,6 @@ input[type="checkbox"] {
 .lst-group {
 	margin-bottom:10px;
 	line-height:16px;
-	transition:.2s all;
 	z-index:5
 }
 
@@ -4484,12 +4102,10 @@ input[type="checkbox"] {
 	font-size:14.5px;
 	line-height:18px;
 	box-shadow:0 2px 5px 0 rgba(0,0,0,.23);
-	transition:.2s all;
 	margin-top:-18px;
 	text-indent:0;
 	width:220px;
 	margin-right:-20px;
-	animation:menuDown .3s 1 cubic-bezier(.19,1,.22,1);
 	border-radius:2px
 }
 
@@ -4497,33 +4113,22 @@ input[type="checkbox"] {
 	position:relative;
 	display:block;
 	padding:8px 0 0 18px;
-	height:30px;
-	transition:.2s all
+	height:30px
 }
 
 .dropdown-menu a {
 	position:absolute;
 	line-height:2;
-	top:0;
-	bottom:0;
-	left:0;
-	right:0;
 	padding:5px 0 0 15px
 }
 
 .pos-t {
 	top:auto;
-	animation:menuUp .3s 1 cubic-bezier(.19,1,.22,1);
 	bottom:0;
 	right:0
 }
 
 .ovl-trap {
-	position:fixed;
-	top:0;
-	bottom:0;
-	right:0;
-	left:0;
 	z-index:1
 }
 
@@ -4532,8 +4137,6 @@ input[type="checkbox"] {
 	position:absolute;
 	border-radius:4px;
 	box-shadow:0 2px 5px rgba(117,117,117,.8);
-	transition:opacity .25s cubic-bezier(.19,1,.22,1),max-height .2s cubic-bezier(.19,1,.22,1);
-	animation:leftPopoverDown .25s cubic-bezier(.19,1,.22,1);
 	margin-left:auto;
 	pointer-events:all
 }
@@ -4546,7 +4149,6 @@ input[type="checkbox"] {
 	z-index:6;
 	left:65px;
 	top:-60px;
-	animation:rightPopoverDown .25s cubic-bezier(.19,1,.22,1);
 	right:0
 }
 
@@ -4577,12 +4179,10 @@ input[type="checkbox"] {
 .card-player,.card-image {
 	max-width:100%;
 	border:0;
-	transition:.2s all;
 	box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 5px 0 rgba(0,0,0,.23)
 }
 
 .media-image {
-	transition:.2s all;
 	box-shadow:0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24)
 }
 
@@ -4605,19 +4205,16 @@ input[type="checkbox"] {
 }
 
 .media-item {
-	box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 5px 0 rgba(0,0,0,.23);
-	transition:.3s all
+	box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 5px 0 rgba(0,0,0,.23)
 }
 
 .media-item:active {
 	box-shadow:0 10px 10px 0 rgba(0,0,0,.22),0 6px 3px 0 rgba(0,0,0,.328)!important;
-	opacity:.7;
-	transition:.3s all
+	opacity:.7
 }
 
 .media-item:hover {
-	box-shadow:0 10px 10px 0 rgba(0,0,0,.19),0 6px 3px 0 rgba(0,0,0,.23);
-	transition:.3s all
+	box-shadow:0 10px 10px 0 rgba(0,0,0,.19),0 6px 3px 0 rgba(0,0,0,.23)
 }
 
 .column-navigator {
@@ -4627,11 +4224,7 @@ input[type="checkbox"] {
 	bottom:0;
 	right:0;
 	overflow:visible;
-	opacity:0;
-	animation:fadeIn .4s cubic-bezier(.19,1,.22,1);
-	animation-fill-mode:forwards;
-	animation-delay:4s;
-	transition:.15s all cubic-bezier(.19,1,.22,1)
+	opacity:0
 }
 
 .column-nav-link {
@@ -4641,8 +4234,6 @@ input[type="checkbox"] {
 	font-size:18px;
 	cursor:pointer;
 	overflow:visible;
-	transition:.3s all;
-	transition-delay:2s;
 	transform:none!important;
 	box-shadow:none;
 	top:0
@@ -4661,8 +4252,6 @@ input[type="checkbox"] {
 	left:0!important;
 	box-sizing:border-box;
 	color:rgba(255,255,255,.75);
-	transition:.4s all cubic-bezier(.19,1,.22,1);
-	transition-delay:1s;
 	display:inline-block;
 	left:initial!important;
 	box-shadow:none!important;
@@ -4674,17 +4263,7 @@ input[type="checkbox"] {
 
 .column-navigator:hover .column-nav-item,.column-nav-item.is-new {
 	opacity:1;
-	width:40px;
-	transition:.2s all cubic-bezier(.19,1,.22,1),.4s transform
-}
-
-.column-navigator:hover .column-nav-item:not(.is-new) {
-	transform:none
-}
-
-.column-nav-item.is-new {
-	transform:rotate(360deg);
-	transition:.2s all cubic-bezier(.19,1,.22,1),.4s transform
+	width:40px
 }
 
 .column-nav-link i {
@@ -4720,8 +4299,7 @@ input[type="checkbox"] {
 }
 
 .media-img {
-	max-width:100%!important;
-	vertical-align:middle
+	max-width:100%!important
 }
 
 .compose-content .account-selector-grid-toggle {
@@ -4742,8 +4320,7 @@ input[type="checkbox"] {
 	margin-bottom:15px;
 	margin-left:10px!important;
 	margin-top:-15px!important;
-	width:235px;
-	animation:calendarMenuDown .3s cubic-bezier(.19,1,.22,1)
+	width:235px
 }
 
 .js-column-detail .column-title-back:after,.js-tweet-results .column-title-back:after,.js-tweet-social-proof-back:after {
@@ -4820,10 +4397,6 @@ input[type="checkbox"] {
 	border-radius:0!important
 }
 
-.replies-after .stream-item.is-actionable {
-	animation:tweetIncomingTimeline .4s cubic-bezier(.19,1,.22,1)
-}
-
 .tweet-button span.label {
 	font-size:16px;
 	text-align:center;
@@ -4850,7 +4423,10 @@ input[type="checkbox"] {
 }
 
 .facet-type .control-group select,.facet-type .control-group input:not([type=checkbox]) {
-	width:55%
+	width:55%;
+	float:right;
+	display:block;
+
 }
 
 .app-nav-link.js-header-add-column .obj-left {
@@ -4876,9 +4452,6 @@ input[type="checkbox"] {
 
 .column-nav-flyout .column-nav-item {
 	height:40px!important;
-	top:0;
-	bottom:0;
-	left:0;
 	width:100px
 }
 
@@ -4886,12 +4459,6 @@ input[type="checkbox"] {
 	content:"Close Account List";
 	font-size:14px;
 	text-align:center
-}
-
-.js-hide-drawer.is-hidden {
-	display:block!important;
-	opacity:0;
-	pointer-events:none
 }
 
 .js-show-drawer .obj-left {
@@ -4938,12 +4505,7 @@ input[type="checkbox"] {
 
 .js-account-manager-container {
 	box-shadow:0 15px 40px rgba(17,17,17,.4);
-	animation:windowDown .3s 1 cubic-bezier(.19,1,.22,1);
 	overflow:hidden
-}
-
-.account-summary>a.obj-left.item-img,a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
-	transition:.15s all
 }
 
 a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
@@ -4958,8 +4520,7 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 	width:240px;
 	margin-left:10px;
 	box-shadow:0 3px 7px rgba(17,17,17,.5);
-	margin-top:15px;
-	animation:mediaDown .825s cubic-bezier(.19,1,.22,1)
+	margin-top:15px
 }
 
 .cal header span {
@@ -5013,16 +4574,19 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 	margin-left:275px!important
 }
 
-.app-search-fake {
-	transition:.15s all cubic-bezier(.19,1,.22,1)
-}
-
 .tweet-action .icon,.tweet-detail-action i {
 	font-size:20px
 }
 
 .tweet-action .icon-retweet,.tweet-detail-action .icon-retweet {
-	font-size:24px
+	font-size:24px;
+	padding-top:11px;
+}
+
+
+.tweet-detail-action .icon-retweet {
+	top:3px!important;
+	position:relative!important
 }
 
 .media-sensitive-content {
@@ -5064,12 +4628,6 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 	width:70%!important
 }
 
-.media-sensitive.is-hidden {
-	display:block!important;
-	opacity:0!important;
-	pointer-events:none
-}
-
 .media-preview video {
 	box-shadow:0 3px 5px rgba(17,17,17,.3);
 	margin-top:0
@@ -5091,7 +4649,6 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 }
 
 .js-contributor-manager-container {
-	animation:windowDown .3s 1 cubic-bezier(.19,1,.22,1);
 	overflow:hidden
 }
 
@@ -5129,10 +4686,6 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 	margin-left:10px
 }
 
-.js-submittable-input.js-compose-text {
-	border:0
-}
-
 .js-save.block,.js-cancel.block {
 	display:inline!important
 }
@@ -5153,18 +4706,13 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 }
 
 .js-modal[style="display:none;"] {
-	animation:fadeOut .2s cubic-bezier(.19,1,.22,1);
-	animation-fill-mode:forwards;
 	display:block!important;
-	transition:margin-top 1s!important;
-	transition-delay:.2s!important;
 	margin-top:100%
 }
 
 .mtd-drawer-button {
 	top:5px;
-	z-index:5;
-	transition:.15s all
+	z-index:5
 }
 
 .mtd-drawer-button:active {
@@ -5178,7 +4726,6 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 	margin-left:-14px;
 	transform:scale(1);
 	opacity:1;
-	transition:70ms all,80ms margin;
 	pointer-events:none
 }
 
@@ -5193,8 +4740,7 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 	border-radius:33px;
 	z-index:5;
 	transform:scale(.5);
-	opacity:0;
-	transition:.5s all,.15s opacity
+	opacity:0
 }
 
 .hide-detail-view-inline .mtd-drawer-button {
@@ -5209,14 +4755,12 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 	z-index:6;
 	position:absolute;
 	box-shadow:0 15px 40px rgba(17,17,17,.4);
-	transition:.3s all cubic-bezier(.19,1,.22,1);
 	overflow-x:hidden;
 	overflow-y:auto
 }
 
 .mtd-nav-drawer-hidden {
-	margin-left:-320px;
-	pointer-events:none
+	margin-left:-320px
 }
 
 .mtd-nav-drawer-background {
@@ -5225,14 +4769,11 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 	background:rgba(100,100,100,.4);
 	height:100%;
 	width:100%;
-	transition:.3s all cubic-bezier(.19,1,.22,1);
 	pointer-events:all
 }
 
 .mtd-nav-drawer-background-hidden {
-	background:rgba(100,100,100,0);
-	transition:.4s all cubic-bezier(.19,1,.22,1);
-	pointer-events:none
+	background:transparent
 }
 
 .mtd-nd-header-image {
@@ -5325,18 +4866,12 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 }
 
 .js-compose-message-recipient-container .typeahead-user-list {
-	width:240px;
-	transition:.2s all;
-	animation:menuDown .225s 1 cubic-bezier(.19,1,.22,1)
+	width:240px
 }
 
 .js-compose-message-recipient-container .js-typeahead-dropdown {
 	left:10px;
 	z-index:5
-}
-
-.mdl-col-settings form.frm fieldset {
-	animation:settingsColumnSlide .35s 1 cubic-bezier(.19,1,.22,1)
 }
 
 .mdl-favorite-from-options .txt-r-deep-yellow {
@@ -5377,7 +4912,6 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 	padding:0 10px;
 	color:inherit;
 	line-height:50px;
-	transition:all .25s cubic-bezier(.19,1,.22,1);
 	opacity:0;
 	pointer-events:none;
 	z-index:5
@@ -5441,7 +4975,8 @@ fieldset .fixed-width-label:not(.radio),fieldset:not(.js-search-filter) .control
 	width:100%;
 	text-align:center;
 	font-weight:300;
-	font-size:24px
+	font-size:24px;
+	margin-top:40px
 }
 
 #global_filter_settings .control-label {
@@ -5516,13 +5051,6 @@ fieldset .fixed-width-label:not(.radio),fieldset:not(.js-search-filter) .control
 	content:"Source "
 }
 
-.js-modal[style="display:none;"],.typeahead[style="display:none;"] {
-	pointer-events:none;
-	display:block!important;
-	opacity:0;
-	animation:none
-}
-
 .is-wide-columns .column-options {
 	width:353px
 }
@@ -5532,7 +5060,7 @@ fieldset .fixed-width-label:not(.radio),fieldset:not(.js-search-filter) .control
 }
 
 .margin-t--12.margin-b--30 {
-	margin-top:-47px!important
+	margin-top:-47px!important;
 }
 
 .js-quote-tweet-holder .quoted-tweet {
@@ -5571,10 +5099,6 @@ fieldset .fixed-width-label:not(.radio),fieldset:not(.js-search-filter) .control
 	box-shadow:-6px 1px 10px rgba(17,17,17,.35)
 }
 
-.cmp-replyto {
-	width:94.75%
-}
-
 .lst-group .username {
 	display:block;
 	margin-top:2px;
@@ -5589,7 +5113,6 @@ fieldset .fixed-width-label:not(.radio),fieldset:not(.js-search-filter) .control
 }
 
 .tweet-action[rel="favorite"] i,.tweet-detail-action[rel="favorite"] i {
-	transition:.35s transform,.35s color;
 	transform:rotate(0deg);
 	display:block
 }
@@ -5633,7 +5156,6 @@ fieldset .fixed-width-label:not(.radio),fieldset:not(.js-search-filter) .control
 }
 
 .js-column-options .dropdown-menu {
-	animation:menuDown .4s 1 cubic-bezier(.19,1,.22,1);
 	margin-top:0;
 	left:0;
 	top:-15px
@@ -5668,7 +5190,6 @@ fieldset .fixed-width-label:not(.radio),fieldset:not(.js-search-filter) .control
 	position:relative;
 	top:-3em;
 	opacity:1;
-	transition:all .2s cubic-bezier(.55,0,.1,1);
 	pointer-events:auto;
 	padding:8px 12px;
 	min-height:0;
@@ -5688,14 +5209,9 @@ fieldset .fixed-width-label:not(.radio),fieldset:not(.js-search-filter) .control
 	line-height:.9
 }
 
-.more-tweets-btn-container--hidden .more-tweets-btn {
-	transition:none
-}
-
 .more-tweets-btn-container--visible .more-tweets-btn,.more-tweets-btn-container--loading .more-tweets-btn {
 	opacity:1;
-	top:20px;
-	animation:moreTweetsButtonDown .7s 1 cubic-bezier(.55,0,.1,1)
+	top:20px
 }
 
 .compose-message-recipient-input-container {
@@ -5739,14 +5255,9 @@ fieldset .fixed-width-label:not(.radio),fieldset:not(.js-search-filter) .control
 }
 
 .typeahead-dropdown {
-	animation:menuUpRelative .225s 1,fadeIn .225s 1;
 	top:60px;
 	width:240px;
 	overflow-x:hidden
-}
-
-.typeahead-dropdown.is-hidden {
-	animation:none
 }
 
 .dropdown-menu ul {
@@ -5755,15 +5266,12 @@ fieldset .fixed-width-label:not(.radio),fieldset:not(.js-search-filter) .control
 
 .compose-message-recipient-container {
 	display:block!important;
-	transition:.2s all;
 	max-height:2000px;
 	opacity:1
 }
 
 .compose-message-recipient-container.is-hidden {
-	max-height:0;
-	opacity:0;
-	pointer-events:none
+	max-height:0
 }
 
 .js-column-back,.js-column-back:hover,.js-column-back:active,.js-column-back:focus {
@@ -5837,16 +5345,11 @@ fieldset .toggle-switch {
 	top:4px
 }
 
-.toggle-switch .toggle-switch-label:before {
-	transition:all .2s ease-in-out
-}
-
 .toggle-switch-label:after {
 	width:18px;
 	height:18px;
 	border-radius:9px;
-	box-shadow:0 3px 6px rgba(0,0,0,.25);
-	transition:all .35s cubic-bezier(.55,0,.1,1)
+	box-shadow:0 3px 6px rgba(0,0,0,.25)
 }
 
 .toggle-switch-input:checked+.toggle-switch-label:after {
@@ -5864,7 +5367,7 @@ fieldset .toggle-switch {
 }
 
 .tweet-detail-action-item.margin-ln {
-	margin-left:12%!important
+	margin-left:7%!important
 }
 
 .tweet-detail-action-item {
@@ -5928,8 +5431,7 @@ button.mtd-no-transform-case {
 	right:-5px;
 	width:5px;
 	height:0;
-	background:transparent;
-	transition:right .1s cubic-bezier(.19,1,.22,1),background .1s cubic-bezier(.19,1,.22,1),height .15s cubic-bezier(.19,1,.22,1)
+	background:transparent
 }
 
 .is-favorite .tweet-dogear {
@@ -5959,7 +5461,6 @@ button.mtd-no-transform-case {
 	position:relative;
 	display:none;
 	padding-left:8px;
-	transition:height .15s cubic-bezier(.19,1,.22,1);
 	overflow-y:hidden
 }
 
@@ -5973,8 +5474,7 @@ button.mtd-no-transform-case {
 
 .lst-group li {
 	padding-left:5px;
-	display:block;
-	transition:.2s all
+	display:block
 }
 
 .lst-group li:hover {
@@ -5991,17 +5491,13 @@ button.mtd-no-transform-case {
 	display:block
 }
 
-.js-column-social-proof .stream-item {
-	animation:profileSlide .5s cubic-bezier(.19,1,.22,1)
-}
-
 .js-search .popover {
 	width:400px!important
 }
 
 .edit-conversation-name .btn {
 	padding:5px;
-	width:40px;
+	width:40px
 }
 
 .edit-conversation-name .btn i {
@@ -6021,17 +5517,12 @@ button.mtd-no-transform-case {
 	text-align:left
 }
 
-.js-column-options {
-	transition:height .3s cubic-bezier(.19,1,.22,1)
-}
-
 .js-popover-content.scroll-none {
 	border-radius:4px
 }
 
 .pin-bottom.margin-a--15 {
-	margin-bottom:7px!important;
-	pointer-events:none
+	margin-bottom:7px!important
 }
 
 .js-account-manager-container {
@@ -6055,18 +5546,12 @@ button.mtd-no-transform-case {
 
 .contributor-row:not([data-state="confirmRemove"]) .contributor-confirm-remove,.contributor-settings-role,.contributor-detail,.contributor-remove {
 	opacity:0;
-	margin-top:-20px;
-	transition:opacity .2s cubic-bezier(.19,1,.22,1),margin-top .2s cubic-bezier(.19,1,.22,1)
+	margin-top:-20px
 }
 
 .contributor-row[data-state="settings"] .contributor-settings-role,.contributor-row[data-state="settings"] .contributor-confirm-change,.contributor-row[data-state="closed"] .contributor-detail,.contributor-row[data-state="settings"] .contributor-remove {
 	margin-top:0;
 	opacity:1
-}
-
-.contributor-row[data-state="confirmRemove"] .contributor-confirm-remove {
-	display:block;
-	animation:windowDown .2s 1!important
 }
 
 .contributor-row[data-state="confirmRemove"] .contributor-confirm-remove.padding-bl {
@@ -6080,7 +5565,6 @@ button.mtd-no-transform-case {
 	margin-left:-30px;
 	transform:scale(1);
 	opacity:1;
-	transition:.07s all,.08s margin
 }
 
 .drawer-header .drawer-header-title .icon:after {
@@ -6094,8 +5578,7 @@ button.mtd-no-transform-case {
 	border-radius:33px;
 	z-index:5;
 	transform:scale(.5);
-	opacity:0;
-	transition:.5s all,.15s opacity
+	opacity:0
 }
 
 .conversation-event .item-box {
@@ -6126,6 +5609,7 @@ button.mtd-no-transform-case {
 	font-size:12px!important;
 	text-transform:uppercase;
 	padding:10px 3px;
+	max-width:92%;
 	font-weight:500
 }
 
@@ -6163,7 +5647,7 @@ button.mtd-no-transform-case {
 }
 
 .tweet-stats {
-	margin-top:-27px;
+	margin-top:-30px
 }
 
 .tweet-detail .card-holder .txt-small a {
@@ -6196,10 +5680,6 @@ button.mtd-no-transform-case {
 	box-sizing:border-box
 }
 
-.js-tweet-translation {
-	animation:tweetIncomingTimeline .4s cubic-bezier(.19,1,.22,1)
-}
-
 .tweet-detail .margin-tl.txt-small:before {
 	content:"";
 	display:block;
@@ -6210,8 +5690,7 @@ button.mtd-no-transform-case {
 }
 
 .accordion .icon-arrow-d {
-	transform:rotate(0deg);
-	transition:.3s transform cubic-bezier(.19,1,.22,1)
+	transform:rotate(0deg)
 }
 
 .accordion .is-active .icon-arrow-d {
@@ -6225,8 +5704,8 @@ button.mtd-no-transform-case {
 
 .js-open-analytics {
 	position:absolute;
-	margin-left:-22px;
-	margin-top:20px;
+	margin-top:40px;
+	padding-bottom:20px!important;
 	text-align:right
 }
 
@@ -6294,16 +5773,11 @@ button.mtd-no-transform-case {
 .js-mediatable {
 	position:absolute;
 	pointer-events:none;
-	background:rgba(0,0,0,.3);
-	top:0;
-	left:0;
-	right:0;
-	bottom:0
+	background:rgba(0,0,0,.3)
 }
 
 .mdl.med-fullpanel {
 	background:transparent;
-	animation:none;
 	box-shadow:none
 }
 
@@ -6346,12 +5820,10 @@ button.mtd-no-transform-case {
 	opacity:0;
 	width:60px;
 	text-align:center;
-	transition:opacity .3s cubic-bezier(.19,1,.22,1) .1s,left .25s cubic-bezier(.19,1,.22,1)
 }
 
 .btn-fav-faved-text {
-	left:42px;
-	transition:opacity .4s cubic-bezier(.19,1,.22,1) .13s,left .25s cubic-bezier(.19,1,.22,1)
+	left:42px
 }
 
 .s-favorited:not(:hover)>.btn-fav-faved-text {
@@ -6399,10 +5871,6 @@ button.mtd-no-transform-case {
 	bottom:-50px
 }
 
-.cmp-replyto.js-inreply .tweet-avatar {
-	margin-top:-100%;
-	box-shadow:0 3px 9px rgba(17,17,17,.475)
-}
 
 .s-tall-fixed {
 	width:644px;
@@ -6416,10 +5884,6 @@ button.mtd-no-transform-case {
 .report-flow {
 	border:0;
 	position:absolute;
-	top:0;
-	left:0;
-	bottom:0;
-	right:0;
 	width:100%;
 	height:100%
 }
@@ -6515,52 +5979,52 @@ button.mtd-no-transform-case {
 	max-height:10px
 }
 
-#mtd-theme-control>option[value="paper"] {
+#mtd-theme-control option[value="paper"] {
 	background:#eee;
 	color:#333
 }
 
-#mtd-theme-control>option[value="grey"] {
+#mtd-theme-control option[value="grey"] {
 	background:#555
 }
 
-#mtd-theme-control>option[value="red"] {
+#mtd-theme-control option[value="red"] {
 	background:#F44336
 }
 
-#mtd-theme-control>option[value="pink"] {
+#mtd-theme-control option[value="pink"] {
 	background:#E91E63
 }
 
-#mtd-theme-control>option[value="orange"] {
+#mtd-theme-control option[value="orange"] {
 	background:#FF5722
 }
 
-#mtd-theme-control>option[value="violet"] {
+#mtd-theme-control option[value="violet"] {
 	background:#673AB7
 }
 
-#mtd-theme-control>option[value="teal"] {
+#mtd-theme-control option[value="teal"] {
 	background:#009688
 }
 
-#mtd-theme-control>option[value="green"] {
+#mtd-theme-control option[value="green"] {
 	background:#4CAF50
 }
 
-#mtd-theme-control>option[value="yellow"] {
+#mtd-theme-control option[value="yellow"] {
 	background:#FFC107
 }
 
-#mtd-theme-control>option[value="cyan"] {
+#mtd-theme-control option[value="cyan"] {
 	background:#00BCD4
 }
 
-#mtd-theme-control>option[value="black"] {
+#mtd-theme-control option[value="black"] {
 	background:#000
 }
 
-#mtd-theme-control>option[value="blue"] {
+#mtd-theme-control option[value="blue"] {
 	background:#2196F3
 }
 
@@ -6571,6 +6035,14 @@ textarea:not(.compose-text):not(.js-compose-text) {
 
 .js-my-custom-timelines>li {
 	padding:10px
+}
+
+.tweet-detail-wrapper .tweet-text {
+	cursor:default
+}
+
+.chirp-container .tweet-text {
+	cursor:pointer
 }
 
 .tweet-text.with-linebreaks {
@@ -6609,19 +6081,6 @@ textarea:not(.compose-text):not(.js-compose-text) {
 	margin-top:-3px
 }
 
-.cmp-replyto .tweet-header {
-	margin-top:-37px
-}
-
-.cmp-replyto .tweet-img {
-	margin-top:45px;
-	margin-left:-50px
-}
-
-.cmp-replyto.js-inreply {
-	min-height:20px
-}
-
 
 /* Theme standard message banners */
 
@@ -6630,27 +6089,14 @@ body>.message-banner[style="color: rgb(85, 85, 85); background-color: rgb(178, 2
 	color:inherit!important
 }
 
-
-
-
 .s-following .following-text,.s-following .unfollow-text {
-	transition:margin-left 0.3s cubic-bezier(.19,1,.22,1),opacity 0.3s cubic-bezier(.19,1,.22,1);
 	opacity:1;
 	margin-top:-8px;
 	position:absolute
 }
 
-.s-following .follow-btn:hover .following-text,.s-following .follow-btn:not(:hover) .unfollow-text {
-	transition:margin-left 0.3s cubic-bezier(.19,1,.22,1),opacity 0.3s cubic-bezier(.19,1,.22,1) 0.15s;
-	opacity:0
-}
-
-.s-following .follow-btn:not(:hover) .unfollow-text {
-	transition:margin-left 0.3s cubic-bezier(.19,1,.22,1),opacity 0.3s cubic-bezier(.19,1,.22,1);
-}
-
 .follow-btn:not(:hover) .unfollow-text {
-	margin-left:-18px
+	margin-left:-19px
 }
 
 .s-following .follow-btn:hover .following-text {
@@ -6659,26 +6105,6 @@ body>.message-banner[style="color: rgb(85, 85, 85); background-color: rgb(178, 2
 
 .activity-header-wrapping.activity-header.has-source-avatar>.nbfc {
 	font-size:0
-}
-
-
-@keyframes dontTouchMe {
-	0% {
-		transform:scale(1) rotate(0deg)
-	}
-
-	50% {
-		transform:scale(1.05) rotateX(120deg);
-		-webkit-filter:grayscale(100%)
-	}
-
-	100% {
-		transform:scale(1)
-	}
-}
-
-.mtd-dont-touch-me {
-	animation:dontTouchMe 5s cubic-bezier(0.5,0.7,0.5,1) infinite both
 }
 
 .med-embeditem>.l-table {
@@ -6698,13 +6124,12 @@ body>.message-banner[style="color: rgb(85, 85, 85); background-color: rgb(178, 2
     text-align:left;
     padding:5px;
     bottom:20px!important;
-    transition:right .5s;
     border-radius:3px;
     right:-290px
 }
 
 .status-message[style="bottom: 0px;"] {
-	right:0;
+	right:0
 }
 
 .status-message-text {
@@ -6712,4 +6137,83 @@ body>.message-banner[style="color: rgb(85, 85, 85); background-color: rgb(178, 2
   padding:5px;
   font-size:14px;
   line-height:1.2em
+}
+
+.column:not(.is-options-open) .js-column-options {
+	height:0!important
+}
+
+.column-scroller {
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+}
+
+.column-scroller[style="top: -77px;"],.more-tweets-btn-container[style="top: -77px;"],.column-scroller[style="top: -75px;"],.more-tweets-btn-container[style="top: -75px;"],.column-scroller[style="top: -135px;"],.more-tweets-btn-container[style="top: -135px;"],.column-scroller[style="top: -137px;"],.more-tweets-btn-container[style="top: -137px;"],.column-scroller[style="top: -79px;"],.more-tweets-btn-container[style="top: -79px;"],.column-scroller[style="top: -93px;"],.more-tweets-btn-container[style="top: -93px;"],.column-scroller[style="top: -64px;"],.more-tweets-btn-container[style="top: -64px;"] {
+	top:0!important
+}
+
+.accordion-divider-t>.button-group {
+	float:left
+}
+
+ul.tweet-stats:nth-child(2) {
+	margin-top:0
+}
+
+.tweet-detail-action-item {
+	max-height:20px
+}
+
+.js-open-analytics>.txt-size-variable--10 {
+	padding-bottom:30px;
+	padding-top:0
+}
+
+.cmp-replyto .icon-small-context {
+	padding-right:10px
+}
+
+.cmp-replyto .tweet-text {
+	font-size:0.9em;
+	margin-top:2px;
+}
+
+.btn .icon {
+    line-height: 1em;
+    vertical-align: middle
+}
+
+.facet-type .control-label {
+	float:left;
+	position:relative;
+	text-align:left;
+	display:block;
+	text-transform:lowercase;
+	width:0;
+	height:0
+}
+
+.js-quote-tweet-holder:not(.is-hidden)+div+div+.margin-t--12 {
+	margin-top:-115px!important
+}
+
+.quoted-tweet .tweet-avatar,.quoted-tweet .tweet-img {
+	height:24px;
+	width:24px;
+	margin-left:5px
+}
+
+.compose .quoted-tweet .account-link>.nbfc {
+	position:absolute
+}
+
+.compose .quoted-tweet .js-quoted-tweet-text {
+	padding-top:10px;
+	padding-left:5px
+}
+
+.compose .quoted-tweet .sprite-close {
+	padding-top:0
 }
