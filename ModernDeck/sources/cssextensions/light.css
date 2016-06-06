@@ -15,7 +15,8 @@ a:not(.column-header-link):not(.js-column-back):not(.list-account):not(.account-
 #caltoday,
 .lst-profile a,
 .lst-profile a:hover,
-.lst-profile a:active
+.lst-profile a:active,
+input[type="checkbox"]:before
 {
 	color:#00BCD4
 }
@@ -26,14 +27,13 @@ a:not(.list-account):not(.js-column-back):not(.column-header-link):focus
 	color:#0DA8BC;
 }
 
-a:active,
-a:focus {
+a:not(.compose-account):not(.js-toggle-item):not(.column-header-link):active,
+a:not(.compose-account):not(.js-toggle-item):not(.column-header-link):focus {
 	background-color:rgba(0,0,0,.05)
 }
 
 .form-legend,
 .prf-follow-status,
-.accs-header,
 .mtd-no-chars-suggestions,
 option,
 .typeahead,
@@ -41,7 +41,8 @@ option,
 .list-account,
 .mtd-about-title,
 .character-count-compose,
-.prf-stats li strong
+.prf-stats li strong,
+.inline-account-safeguard-checkbox
 {
 	color:#333
 }
@@ -73,8 +74,7 @@ option,
 	color:#4c4c4c
 }
 
-.btn:focus,
-.is-options-open .column-settings-link:active
+.btn:focus
 {
 	color:#26C6DA
 }
@@ -168,9 +168,10 @@ option,
 .s-following .follow-btn:active,
 .btn-positive-alt.is-selected,
 .is-selected.btn-fav.s-favorited,
-.s-following .is-selected.follow-btn
+.s-following .is-selected.follow-btn,
+.s-following .follow-btn:hover
 {
-	color:#C22727
+	color:#C22727!important
 }
 
 .btn-compose:not(.js-hide-drawer)
@@ -185,25 +186,24 @@ option,
 	color:#fff!important
 }
 
+.invalid-char-count,
+.unfollow-text,
+#add-filter:not([disabled]),
 .btn-negative
 {
-	color:#D80000
+	color:#D80000!important
 }
 
-.btn-negative:hover
+.btn-negative:not([disabled]):not(.is-disabled):hover
 {
-	color:#FF2727
+	color:#FF2727!important
 }
 
-.btn-negative:focus
-{
-	color:#a00
-}
-
+.btn-negative:focus,
 .btn-negative:active,
 .btn-negative.is-selected
 {
-	color:#B30000
+	color:#B30000!important
 }
 
 .btn-negative[disabled],
@@ -214,7 +214,7 @@ option,
 .btn-negative.is-disabled:focus,
 .btn-negative.is-disabled:active
 {
-	color:rgba(178,0,0,.3)
+	color:rgba(178,0,0,.3)!important
 }
 
 .tweet-action[data-actions-menu-position]:focus
@@ -327,11 +327,6 @@ body,
 	color:#0EC5D5
 }
 
-.s-following .follow-btn:hover
-{
-	color:#EC1313
-}
-
 .btn-compose:not(.js-hide-drawer),
 .btn-compose:not(.js-hide-drawer):hover,
 .btn-compose:not(.js-hide-drawer):focus
@@ -434,7 +429,7 @@ html:not(.mtd-dark-media-previews) .med-tweet,
 .facet-type,
 .is-options-open .column-settings-link
 {
-	background:#26C6DA
+	background:#26C6DA!important
 }
 
 .lst-group.js-setting-list .selected {
@@ -862,11 +857,6 @@ textarea::placeholder
 textarea
 {
 	border-color:#333
-}
-
-.over-char-count:disabled
-{
-	color:#a93730
 }
 
 .column-content

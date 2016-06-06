@@ -497,7 +497,7 @@ function LoginStuffs() {
 		setTimeout(LoginStuffs,150);
 		return;
 	}
-	var bannerPhoto = profileInfo._profileBannerURL.search("empty") > 0 ? "" : profileInfo._profileBannerURL();
+	var bannerPhoto = profileInfo._profileBannerURL.search("empty") > 0 ? "" : profileInfo._profileBannerURL;
 	var avatarPhoto = profileInfo.profileImageURL.replace("_normal","");
 	var name = profileInfo.name;
 	var username = profileInfo.screenName;
@@ -541,8 +541,9 @@ function NavigationSetup() {
 		mutationObserver(b,function(){
 			if (typeof c.attr("style") !== "undefined") {
 				var num = parseInt(c.attr("style").match(/[\-\d]+/g));
-				if (num < 0)
-					c.attr("style","top: 0px;")
+				var hasFilterOptionsVisible = parseInt(c.parent().children(".column-options").children('.js-column-message[style]')[0].style.height.replace("px","")) > 0;
+				if ((!hasFilterOptionsVisible && num < 0) || (hasFilterOptionsVisible && num < 21))
+					c.attr("style","top: " + ((!hasFilterOptionsVisible && "0") || "22") + "px;")
 			}
 		},{attributes:true});
 	})
