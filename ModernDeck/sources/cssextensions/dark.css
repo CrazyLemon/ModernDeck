@@ -13,14 +13,16 @@ a:not([href="#"]):not(.column-header-link):not(.js-column-back):not(.js-tweet-so
 .icon-follow-color,
 .tweet-actions.is-visible .icon-reply,
 #caltoday,
-input[type="checkbox"]:before
+input[type="checkbox"]:checked:before,
+input[type="radio"]:checked:before,
+.mtd-logo
 {
 	color:#009EAD;
 	transition:color .3s
 }
 
-a:not(.compose-account):not(.js-toggle-item):active,
-a:not(.compose-account):not(.js-toggle-item):focus
+a:not(.list-account):not(.js-column-back):not(.compose-account):not(.js-toggle-item):not(.column-header-link):active,
+a:not(.list-account):not(.js-column-back):not(.compose-account):not(.js-toggle-item):not(.column-header-link):focus
 {
 	color:#00737E;
 	background-color:rgba(0,0,0,.05)
