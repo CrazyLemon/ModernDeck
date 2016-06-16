@@ -5,7 +5,7 @@
 
 "use strict";
 
-var SystemVersion = "6.0 RC3 (Build 2016.06.14.2)";
+var SystemVersion = "6.0 (Build 2016.06.15.3)";
 var MTDBaseURL = "https://raw.githubusercontent.com/dangeredwolf/ModernDeck/master/ModernDeck/"; // Defaults to streaming if nothing else is available (i.e. legacy firefox)
 
 var msgID,
@@ -236,8 +236,8 @@ function MTDInit(){
 		fontParseHelper({weight:"500",name:"Roboto500latin",range:"U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000"}) +
 		fontParseHelper({weight:"500",name:"Roboto500latinext"}) +
 		fontParseHelper({family:"Material",weight:"400",name:"MaterialIcons",range:"U+0000-F000"}) +
-		fontParseHelper({family:"MD",weight:"400",name:"mdvectors",range:"U+E000-FFFF"}) +
-		fontParseHelper({family:"Font Awesome",weight:"400",name:"fontawesome",range:"U+0000-F000"})
+		fontParseHelper({family:"MD",weight:"400",name:"mdvectors",range:"U+E000-FFFF"})
+		// fontParseHelper({family:"Font Awesome",weight:"400",name:"fontawesome",range:"U+0000-F000"})
 	));
 
 	document.querySelector(".js-modals-container").removeChild = function(rmnode){
@@ -295,11 +295,11 @@ function MTDInit(){
 		return TD.i("{{hours12}}:{{minutes}} {{amPm}}, {{day}} {{month}} {{fullYear}}", TD.util.prettyTime(e));
 	};
 
-	head.append(
-		make("script")
-			.attr("type","text/javascript")
-			.attr("src",MTDBaseURL + "sources/libraries/waves.js")
-	)
+	// head.append(
+	// 	make("script")
+	// 		.attr("type","text/javascript")
+	// 		.attr("src",MTDBaseURL + "sources/libraries/waves.js")
+	// )
 
 	NavigationSetup();
 
@@ -611,7 +611,7 @@ function NavigationSetup() {
 			.attr("id","btdsettings")
 			.append(
 				make("i")
-				.addClass("icon-btd-settings")
+				.addClass("icon icon-btd-settings")
 			)
 			.click(function(){
 				MTDPrepareWindows();
