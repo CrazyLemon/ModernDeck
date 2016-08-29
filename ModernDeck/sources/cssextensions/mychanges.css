@@ -1,14 +1,27 @@
 /* my changes */
 .is-wide-columns .column {
-	width:25% !important;
+	width:20% !important;
 }
 .is-wide-columns .column-content, .is-wide-columns .column-header,.is-wide-columns .column-header-temp {
 	width:100% !important;
 }
-/* <3 */
-/*.icon-favorite:before {
-	content:"\e87d" !important;
+.column-type-interactions .column-holder .column-panel .column-content .chirp-container .stream-item .item-box .activity-header .nbfc.txt-mute.txt-small {
+    margin-bottom: 20px;
 }
-.is-favorite .icon-favorite-toggle,.btn:not(.btn-fav-fav-text)>.icon-favorite-color,.obj-left>.icon-favorite-color {
-	color:#BE1931 !important;
-}*/
+.column-type-interactions .column-holder .column-panel .column-content .chirp-container .stream-item .item-box .activity-header .nbfc .txt-mute .txt-small .txt-bold {
+	margin-left: 35px;
+}
+.column-type-interactions .column-holder .column-panel .column-content .chirp-container .stream-item .item-box .account-summary .account-summary-text .account-bio {
+	margin-left: 55px;
+}
+.column-type-interactions .stream-item:not(.is-actionable) .activity-header:not(.has-source-avatar):not(.activity-header-wrapping) {
+	padding-bottom: 5px;
+}
+/* fix X followed you notifications
+.activity-header .txt-mute {
+	padding-left: 70px !important;
+}
+.account-inline {
+	padding-top: 25px !important;
+}
+*/
