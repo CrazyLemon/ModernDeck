@@ -11,17 +11,13 @@
 .column-type-interactions .column-holder .column-panel .column-content .chirp-container .stream-item .item-box .activity-header .nbfc .txt-mute .txt-small .txt-bold {
 	margin-left: 35px;
 }
+.column-type-activity .column-holder .column-panel .column-content .chirp-container .stream-item .item-box .account-summary .account-summary-text .account-bio,
 .column-type-interactions .column-holder .column-panel .column-content .chirp-container .stream-item .item-box .account-summary .account-summary-text .account-bio {
 	margin-left: 55px;
 }
 .column-type-interactions .stream-item:not(.is-actionable) .activity-header:not(.has-source-avatar):not(.activity-header-wrapping) {
 	padding-bottom: 5px;
 }
-/* fix X followed you notifications
-.activity-header .txt-mute {
-	padding-left: 70px !important;
+.column-type-activity .column-holder .column-panel .column-content .column-scroller .chirp-container .stream-item .item-box .activity-header .nbfc .account-link {
+	margin-left: 5px;
 }
-.account-inline {
-	padding-top: 25px !important;
-}
-*/
