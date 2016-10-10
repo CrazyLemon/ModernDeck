@@ -41,3 +41,6 @@
 .tweet-timestamp {
 	top: 15px !important;
 }
+.tweet-detail-reply .stream-item .item-box .tweet .tweet-header .account-link .nbfc .account-inline {
+	padding-left: 35px !important;
+}
