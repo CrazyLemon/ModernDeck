@@ -21,3 +21,20 @@
 .column-type-activity .column-holder .column-panel .column-content .column-scroller .chirp-container .stream-item .item-box .activity-header .nbfc .account-link {
 	margin-left: 5px;
 }
+.is-favorite .icon-favorite-toggle {
+  color: red !important;
+}
+.obj-left>.icon-favorite-color {
+	color: red !important;
+}
+.stream-item .icon-small-context {
+  color: green;
+}
+.activity-indicator.activity-icon-aligned {
+  color: black;
+}
+.column-type-home .column-holder .column-panel .column-content .column-scroller .chirp-container .stream-item .item-box .tweet .tweet-header .account-link .nbfc .account-inline,
+.column-type-mention .column-holder .column-panel  .column-content .column-scroller .chirp-container .stream-item .item-box .tweet .tweet-header .account-link .nbfc ,
+.column-type-activity .column-holder .column-panel  .column-content .column-scroller .chirp-container .stream-item .item-box .tweet .tweet-header .account-link .nbfc .account-inline {
+	margin-left: 50px !important;
+}
