@@ -38,3 +38,6 @@
 .column-type-activity .column-holder .column-panel  .column-content .column-scroller .chirp-container .stream-item .item-box .tweet .tweet-header .account-link .nbfc .account-inline {
 	margin-left: 50px !important;
 }
+.tweet-timestamp {
+	top: 15px !important;
+}
