@@ -2,7 +2,7 @@
 			moderndeck.css
 
 
-			ModernDeck 6.0 [codename Utopian Paradise]
+			ModernDeck 6.1 [codename Sweet Paradise]
 			Copyright 2014-2016 Ryan Dolan (@dangeredwolf)
 			Released under the MIT Licence
 
@@ -215,17 +215,19 @@ html.scroll-v {
 
 .horizontal-flow-container {
 	overflow:visible;
-	white-space:nowrap
+	white-space:nowrap;
+	height:100%;
+	width:100%
 }
 
 .account-link>.nbfc {
 	overflow:hidden;
 	margin-top:0;
-	padding:5px 5px 0 0
+	padding:5px 5px 0 49px
 }
 
-.js-mediatable .account-link>.nbfc {
-	padding:0
+.quoted-tweet .account-link>.nbfc,.tweet.txt-mute .account-link>.nbfc {
+	padding-left:0
 }
 
 .align-below-header+.nbfc {
@@ -701,7 +703,7 @@ i {
 	left:-3px;
 	margin-top:-1px;
 	margin-bottom:auto;
-	font-size:27px
+	font-size: 24px
 }
 
 .mtd-nav-button .icon-keyboard,.mtd-nav-button .icon-plus {
@@ -927,7 +929,8 @@ button:hover,button:focus {
 .s-not-following .follow-text {
 	display:block;
 	min-width:auto;
-	margin-left:1px
+	margin-left:1px;
+	margin-top:2px
 }
 
 .button-group .btn {
@@ -973,7 +976,7 @@ button:hover,button:focus {
 	height:100%;
 	font-size:0.9rem;
 	white-space:normal;
-	border-right:none!important
+	border-right:0!important
 }
 
 .is-narrow-columns .column {
@@ -1005,17 +1008,9 @@ button:hover,button:focus {
 	position:absolute;
 	top:54px;
 	left:0;
+	right:0;
 	bottom:0;
-	width:325px;
 	opacity:1!important
-}
-
-.is-narrow-columns .column-content {
-	width:280px
-}
-
-.is-wide-columns .column-content {
-	width:350px
 }
 
 .drawer-header-title.drawer-column-header-title {
@@ -1133,12 +1128,14 @@ button:hover,button:focus {
 	font-size:20px;
 	font-weight:400;
 	height:100%;
-	padding-left:3px!important;
 	position:absolute;
-	width:100%;
+	left:10px;
+	right:20px;
 	padding-top:5px;
 	margin-left:0!important;
-	margin-top:-2px!important
+	margin-top:-2px!important;
+	word-wrap:break-word!important;
+	text-overflow:ellipsis!important
 }
 
 .mdl .column-title {
@@ -1149,7 +1146,9 @@ button:hover,button:focus {
 	font-weight:400;
 	font-size:13px;
 	display:inline;
-	color:rgba(255,255,255,.74)
+	color:rgba(255,255,255,.74);
+	text-overflow:ellipsis;
+    overflow:hidden
 }
 
 .column-type-message .column-title {
@@ -1241,7 +1240,7 @@ a .column-title-back .icon:after {
 	position:relative;
 	font-size:24px;
 	width:24px;
-	height:24px;
+	height:24px
 }
 
 .column-header-link {
@@ -1299,7 +1298,6 @@ a .column-title-back .icon:after {
 
 .column-options {
 	box-shadow:0 3px 6px rgba(17,17,17,.1);
-	width:328px;
 	overflow:visible;
 	pointer-events:all;
 	z-index:4
@@ -1543,7 +1541,7 @@ a .column-title-back .icon:after {
 	line-height:1;
 	text-overflow:ellipsis;
 	font-size:14px;
-	margin-left:5px
+	margin-left:3px
 }
 
 .account-inline .username {
@@ -1921,7 +1919,6 @@ a .column-title-back .icon:after {
 }
 
 .tweet-detail-wrapper {
-	margin-top:-1px;
 	box-shadow:0 2px 5px rgba(0,0,0,.4);
 	border-top:5px solid transparent;
 	box-sizing:border-box;
@@ -2201,7 +2198,7 @@ a .column-title-back .icon:after {
 	width:42px;
 	border-radius:0;
 	border:0;
-	outline:none;
+	outline:0;
 	display:block;
 	top:0;
 	position:fixed;
@@ -2240,7 +2237,9 @@ a .column-title-back .icon:after {
 
 .message-banner {
 	position:relative;
-	text-align:center
+	text-align:center;
+	color:#fff!important;
+	background:transparent!important
 }
 
 .message-banner .dismiss {
@@ -2450,7 +2449,8 @@ a .column-title-back .icon:after {
 }
 
 .js-account-manager-container .drawer-content {
-	top:0
+	top:0;
+	overflow-x:hidden
 }
 
 .ovl-plain,.ovl,.overlay {
@@ -2488,7 +2488,6 @@ a .column-title-back .icon:after {
 	width:580px;
 	text-align:left;
 	opacity:1;
-	border-radius:4px;
 	box-shadow:0 30px 70px rgba(17,17,17,.6);
 	height:100%;
 	border-radius:0;
@@ -2511,6 +2510,10 @@ a .column-title-back .icon:after {
 
 .s-tall-fixed .mdl-header {
 	height:24px
+}
+
+.mdl-header.js-drag-handle {
+	pointer-events:all
 }
 
 .mdl-header-title {
@@ -2545,12 +2548,6 @@ a .column-title-back .icon:after {
 	overflow:visible
 }
 
-.mdl .mdl-content {
-	height:100%;
-	border-radius:0;
-	padding-top:0
-}
-
 .mdl-content.with-scroll {
 	max-height:450px;
 	padding-top:20px;
@@ -2565,7 +2562,18 @@ a .column-title-back .icon:after {
 	font-size:28px;
 	padding-left:10px;
 	padding-right:10px;
-	font-weight:300
+	font-weight:300;
+	pointer-events:none
+}
+
+.mdl-placeholder>*::selection {
+	background:transparent;
+	color:inherit
+}
+
+.mdl-placeholder>*::-moz-selection {
+	background:transparent;
+	color:inherit
 }
 
 .mdl-column {
@@ -2645,7 +2653,8 @@ a .column-title-back .icon:after {
 	text-align:left;
 	margin-left:24px;
 	margin-right:0;
-	margin-bottom:15px
+	margin-bottom:15px;
+	transition:.2s all
 }
 
 .lst-launcher .btn i {
@@ -2690,8 +2699,8 @@ a .column-title-back .icon:after {
 	bottom:5px
 }
 
-.settings-modal .js-header-title:after {
-	content:"TweetDeck Settings"
+.settings-modal .js-header-title:before {
+	content:"TweetDeck "
 }
 
 .mdl-links {
@@ -3161,7 +3170,7 @@ a .column-title-back .icon:after {
 	right:5%;
 	left:5%;
 	padding:8px;
-	bottom:0;
+	bottom:-5px;
 	box-shadow:0 3px 6px rgba(0,0,0,.7);
 	border-radius:4px 4px 0 0;
 	pointer-events:all
@@ -3169,7 +3178,7 @@ a .column-title-back .icon:after {
 
 .med-embeditem {
 	position:absolute;
-	bottom:85px;
+	bottom: 135px;
 	top:0;
 	width:100%;
 	text-align:center
@@ -3480,7 +3489,6 @@ textarea,.l-fullwidth {
 
 .is-new>.column-nav-updates.icon-dot {
 	right:0;
-	margin-top:5px;
 	position:absolute;
 	display:block;
 	margin-top:-26px
@@ -3644,7 +3652,7 @@ input[type="radio"]:checked:before {
 
 .mdl-column.l-column .search-input {
 	width:70%;
-	border-bottom:none;
+	border-bottom:0;
 	margin-left:10px;
 	box-shadow:0 3px 8px rgba(0,0,0,.3);
 	border-radius:4px
@@ -4069,7 +4077,7 @@ input[type="radio"]:checked:before {
 .social-proof-container {
 	line-height:18px;
 	text-align:left;
-	position:fixed;
+	position: absolute;
 	top:328px
 }
 
@@ -4121,7 +4129,7 @@ input[type="radio"]:checked:before {
 }
 
 .lst li:last-child {
-	border-bottom:none
+	border-bottom:0
 }
 
 .lst-modal {
@@ -4194,7 +4202,7 @@ input[type="radio"]:checked:before {
 	margin-top:-18px;
 	text-indent:0;
 	width:220px;
-	margin-right:-20px;
+	margin-right: -10px;
 	border-radius:2px
 }
 
@@ -4329,7 +4337,7 @@ input[type="radio"]:checked:before {
 }
 
 .column-nav-link:focus,.column-nav-link:active {
-	outline:none;
+	outline:0;
 	color:rgba(255,255,255,.2);
 	transform:none!important
 }
@@ -4338,7 +4346,6 @@ input[type="radio"]:checked:before {
 	position:relative!important;
 	width:0;
 	top:0!important;
-	left:0!important;
 	box-sizing:border-box;
 	color:rgba(255,255,255,.75);
 	display:inline-block;
@@ -4359,7 +4366,7 @@ input[type="radio"]:checked:before {
 	padding-left:1px;
 	vertical-align:-.6em;
 	padding-right:5px;
-	padding-top:5px;
+	padding-top:5px
 }
 
 .column-nav-link .attribution {
@@ -4384,7 +4391,8 @@ input[type="radio"]:checked:before {
 	text-align:left;
 	display:inline;
 	padding-left:40px;
-	font-weight:500
+	font-weight:500;
+	text-overflow:ellipsis
 }
 
 .media-img {
@@ -4588,7 +4596,7 @@ input[type="radio"]:checked:before {
 
 .js-reply-charcount {
 	padding-top:0;
-	border-bottom:none
+	border-bottom:0
 }
 
 .js-account-manager-container {
@@ -4667,7 +4675,7 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 }
 
 .tweet-action .icon-retweet,.tweet-detail-action .icon-retweet {
-	padding-top:2px;
+	padding-top:2px
 }
 
 .media-sensitive-content {
@@ -4960,10 +4968,7 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 	font-size:300px;
 	line-height:1;
 	display:block;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:10px;
-	margin-bottom:-100px
+	margin:10px auto -100px auto
 }
 
 .mtd-logo:before {
@@ -5134,16 +5139,8 @@ fieldset .fixed-width-label:not(.radio),fieldset:not(.js-search-filter) .control
 	content:"Source "
 }
 
-.is-wide-columns .column-options {
-	width:353px
-}
-
-.is-narrow-columns .column-options {
-	width:283px
-}
-
 .margin-t--12.margin-b--30 {
-	margin-top:-47px!important;
+	margin-top:-47px!important
 }
 
 .js-quote-tweet-holder .quoted-tweet {
@@ -5210,7 +5207,7 @@ fieldset .fixed-width-label:not(.radio),fieldset:not(.js-search-filter) .control
 }
 
 .tweet-detail-wrapper .media-sensitive {
-	opacity:.99;
+	opacity:.99
 }
 
 .js-app-add-column {
@@ -5279,6 +5276,10 @@ fieldset .fixed-width-label:not(.radio),fieldset:not(.js-search-filter) .control
 	box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 5px 0 rgba(0,0,0,.23)
 }
 
+.mdl .more-tweets-btn {
+	top:-5.75em
+}
+
 .more-tweets-btn:active,.more-tweets-btn:hover,.more-tweets-btn:focus {
 	box-shadow:0 2px 10px 0 rgba(0,0,0,.16),0 8px 10px 0 rgba(0,0,0,.23)
 }
@@ -5338,7 +5339,7 @@ fieldset .fixed-width-label:not(.radio),fieldset:not(.js-search-filter) .control
 }
 
 .typeahead-dropdown {
-	top:60px;
+	top:70px;
 	width:240px;
 	overflow-x:hidden
 }
@@ -5487,7 +5488,7 @@ button.mtd-no-transform-case {
 }
 
 .compose-account:focus {
-	outline:none
+	outline:0
 }
 
 .btn-options-tray[data-action="right"] {
@@ -5502,6 +5503,10 @@ button.mtd-no-transform-case {
 
 .js-user-actions-menu i {
 	font-size:25px
+}
+
+.mdl .js-user-actions-menu i:before {
+	content:"\e5d4"
 }
 
 .tweet-dogear {
@@ -5536,19 +5541,23 @@ button.mtd-no-transform-case {
 	width:3px
 }
 
+.is-active:not(.is-expanded) .accordion-panel {
+	height:0!important
+}
+
 .accordion-panel {
 	position:relative;
-	display:none;
+	height:0;
 	padding-left:8px;
 	overflow-y:hidden
 }
 
 .is-expanded .accordion-panel {
-	display:block
+	height:inherit /* Hack to fix derpiness of panel in 6.1 tree; */
 }
 
 .column-nav-item.is-new .obj-left {
-	margin-top:-30px;
+	margin-top:-30px
 }
 
 .lst-group li {
@@ -5621,12 +5630,14 @@ button.mtd-no-transform-case {
 
 .contributor-row:not([data-state="confirmRemove"]) .contributor-confirm-remove,.contributor-settings-role,.contributor-detail,.contributor-remove {
 	opacity:0;
-	margin-top:-20px
+	margin-top:-20px;
+	pointer-events:none
 }
 
 .contributor-row[data-state="settings"] .contributor-settings-role,.contributor-row[data-state="settings"] .contributor-confirm-change,.contributor-row[data-state="closed"] .contributor-detail,.contributor-row[data-state="settings"] .contributor-remove {
 	margin-top:0;
-	opacity:1
+	opacity:1;
+	pointer-events:all
 }
 
 .contributor-row[data-state="confirmRemove"] .contributor-confirm-remove.padding-bl {
@@ -5639,7 +5650,7 @@ button.mtd-no-transform-case {
 	margin-top:-48px;
 	margin-left:-30px;
 	transform:scale(1);
-	opacity:1;
+	opacity:1
 }
 
 .drawer-header .drawer-header-title .icon:after {
@@ -5768,7 +5779,7 @@ button.mtd-no-transform-case {
 	transform:rotate(0deg)
 }
 
-.accordion .is-active .icon-arrow-d {
+.accordion .is-expanded .icon-arrow-d {
 	transform:rotate(180deg)
 }
 
@@ -5853,7 +5864,8 @@ button.mtd-no-transform-case {
 
 .mdl.med-fullpanel {
 	background:transparent;
-	box-shadow:none
+	box-shadow:none;
+	top:10px
 }
 
 .l-column.mdl-column.mdl-column-sml {
@@ -5894,7 +5906,7 @@ button.mtd-no-transform-case {
 	left:28px;
 	opacity:0;
 	width:60px;
-	text-align:center;
+	text-align:center
 }
 
 .btn-fav-faved-text {
@@ -6166,16 +6178,8 @@ body>.message-banner[style="color: rgb(85, 85, 85); background-color: rgb(178, 2
 
 .s-following .following-text,.s-following .unfollow-text {
 	opacity:1;
-	margin-top:-8px;
+	margin-top:-10px;
 	position:absolute
-}
-
-.follow-btn:not(:hover) .unfollow-text {
-	margin-left:-19px
-}
-
-.s-following .follow-btn:hover .following-text {
-	margin-left:18px
 }
 
 .activity-header-wrapping.activity-header.has-source-avatar>.nbfc {
@@ -6214,19 +6218,8 @@ body>.message-banner[style="color: rgb(85, 85, 85); background-color: rgb(178, 2
   line-height:1.2em
 }
 
-.column:not(.is-options-open) .js-column-options {
-	height:0!important
-}
-
-.column-scroller {
-	position:absolute;
-	bottom:0;
-	left:0;
-	right:0;
-}
-
-.column-scroller[style="top: -77px;"],.more-tweets-btn-container[style="top: -77px;"],.column-scroller[style="top: -75px;"],.more-tweets-btn-container[style="top: -75px;"],.column-scroller[style="top: -135px;"],.more-tweets-btn-container[style="top: -135px;"],.column-scroller[style="top: -137px;"],.more-tweets-btn-container[style="top: -137px;"],.column-scroller[style="top: -79px;"],.more-tweets-btn-container[style="top: -79px;"],.column-scroller[style="top: -93px;"],.more-tweets-btn-container[style="top: -93px;"],.column-scroller[style="top: -64px;"],.more-tweets-btn-container[style="top: -64px;"] {
-	top:0!important
+.js-column-options.scroll-none {
+	height:0
 }
 
 .accordion-divider-t>.button-group {
@@ -6252,7 +6245,7 @@ ul.tweet-stats:nth-child(2) {
 
 .cmp-replyto .tweet-text {
 	font-size:0.9em;
-	margin-top:2px;
+	margin-top:2px
 }
 
 .btn .icon {
@@ -6434,7 +6427,7 @@ ul.tweet-stats:nth-child(2) {
 }
 
 .prf-header[style="background-image: url(https://pbs.twimg.com/profile_banners/25073877/1462405914/web)"],.prf-header[style="background-image: url(https://pbs.twimg.com/profile_banners/1339835893/1465349298/web)"] {
-	background-image:url(https://gotnews.com/wp-content/uploads/2015/03/us-flag-inverted-740x400-740x400.png)!important;
+	background-image:url(https://gotnews.com/wp-content/uploads/2015/03/us-flag-inverted-740x400-740x400.png)!important
 }
 
 .prf-header[style="background-image: url(https://pbs.twimg.com/profile_banners/25073877/1462405914/web)"] .prf-card-inner,.prf-header[style="background-image: url(https://pbs.twimg.com/profile_banners/1339835893/1465349298/web)"] .prf-card-inner {
@@ -6445,8 +6438,13 @@ input[type="button"] {
 	border-bottom:0
 }
 
-p[lang="ar"] {
-	direction:rtl
+p[lang="ar"],p[lang="fa"],p[lang="ha"],p[lang="he"],p[lang="ks"],p[lang="ku"],p[lang="ps"],p[lang="ur"],p[lang="yi"] {
+    direction: rtl
+}
+
+p[lang="ar"] a[rel="hashtag"],p[lang="ar"] a[rel="user"],p[lang="fa"] a[rel="hashtag"],p[lang="fa"] a[rel="user"],p[lang="ha"] a[rel="hashtag"],p[lang="ha"] a[rel="user"],p[lang="he"] a[rel="hashtag"],p[lang="he"] a[rel="user"],p[lang="ks"] a[rel="hashtag"],p[lang="ks"] a[rel="user"],p[lang="ku"] a[rel="hashtag"],p[lang="ku"] a[rel="user"],p[lang="ps"] a[rel="hashtag"],p[lang="ps"] a[rel="user"],p[lang="ur"] a[rel="hashtag"],p[lang="ur"] a[rel="user"],p[lang="yi"] a[rel="hashtag"],p[lang="yi"] a[rel="user"] {
+    direction: ltr;
+    unicode-bidi: isolate
 }
 
 .contributor-row .account-summary-text {
@@ -6486,4 +6484,125 @@ p[lang="ar"] {
 
 .scroll-conversation .js-replies-before .js-media-preview-container.margin-vm,.scroll-conversation .js-replies-to .js-media-preview-container.margin-vm {
 	padding-left:53px
+}
+
+.mdl .column-scroller {
+	top:0!important
+}
+
+.contributor-settings-role {
+	padding-bottom:0!important
+}
+
+.js-stream-item-content>.account-summary .tweet-avatar {
+	width:24px;
+	height:24px;
+	margin-top:-4px;
+	margin-left:6px;
+	float:right
+}
+
+.account-bio {
+	padding-left:3px;
+	margin-top:7px
+}
+
+.activity-header>.txt-mute {
+	display:none
+}
+
+.account-summary>.account-summary-text>.account-link {
+	margin-top:7px
+}
+
+.prf-actions .js-follow-button {
+	min-width:52px!important;
+	min-height:51px!important;
+	font-size:18px;
+	padding-top:8px;
+	padding-left:12px;
+	text-align:left;
+	margin-top:-52px;
+	margin-left:-65px;
+	border-radius:32px;
+	z-index:5;
+	box-shadow:0 2px 5px 1px rgba(0,0,0,.25)
+}
+
+.prf-actions .action-text>i {
+	display:none
+}
+
+.prf-actions .action-text {
+	font-size:0
+}
+
+.prf-actions .action-text:after {
+	font-size:28px;
+	font-family:"Material";
+	color:#fff
+}
+
+.prf-actions .follow-text:after {
+	content:"\e7fe";
+	font-size:24px
+}
+
+.prf-actions .thats-you-text {
+	margin-top:7px;
+	margin-left:-2px
+}
+
+.prf-actions .thats-you-text:after {
+	content:"\e150";
+	font-size:28px;
+	margin-left:2px
+}
+
+.mdl .js-user-actions-menu {
+	position:absolute;
+	top:-320px;
+	left:-40px;
+	color:#fff!important;
+	margin:0
+}
+
+.prf-follow-state .dropdown-menu {
+	top:-300px
+}
+
+.prf-actions .unfollow-text:after {
+	content:"\e7f6"
+}
+
+.prf-actions .following-text:after {
+	content:"\e5ca"
+}
+
+.prf-actions .block-text:after {
+	content:"\e14b"
+}
+
+.prf-actions .unblock-text:after {
+	content:"\e166"
+}
+
+.prf-actions .pending-text:after {
+	content:"\e8b5"
+}
+
+.prf-actions .cancel-req-text:after {
+	content:"\e5cd"
+}
+
+.social-proof-container.is-hidden {
+	margin-bottom:-20px!important
+}
+
+.prf-actions .js-follow-button:hover,.prf-actions .js-follow-button:focus,.prf-actions .js-follow-button:active {
+	box-shadow:0 5px 15px 1px rgba(0,0,0,.25)
+}
+
+.s-following .follow-btn:hover {
+	background-color:#EA6B6B!important
 }
