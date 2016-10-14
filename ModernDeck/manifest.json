@@ -3,7 +3,7 @@
   "short_name": "ModernDeck",
 
   "description": "TweetDeck, just more beautiful, colourful, customisable, fast, and fun than ever.",
-  "version": "6.0",
+  "version": "6.1",
 
   "permissions": [
     "webRequest",
@@ -70,11 +70,5 @@
     "default_title": "Launch TweetDeck"
   },
 
-  "manifest_version": 2,
-
-  "applications": {
-     "gecko": {
-          "id": "thejumono@gmail.com"
-     }
-  }
+  "manifest_version": 2
 }
