@@ -37,3 +37,29 @@
 .activity-header>.txt-mute {
     display: inherit !important;
 }
+.tweet-detail .margin-tl.txt-small a, .tweet-stats li a {
+	float: inherit !important;
+	position: inherit !important;
+	padding-left: 10px !important;
+}
+.tweet-stat b {
+    padding-left: 10px !important;
+}
+.stat-word {
+    padding-left: 10px !important;
+}
+.tweet-detail-actions {
+	margin-top: 20px !important;
+}
+.tweet-detail-action-item.margin-ln {
+    margin-left: -2%!important;
+}
+.tweet-detail-action-item {
+	margin-left: 3%!important;
+}
+a.js-show-tip.tweet-detail-action.position-rel:hover {
+    color: red !important;
+}
+a.tweet-detail-action:hover {
+    color: green!important;
+}
