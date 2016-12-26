@@ -28,9 +28,11 @@
 }
 .obj-left>.icon-favorite-color, .is-favorite .icon-favorite-toggle, .activity-indicator.icon-favorite  {
   color: red !important;
+	padding-left: 15px;
 }
 .stream-item .icon-small-context {
   color: green;
+	padding-left: 15px;
 }
 .column-type-interactions .column-holder .column-panel .column-content .column-scroller .chirp-container .stream-item .item-box .activity-header .activity-indicator.activity-icon-aligned {
   color: black;
