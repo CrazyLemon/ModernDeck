@@ -26,7 +26,7 @@
 	margin-right: 5px;
 	margin-left: 20px;
 }
-.obj-left>.icon-favorite-color, .activity-indicator.icon-favorite  {
+.obj-left>.icon-favorite-color, .pull-right.icon-favorite-color {
   color: red !important;
 	padding-left: 15px;
 }
@@ -79,4 +79,26 @@ a.tweet-detail-action:hover {
 .js-stream-item-content>.account-summary .tweet-avatar {
   width: 48px !important;
   height: 48px !important;
+}
+.tweet-stats li[data-type="repliers"] span {
+	bottom: inherit !important;
+	left: inherit !important;
+	margin-left: 0px !important;
+	text-align: inherit !important;
+	width: 50px !important;
+}
+.tweet-stats li[data-type="repliers"] b {
+margin-right: 37px !important;
+}
+
+.tweet-stats .stat-word {
+	display: inherit !important;
+}
+.tweet-stat {
+	text-transform: inherit !important;
+}
+.tweet-stats li a, .tweet-stats li span {
+	position: inherit !important;
+	margin-left: 0px !important;
+	margin-top: 0px !important;
 }
