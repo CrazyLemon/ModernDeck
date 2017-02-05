@@ -114,3 +114,6 @@ time.js-timestamp.tweet-timestamp.txt-mute.flex-shrink--0.txt-small {
 time.js-timestamp.tweet-timestamp.txt-mute.flex-shrink--0 {
 	margin-top: 8px;
 }
+.tweet .padding-bs {
+	padding-bottom: 0px !important;
+}
