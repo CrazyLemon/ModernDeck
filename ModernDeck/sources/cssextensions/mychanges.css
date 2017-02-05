@@ -24,7 +24,6 @@
 }
 .column-type-interactions .column-holder .column-panel .column-content .column-scroller .chirp-container .stream-item .item-box .activity-header .nbfc .account-link {
 	margin-right: 5px;
-	margin-left: 20px;
 }
 .obj-left>.icon-favorite-color, .pull-right.icon-favorite-color {
   color: red !important;
@@ -101,4 +100,13 @@ margin-right: 37px !important;
 	position: inherit !important;
 	margin-left: 0px !important;
 	margin-top: 0px !important;
+}
+.icon-follow {
+	margin-top: -2px;
+}
+.account-link.txt-bold {
+	line-height: normal !important;
+}
+.icon-user-dd {
+	margin-top: -15px;
 }
