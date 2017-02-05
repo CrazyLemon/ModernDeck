@@ -31,7 +31,9 @@
 }
 .stream-item .icon-small-context {
   color: green;
-	padding-left: 15px;
+	padding-left: 10px;
+	padding-right: 18px !important;
+	padding-top: 0px !important;
 }
 .column-type-interactions .column-holder .column-panel .column-content .column-scroller .chirp-container .stream-item .item-box .activity-header .activity-indicator.activity-icon-aligned {
   color: black;
@@ -68,9 +70,6 @@ a.tweet-detail-action:hover {
 }
 .icon-small-context {
     font-size: 25px !important;
-	}
-	.stream-item .icon-small-context {
-		padding-top: 0px !important;
 	}
 	.activity-indicator {
 		font-size: 19px !important;
