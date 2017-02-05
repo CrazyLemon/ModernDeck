@@ -62,10 +62,10 @@
 .tweet-detail-action-item {
 	margin-left: 3%!important;
 }
-a.js-show-tip.tweet-detail-action.position-rel:hover {
+a.js-show-tip.tweet-action.position-rel:hover {
     color: red !important;
 }
-a.tweet-detail-action:hover {
+a.tweet-action:hover {
     color: green!important;
 }
 .icon-small-context {
@@ -88,7 +88,6 @@ a.tweet-detail-action:hover {
 .tweet-stats li[data-type="repliers"] b {
 margin-right: 37px !important;
 }
-
 .tweet-stats .stat-word {
 	display: inherit !important;
 }
@@ -101,7 +100,7 @@ margin-right: 37px !important;
 	margin-top: 0px !important;
 }
 .icon-follow {
-	margin-top: -2px;
+	margin-top: -3px;
 }
 .account-link.txt-bold {
 	line-height: normal !important;
