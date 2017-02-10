@@ -62,10 +62,10 @@
 .tweet-detail-action-item {
 	margin-left: 3%!important;
 }
-a.js-show-tip.tweet-action.position-rel:hover {
+a.js-show-tip.tweet-action.position-rel:hover, a.js-show-tip.tweet-detail-action:hover {
     color: red !important;
 }
-a.tweet-action:hover {
+a.tweet-action:hover , a.tweet-detail-action:hover{
     color: green!important;
 }
 .icon-small-context {
@@ -116,4 +116,7 @@ time.js-timestamp.tweet-timestamp.txt-mute.flex-shrink--0 {
 }
 .tweet .padding-bs {
 	padding-bottom: 0px !important;
+}
+.is-favorite .icon-favorite-toggle {
+	color: red !important;
 }
