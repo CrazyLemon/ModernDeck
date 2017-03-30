@@ -120,3 +120,6 @@ time.js-timestamp.tweet-timestamp.txt-mute.flex-shrink--0 {
 .is-favorite .icon-favorite-toggle {
 	color: red !important;
 }
+.other-replies {
+  margin-left: 53px;
+}
