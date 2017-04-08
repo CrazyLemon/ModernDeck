@@ -78,15 +78,18 @@ a.tweet-action:hover , a.tweet-detail-action:hover{
   width: 48px !important;
   height: 48px !important;
 }
-.tweet-stats li[data-type="repliers"] span {
+.tweet-stats> li[data-type="repliers"] {
 	bottom: inherit !important;
 	left: inherit !important;
-	margin-left: 0px !important;
+	margin-left: -10px !important;
 	text-align: inherit !important;
 	width: 50px !important;
+	/*margin-top: -16px !important;*/
+	position: inherit !important;
+	float: inherit !important;
 }
-.tweet-stats li[data-type="repliers"] b {
-margin-right: 37px !important;
+.tweet-stats>li[data-type="repliers"]>b {
+margin-left: 89px !important;
 }
 .tweet-stats .stat-word {
 	display: inherit !important;
@@ -94,7 +97,7 @@ margin-right: 37px !important;
 .tweet-stat {
 	text-transform: inherit !important;
 }
-.tweet-stats li a, .tweet-stats li span {
+.tweet-stats>li>a, .tweet-stats>li>span {
 	position: inherit !important;
 	margin-left: 0px !important;
 	margin-top: 0px !important;
@@ -119,4 +122,13 @@ time.js-timestamp.tweet-timestamp.txt-mute.flex-shrink--0 {
 }
 .is-favorite .icon-favorite-toggle {
 	color: red !important;
+}
+.tweet-stats {
+	margin-top: -15px !important;
+}
+.tweet-detail .margin-tl.txt-small a {
+	padding-bottom: 0px !important;
+}
+.tweet-stats>li[data-type="favoriters"]>a {
+	margin-right: 25px !important;
 }
