@@ -47,9 +47,9 @@
 	position: inherit !important;
 	padding-left: 10px !important;
 }
-.tweet-stat b {
+/*.tweet-stat b {
     padding-left: 10px !important;
-}
+}*/
 .stat-word {
     padding-left: 10px !important;
 }
@@ -131,4 +131,7 @@ time.js-timestamp.tweet-timestamp.txt-mute.flex-shrink--0 {
 }
 .tweet-stats>li[data-type="favoriters"]>a {
 	margin-right: 25px !important;
+}
+.margin-l--1 {
+	margin-left: 20px !important; 
 }
