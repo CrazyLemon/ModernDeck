@@ -133,5 +133,8 @@ time.js-timestamp.tweet-timestamp.txt-mute.flex-shrink--0 {
 	margin-right: 25px !important;
 }
 .margin-l--1 {
-	margin-left: 20px !important; 
+	margin-left: 20px !important;
+}
+.padding-t--4>.nbfc.link-complex-target.txt-base-largest.link-complex-target {
+	margin-left: 32px;
 }
