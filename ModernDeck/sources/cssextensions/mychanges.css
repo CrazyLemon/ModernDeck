@@ -50,9 +50,9 @@
 /*.tweet-stat b {
     padding-left: 10px !important;
 }*/
-.stat-word {
+/*.stat-word {
     padding-left: 10px !important;
-}
+}*/
 .tweet-detail-actions {
 	margin-top: 20px !important;
 }
@@ -81,21 +81,23 @@ a.tweet-action:hover , a.tweet-detail-action:hover{
 .tweet-stats> li[data-type="repliers"] {
 	bottom: inherit !important;
 	left: inherit !important;
-	margin-left: -10px !important;
+	/*margin-left: -10px !important;*/
 	text-align: inherit !important;
 	width: 50px !important;
 	/*margin-top: -16px !important;*/
 	position: inherit !important;
 	float: inherit !important;
 }
-.tweet-stats>li[data-type="repliers"]>b {
-margin-left: 89px !important;
+.tweet-stat[data-type="repliers"] {
+    margin-left: 5% !important;
 }
 .tweet-stats .stat-word {
 	display: inherit !important;
+	margin-top: 5px;
 }
 .tweet-stat {
 	text-transform: inherit !important;
+	width:  inherit !important;
 }
 .tweet-stats>li>a, .tweet-stats>li>span {
 	position: inherit !important;
@@ -123,9 +125,9 @@ time.js-timestamp.tweet-timestamp.txt-mute.flex-shrink--0 {
 .is-favorite .icon-favorite-toggle {
 	color: red !important;
 }
-.tweet-stats {
+/*.tweet-stats {
 	margin-top: -15px !important;
-}
+}*/
 .tweet-detail .margin-tl.txt-small a {
 	padding-bottom: 0px !important;
 }
@@ -137,4 +139,10 @@ time.js-timestamp.tweet-timestamp.txt-mute.flex-shrink--0 {
 }
 .padding-t--4>.nbfc.link-complex-target.txt-base-largest.link-complex-target {
 	margin-left: 32px;
+}
+.tweet-stat[data-type="retweeters"] {
+    margin-left: 9% !important;
+}
+.tweet-stat[data-type="favoriters"] {
+    margin-left: 5% !important;
 }
