@@ -172,9 +172,7 @@ textarea:not(.compose-text):not(.js-compose-text),
 .js-setting-list .selected strong,
 .lst-group.js-setting-list .selected,
 .character-count-compose,
-.btn-options-tray:not([disabled]):not(.is-disabled),
-.toggle-item-text,
-.accordion-panel .txt-bold
+.btn-options-tray:not([disabled]):not(.is-disabled)
 {
 	color:#fff
 }
@@ -477,7 +475,7 @@ textarea
 .ovl,
 .overlay
 {
-	background:rgba(88,100,107,.4)!important
+	background:rgba(88,100,107,.4)
 }
 
 .lst-modal,
@@ -672,33 +670,4 @@ select,
 .mdl-column.l-column .search-input:input-placeholder
 {
 	color:#fff
-}
-
-button[type="submit"] {
-	background:#009EAD
-}
-
-button[type="submit"]:hover {
-	background:#12c3d4
-}
-
-button[type="submit"]:active,button[type="submit"]:focus {
-	background:#12c3d4
-}
-
-.lst-launcher a,.lst-launcher a:hover,.character-count,.character-count-compose,.lst-launcher a:focus,.lst-launcher a:active,.lst-launcher span {
-	color:#fff!important
-}
-
-#id_comments {
-	border:2px solid #54707F
-}
-
-.sentry-error-embed .form-submit .powered-by a {
-  -webkit-filter:brightness(1000%);
-  filter:brightness(1000%);
-}
-
-.js-character-count {
-	color:#fff!important;
 }
