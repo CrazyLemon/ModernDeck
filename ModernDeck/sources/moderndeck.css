@@ -83,6 +83,16 @@ html.scroll-v {
 	pointer-events:all
 }
 
+.mdl.s-profile::-moz-scrollbar,.scroll-styled-v::-moz-scrollbar,.scroll-v::-moz-scrollbar,.lst-launcher::-moz-scrollbar,.mtd-nav-drawer::-moz-scrollbar,.emoji-container>div::-moz-scrollbar,.emoji-container::-moz-scrollbar {
+	width:10px;
+	pointer-events:all
+}
+
+.scroll-styled-h::-moz-scrollbar,.scroll-h::-moz-scrollbar {
+	height:10px;
+	pointer-events:all
+}
+
 .antiscroll-inner {
 	overflow-y:scroll;
 	overflow-x:hidden
@@ -99,6 +109,11 @@ html.scroll-v {
 }
 
 .antiscroll-inner::scrollbar {
+	width:0;
+	height:0
+}
+
+.antiscroll-inner::-moz-scrollbar {
 	width:0;
 	height:0
 }
@@ -5929,7 +5944,7 @@ button.mtd-no-transform-case {
 .s-inreply.s-fluid-height .cf>.pull-right {
 	position:absolute;
 	right:0;
-	bottom:-50px
+	bottom:-40px;
 }
 
 .s-inreply.s-fluid-height>.mdl-inner {
@@ -6706,7 +6721,7 @@ legend.frm-legend+div+.control-group>.control-label,legend.frm-legend+div+div+.c
 }
 
 .sentry-error-embed {
-	animation:windowDown .3s cubic-bezier(.19,1,.22,1)!important;
+	animation:windowDown .3s cubic-bezier(.19,1,.22,1)!important!important;
 	width:600px!important;
 	margin:0 auto!important;
 	max-height:900px!important;
