@@ -146,3 +146,7 @@ time.js-timestamp.tweet-timestamp.txt-mute.flex-shrink--0 {
 .tweet-stat[data-type="favoriters"] {
     margin-left: 5% !important;
 }
+.column-type-interactions .stream-item .item-box .activity-header .nbfc.txt-mute.txt-size-variable--12.flex-auto {
+    margin-left: 20px;
+    margin-bottom: 7px;
+}
