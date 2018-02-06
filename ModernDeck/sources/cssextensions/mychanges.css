@@ -6,7 +6,7 @@
 	width:100% !important;
 }
 .column-type-interactions .column-holder .column-panel .column-content .chirp-container .stream-item .item-box .activity-header .nbfc.txt-mute.txt-small {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 .column-type-interactions .column-holder .column-panel .column-content .chirp-container .stream-item .item-box .activity-header .nbfc .txt-mute .txt-small .txt-bold {
 	margin-left: 35px;
@@ -57,16 +57,16 @@
 	margin-top: 20px !important;
 }
 .tweet-detail-action-item.margin-ln {
-    margin-left: -2%!important;
+  margin-left: -2%!important;
 }
 .tweet-detail-action-item {
 	margin-left: 3%!important;
 }
 a.js-show-tip.tweet-action.position-rel:hover, a.js-show-tip.tweet-detail-action:hover {
-    color: red !important;
+  color: red !important;
 }
 a.tweet-action:hover , a.tweet-detail-action:hover{
-    color: green!important;
+  color: green!important;
 }
 .icon-small-context {
     font-size: 25px !important;
@@ -89,7 +89,7 @@ a.tweet-action:hover , a.tweet-detail-action:hover{
 	float: inherit !important;
 }
 .tweet-stat[data-type="repliers"] {
-    margin-left: 5% !important;
+  margin-left: 5% !important;
 }
 .tweet-stats .stat-word {
 	display: inherit !important;
@@ -141,12 +141,15 @@ time.js-timestamp.tweet-timestamp.txt-mute.flex-shrink--0 {
 	margin-left: 32px;
 }
 .tweet-stat[data-type="retweeters"] {
-    margin-left: 9% !important;
+  margin-left: 9% !important;
 }
 .tweet-stat[data-type="favoriters"] {
-    margin-left: 5% !important;
+  margin-left: 5% !important;
 }
 .column-type-interactions .stream-item .item-box .activity-header .nbfc.txt-mute.txt-size-variable--12.flex-auto {
-    margin-left: 20px;
-    margin-bottom: 7px;
+  margin-left: 20px;
+  margin-bottom: 7px;
+}
+i.icon.icon-heart-filled.icon-favorite-color {
+  color: red;
 }
