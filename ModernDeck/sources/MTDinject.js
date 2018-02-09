@@ -5,8 +5,8 @@
 
 "use strict";
 
-var SystemVersion = "6.1.6";
-var MTDBaseURL = "https://raw.githubusercontent.com/dangeredwolf/ModernDeck/stable/ModernDeck/"; // Defaults to streaming if nothing else is available (i.e. legacy firefox)
+var SystemVersion = "6.2.2";
+var MTDBaseURL = "https://rawgit.com/dangeredwolf/ModernDeck/stable/ModernDeck/"; // Defaults to streaming if nothing else is available
 
 var msgID,
 FetchProfileInfo,
@@ -340,8 +340,6 @@ function MTDInit(){
 	// 		.attr("src",MTDBaseURL + "sources/libraries/waves.js")
 	// )
 
-	NavigationSetup();
-
 }
 
 function SendNotificationMessage(txt) {
@@ -358,10 +356,8 @@ function WaitForNotificationDismiss(node,prevmsgID) {
 		if (msgID === prevmsgID) {
 			$(MTDNotification).addClass("mtd-appbar-notification-hidden");
 			messagesAccounted[node] = undefined;
-			return;
-		} else {
-			return;
 		}
+		return;
 	}
 
 	setTimeout(function(){WaitForNotificationDismiss(node,prevmsgID);},500);

@@ -51,7 +51,7 @@
 .cmp-replyto {
 	position:relative;
 	height:100px;
-	margin-top:100px;
+	margin-top: 80px;
 	margin-bottom:-40px
 }
 
@@ -192,4 +192,14 @@
 
 .mtd-nav-divider-feedback {
 	display:block
+}
+
+.s-inreply.s-fluid-height .cf>.pull-right {
+	position:absolute;
+	right:0;
+	bottom:-40px;
+}
+
+.cf.padding-b--20.padding-r--20.padding-t--5 {
+	margin-top:-70px;
 }

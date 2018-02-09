@@ -23,8 +23,8 @@ input[type="radio"]:checked:before,
 	color:#00BCD4
 }
 
-a:not(.list-account):not(.js-column-back):not(.compose-account):not(.js-toggle-item):not(.column-header-link):active,
-a:not(.list-account):not(.js-column-back):not(.compose-account):not(.js-toggle-item):not(.column-header-link):focus
+a:not(.list-account):not(.js-column-back):not(.compose-account):not(.js-toggle-item):not(.column-header-link):not(.js-account-action):active,
+a:not(.list-account):not(.js-column-back):not(.compose-account):not(.js-toggle-item):not(.column-header-link):not(.js-account-action):focus
 {
 	color:#0DA8BC;
 }
@@ -95,7 +95,10 @@ option,
 .l-column.mdl-column.mdl-column-sml .list-link,
 .typeahead .username,
 .lst-group .list-account .username,
-html .btd-grayscale_notification_icons i.icon.activity-indicator
+html .btd-grayscale_notification_icons i.icon.activity-indicator,
+.txt-r-deep-gray,
+.color-twitter-dark-gray,
+.color-twitter-darker-gray
 {
 	color:#979797
 }

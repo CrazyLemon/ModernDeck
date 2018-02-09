@@ -247,7 +247,7 @@ html.scroll-v {
 	width:300px
 }
 
-.cf:before,.cf:after {
+.cf:before,.cf:after,.tweet:before,.tweet:after {
 	display:block;
 	content:" "
 }
@@ -1337,10 +1337,6 @@ a .column-title-back .icon:after {
 	padding-top:4px!important
 }
 
-.contributor-row .contributor-detail {
-	margin-left:46px
-}
-
 .contributor-sep {
 	border:0;
 	height:1px
@@ -1374,8 +1370,7 @@ a .column-title-back .icon:after {
 }
 
 .stream-item {
-	margin-top:3px;
-	overflow:hidden
+	margin-top:3px
 }
 
 .stream-item.is-actionable:hover {
@@ -1505,6 +1500,12 @@ a .column-title-back .icon:after {
 	width:32px;
 	height:32px;
 	border-radius:16px
+}
+
+.avatar.size36 {
+	width:36px;
+	height:36px;
+	border-radius:18px
 }
 
 .avatar.size48 {
@@ -1804,11 +1805,6 @@ a .column-title-back .icon:after {
 
 .is-conversation>.tweet-body {
 	margin-left:-15px
-}
-
-.tweet:before,.tweet:after {
-	display:block;
-	content:" "
 }
 
 .emoji {
@@ -2533,6 +2529,10 @@ a .column-title-back .icon:after {
 	font-weight:500
 }
 
+#settings-modal .mdl:not(.mtd-settings-panel) .mdl-header-title {
+	font-size:0
+}
+
 .s-tall-fixed .mdl-header-title {
 	padding-top:2px
 }
@@ -2612,7 +2612,6 @@ a .column-title-back .icon:after {
 }
 
 .s-fluid .mdl-inner,.s-fluid-height .mdl-inner {
-	/* position:relative; */
 	top:60px;
 	bottom:0;
 	left:0;
@@ -2706,8 +2705,8 @@ a .column-title-back .icon:after {
 }
 
 .mdl-links {
-	position:absolute;
-	bottom:-350px;
+	position:fixed;
+	bottom:0;
 	left:0;
 	width:500px;
 	color:transparent;
@@ -2885,6 +2884,7 @@ a .column-title-back .icon:after {
 	padding-top:20px;
 	padding-left:19px;
 	padding-right:8px;
+	margin-bottom:11px;
 	display:inline-block
 }
 
@@ -3332,8 +3332,7 @@ a:hover .icn-button-next {
 }
 
 .s-checked .checked {
-	display:block;
-	color:#5F757E /*???*/
+	display:block
 }
 
 .list-link,.list-subtitle,.list-account,.list-listmember,.list-subtitle,.list-filter {
@@ -3990,7 +3989,9 @@ input[type="radio"]:checked:before {
 	text-align:center;
 	padding-bottom:4px;
 	padding-top:4px;
-	margin-top:5px
+	margin-top:5px;
+	padding-left:20px;
+	padding-right:20px
 }
 
 .prf-siteurl {
@@ -4486,9 +4487,9 @@ input[type="radio"]:checked:before {
 .js-add-image-button,.js-tweet-button,.js-dm-button,.js-schedule-button {
 	width:35px!important;
 	height:35px;
-	margin-top:-80px;
+	margin-top: -90px;
 	background:transparent!important;
-	box-shadow:none!important
+	box-shadow:none!important;
 }
 
 .js-add-image-button {
@@ -4752,7 +4753,8 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 }
 
 .js-send-button {
-	margin-right:8px
+	margin-right:16px;
+	height:32px
 }
 
 .drawer-header {
@@ -4818,7 +4820,7 @@ a[rel=user]:active,.card-holder a[rel=mediaPreview]:active {
 
 .js-modal[style="display:none;"] {
 	display:block!important;
-	margin-top:100%
+	margin-top:200%
 }
 
 .mtd-drawer-button {
@@ -5177,7 +5179,8 @@ fieldset .fixed-width-label:not(.radio),fieldset:not(.js-search-filter) .control
 
 .compose .js-quote-tweet-holder .quoted-tweet {
 	padding-left:5px!important;
-	padding-right:90px!important
+	padding-right:90px!important;
+	position:relative
 }
 
 .is-options-open .more-tweets-btn-container--hidden {
@@ -5553,8 +5556,8 @@ button.mtd-no-transform-case {
 	width:3px
 }
 
-.is-active:not(.is-expanded) .accordion-panel {
-	height:0!important
+.is-active:not(.is-expanded):not(.account-settings-row) .accordion-panel {
+
 }
 
 .accordion-panel {
@@ -5565,7 +5568,7 @@ button.mtd-no-transform-case {
 }
 
 .is-expanded .accordion-panel {
-	height:inherit /* Hack to fix derpiness of panel in 6.1 tree; */
+	height:inherit
 }
 
 .column-nav-item.is-new .obj-left {
@@ -5652,7 +5655,7 @@ button.mtd-no-transform-case {
 	pointer-events:all
 }
 
-.contributor-row[data-state="confirmRemove"] .contributor-confirm-remove.padding-bl {
+.contributor-row:not([data-state="confirmRemove"]) .contributor-confirm-remove.padding-bl {
 	margin-top:-130px
 }
 
@@ -5935,20 +5938,17 @@ button.mtd-no-transform-case {
 }
 
 .cmp-replyto {
-	bottom:0;
-	right:0;
-	left:0;
-	position:absolute
-}
-
-.s-inreply.s-fluid-height .cf>.pull-right {
-	position:absolute;
-	right:0;
-	bottom:-40px;
+	position:relative;
+	display:inline-block!important;
+	width:100%;
+	padding-left:0!important;
+	padding-right:0!important;
+	margin-top:60px
 }
 
 .s-inreply.s-fluid-height>.mdl-inner {
-	position:relative
+	position:relative;
+	top:20px
 }
 
 .s-tall-fixed {
@@ -6367,6 +6367,11 @@ body>.message-banner[style="color:rgb(85, 85, 85); background-color:rgb(178, 213
 	cursor:pointer
 }
 
+label[for="account-safeguard-checkbox"] {
+	padding-top:0;
+	padding-right:10px
+}
+
 #account-safeguard-checkbox {
 	-webkit-appearance:none;
 	-moz-appearance:none;
@@ -6416,10 +6421,6 @@ p[lang="ar"] a[rel="hashtag"],p[lang="ar"] a[rel="user"],p[lang="fa"] a[rel="has
     unicode-bidi:isolate
 }
 
-.contributor-row .account-summary-text {
-	padding-left:45px
-}
-
 .contributor-detail {
 	padding-top:5px;
 	font-size:0;
@@ -6444,11 +6445,6 @@ p[lang="ar"] a[rel="hashtag"],p[lang="ar"] a[rel="user"],p[lang="fa"] a[rel="has
 
 .contributor-settings-role>.radio {
 	padding-left:0
-}
-
-.contributor-settings-role>.radio .nbfc {
-	width:180px;
-	padding-left:35px
 }
 
 .scroll-conversation .js-replies-before .js-media-preview-container.margin-vm,.scroll-conversation .js-replies-to .js-media-preview-container.margin-vm {
@@ -6556,7 +6552,7 @@ p[lang="ar"] a[rel="hashtag"],p[lang="ar"] a[rel="user"],p[lang="fa"] a[rel="has
 	box-shadow:0 5px 15px 1px rgba(0,0,0,.25)
 }
 
-.s-following .follow-btn:hover {
+.prf .s-following .follow-btn:hover {
 	background-color:#EA6B6B!important
 }
 
@@ -6675,14 +6671,13 @@ legend.frm-legend+div+.control-group>.control-label,legend.frm-legend+div+div+.c
 	margin-left:3px
 }
 
-.js-progress-svg {
-	display:none
-}
-
 .js-character-count {
 	display:block!important;
 	margin-right:46px!important;
-	margin-top:-4px
+	position:absolute;
+	bottom:16px;
+	left:67%;
+	color:#000
 }
 
 .control-group .margin-l--4 {
@@ -6721,17 +6716,16 @@ legend.frm-legend+div+.control-group>.control-label,legend.frm-legend+div+div+.c
 }
 
 .sentry-error-embed {
-	animation:windowDown .3s cubic-bezier(.19,1,.22,1)!important!important;
+	animation:windowDown .3s cubic-bezier(.19,1,.22,1)!important;
 	width:600px!important;
 	margin:0 auto!important;
 	max-height:900px!important;
 	bottom:auto!important;
 	height:auto!important;
 	left:50%!important;
-	margin-left:-300px!important
+	margin-left:-300px!important;
+	top:0!important
 }
-
-
 
 /** Wrapper class name is provided by JS **/
 .sentry-error-embed-wrapper {
@@ -6945,10 +6939,6 @@ button[type="submit"]:active {
 	transform:none!important
 }
 
-.form-submit>.close {
-	display:none
-}
-
 .padding-axl.flex.flex-row.flex-align--center>.flex-auto {
 	padding-left:40px!important
 }
@@ -6979,9 +6969,123 @@ button[type="submit"]:active {
 }
 
 .compose-reply-tweet:not(.is-hidden)+.compose-text-container>.compose-text {
-	height:100px!important;
+	height:100px!important
 }
 
 .prf-header>.width-p--85 {
-	width:100%!important;
+	width:100%!important
+}
+
+svg:not(:root) {
+    overflow:hidden
+}
+
+.stroke-twitter-light-gray {
+    stroke:#CCD6DD
+}
+
+.stroke-twitter-blue {
+    stroke:#1DA1F2
+}
+
+.stroke-twitter-yellow {
+    stroke:#FFAD1F
+}
+
+.stroke-twitter-red {
+    stroke:#E0245E
+}
+
+.js-progress-svg>svg {
+	height:32px!important;
+	width:32px!important
+}
+
+.js-progress-svg>svg>circle {
+	r:12!important;
+	stroke-width:3!important;
+	stroke-dasharray:75!important
+}
+
+.mdl-inner .js-account-selector {
+	width:100%;
+	padding-top:0
+}
+
+.compose-account-names {
+	padding-left:40px;
+	vertical-align:middle
+}
+
+.cf.padding-b--20.padding-r--20.padding-t--5 {
+	margin-top: 10px;
+	height:30px
+}
+
+.mdl-inner.bg-twitter-lightest-gray.padding-l--20.padding-r--20.mdl-header-divider {
+	top:20px
+}
+
+.cmp-replyto .tweet-header,.cmp-replyto .tweet-body,.cmp-replyto .tweet-context {
+	padding-left:10px
+}
+
+.txt-size--13 {
+	font-size:14px
+}
+
+.icon-user-team-mgr.pull-right.icon-small {
+	margin-right:5px
+}
+
+.txt-size--13.padding-txs,.txt-size-variable--16>.padding-t--4 {
+	padding:0!important
+}
+
+.txt-size--13.padding-txs,.txt-size-variable--16 .txt-size--13:not(.account-remove-check-message) {
+	padding-left:20px!important
+}
+
+.avatar.size64 {
+    width:64px;
+    height:64px;
+    border-radius:32px
+}
+
+.avatar.size73 {
+    width:73px;
+    height:73px;
+    border-radius:37px
+}
+
+.account-profile-header {
+    width:100%;
+    height:90px;
+    background-size:cover
+}
+
+.avatar-border--2 {
+	box-shadow:0 5px 10px rgba(17,17,17,.2)
+}
+
+.follow-from-accounts-username>.avatar {
+	margin-top:-4px;
+	margin-right:5px
+}
+
+.compose-message-recipient-list {
+	margin-bottom:10px;
+}
+
+.compose .quoted-tweet .tweet-header+.js-reply-info-container {
+	padding-top:30px;
+	display:inline;
+}
+
+.padding-al.bg-color-twitter-white.br--3 {
+	padding-left:0;
+}
+
+.contributor-option {
+	margin-left:20px;
 }
